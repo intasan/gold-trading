@@ -1,0 +1,14 @@
+{
+  "workflow_run_id": "41788601769",
+  "exported_at": "2026-11-04T06:56:26.299389Z",
+  "rows": 2412,
+  "source_status": {
+    "frankfurter": "success",
+    "gold_api_xau": "success",
+    "gold_api_xag": "success",
+    "worldbank": "success"
+  },
+  "model_status": "evaluated",
+  "forecast_published": false,
+  "runtime": "Airflow DAG CLI execution in Docker with real PostgreSQL; ephemeral services; recorded export persisted in Git"
+}
