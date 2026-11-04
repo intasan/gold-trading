@@ -28,3 +28,7 @@ Initial HGB MAE on the refreshed export: 138.14 vs naive 135.47 USD/troy oz (Nov
 All JPEGs were captured from real browser-rendered pages on 4 November 2026. dashboard-desktop.jpg is the earlier recorded export; dashboard-history.jpg, dashboard-model.jpg and dashboard-pipeline.jpg show the dated export visible at capture time. runtime-integration-actions.jpg shows the real successful GitHub Actions run. None is an Airflow UI or database GUI capture. Raw PostgreSQL and task logs are supplied separately to avoid implying unavailable UI evidence.
 
 The refreshed-data candidate comparison again selected the naive baseline; all 15 alternatives failed to outperform it during pre-holdout validation. The full 16-configuration result includes its input CSV hash. Current dashboard captures (*-current.jpg) show the 4 November export and do not replace the earlier dated captures.
+
+## Final gate and deployed checks
+
+The fixed forecast gate was revalidated in real Docker/PostgreSQL/Airflow integration run 41789917954 (SUCCESS), offline Pipeline checks 41789917999 (SUCCESS), and Pages deployment 41789917334 (SUCCESS). Deployed viewport checks at 360, 390, 768 and 1440 CSS pixels show loaded charts/tables, no horizontal overflow and forecast withheld; see evidence/browser-runtime-current.json. These are browser viewport tests, not physical device tests. Evaluation runs on each automated refresh; forecast publication remains conditional on the fixed research gate, not guaranteed by continued tuning.
