@@ -1,39 +1,78 @@
 name: Refresh real market data
 on:
+  schedule:
+    - cron: '17 6 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/refresh.yml']
 permissions:
   contents: write
+  pages: write
 concurrency:
   group: refresh-market-data
   cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      POSTGRES_PASSWORD: refresh_ephemeral_gold
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Prepare actual PostgreSQL and Airflow runtime
+        run: |
+          mkdir -p evidence/scheduled
+          docker compose up -d --wait postgres
+          docker compose build pipeline
+          docker compose -f docker-compose.yml -f docker-compose.integration.yml build airflow
+          docker compose run --rm pipeline python -m goldtrading replay
+      - name: Execute the three Airflow tasks against PostgreSQL
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.integration.yml run --name gold-airflow-refresh airflow bash -c 'airflow db migrate && airflow dags test gold_analytics_pipeline "$(date -u +%Y-%m-%d)"' 2>&1 | tee evidence/scheduled/airflow-refresh.txt
+          docker cp gold-airflow-refresh:/opt/airflow/gold-trading/data/published/. data/published/
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: pip
-      - run: pip install -r requirements.txt
-      - name: Collect, validate, evaluate and export
-        id: pipeline
+      - name: Check the real exported observations
         run: |
-          python -m goldtrading replay
-          python -m goldtrading refresh > refresh-log.txt 2>&1
-      - name: Preserve run logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: refresh-evidence
-          path: |
-            refresh-log.txt
-            data/published/
-      - name: Commit the recorded export
-        if: success()
+          python tools/check_snapshot.py
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          s=json.loads(Path('data/published/snapshot.json').read_text())
+          assert s['pipeline']['status']=='success', 'Do not publish partial or failed scheduled refresh'
+          assert s['quality']['duplicate_keys']==0 and s['quality']['invalid_prices']==0
+          d={'workflow_run_id':os.environ['GITHUB_RUN_ID'],'exported_at':s['exported_at'],'rows':s['quality']['rows'],'source_status':{k:v['status'] for k,v in s['pipeline']['sources'].items()},'model_status':s['model']['status'],'forecast_published':s['model'].get('forecast') is not None,'runtime':'Airflow DAG CLI execution in Docker with real PostgreSQL; ephemeral services; recorded export persisted in Git'}
+          Path('data/published/refresh-status.json').write_text(json.dumps(d,indent=2))
+          print(json.dumps(d,indent=2))
+          PY
+      - name: Commit verified recorded export
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/published
-          git diff --cached --quiet || git commit -m 'Refresh real-source market export'
+          git diff --cached --quiet || git commit -m 'Refresh recorded observations through Docker PostgreSQL Airflow'
           git push
+      - name: Request rebuild using the existing Pages source
+        run: |
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - name: Preserve actual refresh evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scheduled-refresh-evidence
+          path: |
+            evidence/scheduled/
+            data/published/
+      - name: Clean ephemeral refresh services
+        if: always()
+        run: |
+          docker rm gold-airflow-refresh || true
+          docker compose -f docker-compose.yml -f docker-compose.integration.yml down -v
