@@ -1,0 +1,60 @@
+name: Docker PostgreSQL Airflow integration
+on:
+  push:
+    branches: [main]
+    paths: ['Dockerfile*', 'docker-compose*.yml', 'goldtrading/**', 'dags/**', 'tools/verify_postgres.py', '.github/workflows/integration.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      POSTGRES_PASSWORD: integration_ephemeral_gold
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start PostgreSQL
+        run: |
+          mkdir -p evidence/runtime
+          docker compose up -d --wait postgres
+          docker compose build pipeline dashboard
+          docker compose -f docker-compose.yml -f docker-compose.integration.yml build airflow
+      - name: PostgreSQL persistence and idempotence
+        run: |
+          docker compose run --rm pipeline python -m tools.verify_postgres | tee evidence/runtime/postgres-before.txt
+          docker compose restart postgres
+          docker compose up -d --wait postgres
+          docker compose run --rm pipeline python -m tools.verify_postgres | tee evidence/runtime/postgres-after-restart.txt
+      - name: Real-source pipeline in Docker
+        run: |
+          docker compose run --rm pipeline | tee evidence/runtime/docker-refresh.txt
+          docker compose up -d dashboard
+          curl --fail --retry 12 --retry-delay 2 --retry-connrefused http://127.0.0.1:8000/api/health | tee evidence/runtime/api-health.json
+          curl --fail http://127.0.0.1:8000/api/snapshot > evidence/runtime/api-snapshot.json
+      - name: Run actual Airflow DAG tasks
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.integration.yml run --rm airflow bash -c 'airflow db migrate && airflow dags test gold_analytics_pipeline 2026-11-04' 2>&1 | tee evidence/runtime/airflow-dag.txt
+      - name: Assert all three task states
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          t=Path('evidence/runtime/airflow-dag.txt').read_text()
+          for task in ['extract_validate_load','evaluate_if_sufficient_history','export_snapshot']:
+              assert task in t, task
+          assert 'Marking run' in t and 'successful' in t.lower(), 'DAG success not observed'
+          d=json.loads(Path('evidence/runtime/api-snapshot.json').read_text())
+          assert d['quality']['rows']>=2406
+          assert d['pipeline']['status'] in ['success','partial']
+          print('Docker / PostgreSQL / API / Airflow DAG integration assertions passed')
+          PY
+      - name: Preserve actual runtime logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: actual-runtime-evidence
+          path: evidence/runtime/
+      - name: Clean ephemeral integration services
+        if: always()
+        run: docker compose -f docker-compose.yml -f docker-compose.integration.yml down -v

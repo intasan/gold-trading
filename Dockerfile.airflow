@@ -1,0 +1,8 @@
+FROM apache/airflow:2.10.5-python3.12
+USER root
+RUN python -m venv /opt/gold-venv && chown -R airflow:root /opt/gold-venv
+USER airflow
+COPY requirements.txt requirements-postgres.txt /tmp/gold-requirements/
+RUN /opt/gold-venv/bin/pip install --no-cache-dir -r /tmp/gold-requirements/requirements-postgres.txt
+COPY --chown=airflow:root . /opt/airflow/gold-trading
+ENV GOLD_PROJECT_DIR=/opt/airflow/gold-trading GOLD_PIPELINE_PYTHON=/opt/gold-venv/bin/python
