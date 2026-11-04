@@ -1,0 +1,54 @@
+[
+  {
+    "width": 360,
+    "viewport": 360,
+    "documentWidth": 345,
+    "overflow": false,
+    "dashboardLoaded": true,
+    "quoteGold": "3,931.60",
+    "tableRows": 12,
+    "firstPeriod": "Sept 2026\t4,319.00\tMonthly average\tWorld Bank",
+    "chartPresent": true,
+    "modelStatus": "EVALUATED / NOT PROMOTED",
+    "modelForecast": "Forecast withheld: the candidate has not outperformed the last-observed-price baseline."
+  },
+  {
+    "width": 390,
+    "viewport": 390,
+    "documentWidth": 375,
+    "overflow": false,
+    "dashboardLoaded": true,
+    "quoteGold": "3,931.60",
+    "tableRows": 12,
+    "firstPeriod": "Sept 2026\t4,319.00\tMonthly average\tWorld Bank",
+    "chartPresent": true,
+    "modelStatus": "EVALUATED / NOT PROMOTED",
+    "modelForecast": "Forecast withheld: the candidate has not outperformed the last-observed-price baseline."
+  },
+  {
+    "width": 768,
+    "viewport": 768,
+    "documentWidth": 753,
+    "overflow": false,
+    "dashboardLoaded": true,
+    "quoteGold": "3,931.60",
+    "tableRows": 12,
+    "firstPeriod": "Sept 2026\t4,319.00\tMonthly average\tWorld Bank",
+    "chartPresent": true,
+    "modelStatus": "EVALUATED / NOT PROMOTED",
+    "modelForecast": "Forecast withheld: the candidate has not outperformed the last-observed-price baseline."
+  },
+  {
+    "width": 1440,
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "overflow": false,
+    "dashboardLoaded": true,
+    "quoteGold": "3,931.60",
+    "tableRows": 12,
+    "firstPeriod": "Sept 2026\t4,319.00\tMonthly average\tWorld Bank",
+    "chartPresent": true,
+    "modelStatus": "EVALUATED / NOT PROMOTED",
+    "modelForecast": "Forecast withheld: the candidate has not outperformed the last-observed-price baseline."
+  }
+]
