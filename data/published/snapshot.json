@@ -10164,6 +10164,42 @@
         "training_rows": 308
       }
     ],
-    "forecast": null
+    "forecast": null,
+    "acceptance_gate": {
+      "passed": false,
+      "criteria": {
+        "minimum_mae_gain": 0.05,
+        "minimum_rmse_gain": 0.05,
+        "minimum_winning_annual_folds": 2,
+        "required_holdout_rows": 36
+      },
+      "mae_gain": -0.01972167574702488,
+      "rmse_gain": -0.027367311811405726,
+      "annual_folds": [
+        {
+          "start": "2023-11-01",
+          "end": "2024-10-01",
+          "model_mae": 62.292914756896266,
+          "naive_mae": 70.5,
+          "wins": true
+        },
+        {
+          "start": "2024-11-01",
+          "end": "2025-10-01",
+          "model_mae": 105.76704946572863,
+          "naive_mae": 123.16666666666667,
+          "wins": true
+        },
+        {
+          "start": "2025-11-01",
+          "end": "2026-10-01",
+          "model_mae": 246.37192016222858,
+          "naive_mae": 212.75,
+          "wins": false
+        }
+      ],
+      "scope": "Retrospective research only; publication vintages and execution are not backtested"
+    },
+    "retrospective_gate_passed": false
   }
 }

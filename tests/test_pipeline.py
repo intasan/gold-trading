@@ -76,6 +76,9 @@ class ModelTests(unittest.TestCase):
    self.assertLess(point['train_last_period'],point['period']);self.assertGreaterEqual(point['training_rows'],MIN_TRAIN)
    self.assertEqual(point['naive'],gold[point['train_last_period']]);self.assertEqual(point['actual'],gold[point['period']]);errors.append(abs(point['model']-point['actual']))
   self.assertAlmostEqual(sum(errors)/len(errors),r['model_metrics']['mae'])
-  if not r['beats_naive_mae']:self.assertIsNone(r['forecast'])
+  gate=r['acceptance_gate'];self.assertEqual(len(gate['annual_folds']),3)
+  expected=(r['model_metrics']['mae']<=.95*r['naive_metrics']['mae'] and r['model_metrics']['rmse']<=.95*r['naive_metrics']['rmse'] and sum(f['wins'] for f in gate['annual_folds'])>=2)
+  self.assertEqual(r['retrospective_gate_passed'],expected)
+  if not expected:self.assertIsNone(r['forecast'])
 
 if __name__=='__main__':unittest.main()

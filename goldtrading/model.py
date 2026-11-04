@@ -36,6 +36,21 @@ def metrics(actual,pred):
     a=np.asarray(actual);p=np.asarray(pred)
     return {'mae':float(np.mean(np.abs(a-p))),'rmse':float(np.sqrt(np.mean((a-p)**2))),'mape_percent':float(np.mean(np.abs((a-p)/a))*100)}
 
+def acceptance_gate(predictions):
+    """Fixed retrospective research gate; never a trading acceptance claim."""
+    criteria={'minimum_mae_gain':0.05,'minimum_rmse_gain':0.05,'minimum_winning_annual_folds':2,'required_holdout_rows':36}
+    if len(predictions)!=36:return {'passed':False,'criteria':criteria,'reason':'Requires exactly 36 chronological holdouts','annual_folds':[]}
+    actual=[p['actual'] for p in predictions]
+    m=metrics(actual,[p['model'] for p in predictions]);n=metrics(actual,[p['naive'] for p in predictions]);folds=[]
+    for offset in range(0,36,12):
+        pp=predictions[offset:offset+12];a=[p['actual'] for p in pp]
+        mm=metrics(a,[p['model'] for p in pp]);nn=metrics(a,[p['naive'] for p in pp])
+        folds.append({'start':pp[0]['period'],'end':pp[-1]['period'],'model_mae':mm['mae'],'naive_mae':nn['mae'],'wins':mm['mae']<nn['mae']})
+    mae_gain=1-m['mae']/n['mae'] if n['mae']>0 else 0
+    rmse_gain=1-m['rmse']/n['rmse'] if n['rmse']>0 else 0
+    passed=mae_gain>=.05 and rmse_gain>=.05 and sum(f['wins'] for f in folds)>=2
+    return {'passed':passed,'criteria':criteria,'mae_gain':mae_gain,'rmse_gain':rmse_gain,'annual_folds':folds,'scope':'Retrospective research only; publication vintages and execution are not backtested'}
+
 def evaluate(rows):
     import sklearn
     from sklearn.ensemble import HistGradientBoostingRegressor
@@ -70,8 +85,9 @@ def evaluate(rows):
             forecast={'period':next_period.strftime('%Y-%m-%d'),'value':float(future.previous_price.iloc[0]*math.exp(float(estimator.predict(future[FEATURES])[0]))),'origin_last_observed_period':frame.index[-1].strftime('%Y-%m-%d'),'scope':'Research estimate of monthly average; not a live/spot forecast'}
     actual=[p['actual'] for p in predictions]
     m=metrics(actual,[p['model'] for p in predictions]);n=metrics(actual,[p['naive'] for p in predictions])
-    forecast = forecast if m['mae'] < n['mae'] else None
-    result.update(promotion_status='research_only' if m['mae'] < n['mae'] else 'not_promoted',status='evaluated',reason=None,model_name='HistGradientBoostingRegressor on log returns',sklearn_version=sklearn.__version__,parameters=config,training_rows_before_holdout=cutoff,test_start=predictions[0]['period'],test_end=predictions[-1]['period'],model_metrics=m,naive_metrics=n,beats_naive_mae=m['mae']<n['mae'],predictions=predictions,forecast=forecast)
+    gate=acceptance_gate(predictions)
+    forecast = forecast if gate['passed'] else None
+    result.update(acceptance_gate=gate,retrospective_gate_passed=gate['passed'],promotion_status='research_only' if gate['passed'] else 'not_promoted',status='evaluated',reason=None,model_name='HistGradientBoostingRegressor on log returns',sklearn_version=sklearn.__version__,parameters=config,training_rows_before_holdout=cutoff,test_start=predictions[0]['period'],test_end=predictions[-1]['period'],model_metrics=m,naive_metrics=n,beats_naive_mae=m['mae']<n['mae'],predictions=predictions,forecast=forecast)
     return result
 
 def run_model(store):

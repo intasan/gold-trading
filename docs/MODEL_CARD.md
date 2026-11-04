@@ -13,3 +13,5 @@ Model: HistGradientBoostingRegressor on log returns. Lagged monthly gold, silver
 Current-vintage observations have revisions and publication lags that are not reconstructed. This is retrospective evaluation, not a point-in-time trading backtest. Additional candidate comparison is recorded in evidence/model-research.json; the previously inspected holdout is disclosed as reused historical evidence. Its research gate requires at least 5% lower MAE and RMSE and winning MAE in at least two of three annual folds. Repeated tuning until a known holdout passes would not demonstrate future forecasting quality.
 
 Earlier model card retained in docs/archive/MODEL_CARD_20261103.md. Full current predictions and parameters: data/published/snapshot.json.
+
+The same fixed 5% MAE / RMSE and two-of-three annual-fold gate is enforced in goldtrading/model.py and by the public dashboard. Legacy exports without explicit gate approval fail closed. Gate assessment fields were added to the recorded predictions without changing the actual observations or prediction values.
