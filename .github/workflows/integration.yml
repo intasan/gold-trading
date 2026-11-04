@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+defaults:
+  run:
+    shell: bash
 jobs:
   integration:
     runs-on: ubuntu-latest
@@ -30,11 +33,16 @@ jobs:
         run: |
           docker compose run --rm pipeline | tee evidence/runtime/docker-refresh.txt
           docker compose up -d dashboard
-          curl --fail --retry 12 --retry-delay 2 --retry-connrefused http://127.0.0.1:8000/api/health | tee evidence/runtime/api-health.json
+          curl --fail --retry-all-errors --retry 12 --retry-delay 2 --retry-connrefused http://127.0.0.1:8000/api/health | tee evidence/runtime/api-health.json
           curl --fail http://127.0.0.1:8000/api/snapshot > evidence/runtime/api-snapshot.json
       - name: Run actual Airflow DAG tasks
         run: |
           docker compose -f docker-compose.yml -f docker-compose.integration.yml run --rm airflow bash -c 'airflow db migrate && airflow dags test gold_analytics_pipeline 2026-11-04' 2>&1 | tee evidence/runtime/airflow-dag.txt
+      - name: Inspect actual API and container state
+        if: always()
+        run: |
+          docker compose logs dashboard > evidence/runtime/dashboard-container.txt
+          docker compose ps -a > evidence/runtime/container-state.txt
       - name: Assert all three task states
         run: |
           python - <<'PY'
