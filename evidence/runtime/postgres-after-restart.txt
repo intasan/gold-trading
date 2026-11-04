@@ -1,0 +1,1 @@
+{"postgres_version": "PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit", "real_recorded_rows": 2406, "database_rows": 2406, "second_replay": [0, 2406], "reopen_persistent": true}

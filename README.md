@@ -15,9 +15,9 @@
 - Optional local Python API อ่านฐานข้อมูลโดยตรง; หน้า Pages อ่าน snapshot ที่ Export แล้ว ไม่ได้สตรีมราคาสด
 - Feature engineering จากข้อมูลก่อนหน้า และ expanding-window ML evaluation เทียบ naive baseline
 
-ผลรอบที่ตรวจ: 2,406 observations (ประวัติ 801 เดือน × 3 โลหะ + spot 2 รายการ + FX 1 รายการ). จำนวนนี้เป็น snapshot ของรอบที่บันทึก ไม่ใช่จำนวนสดตลอดเวลา
+ผลรอบที่ตรวจ: 2,412 observations (ประวัติ 802 เดือน × 3 โลหะ + spot 4 รายการ + FX 2 รายการ). จำนวนนี้เป็น snapshot ของรอบที่บันทึก ไม่ใช่จำนวนสดตลอดเวลา
 
-**ML ไม่ชนะ baseline:** holdout 36 เดือน, MAE model ≈133.60 เทียบ naive ≈129.53 USD/troy oz. จึงไม่ promote และไม่เผยแพร่ point forecast ดูตัวเลขจริงและช่วงทดสอบใน [model-evaluation.json](evidence/model-evaluation.json). ไม่อ้างว่าสามารถทำกำไรหรือพยากรณ์ Spot ได้
+**ML ไม่ชนะ baseline:** holdout 36 เดือน, MAE model ≈138.14 เทียบ naive ≈135.47 USD/troy oz. จึงไม่ promote และไม่เผยแพร่ point forecast ดูตัวเลขจริงและช่วงทดสอบใน [current snapshot](data/published/snapshot.json). ไม่อ้างว่าสามารถทำกำไรหรือพยากรณ์ Spot ได้
 
 ## เริ่มรัน (Python 3.12)
 
@@ -67,7 +67,7 @@ docker compose up -d dashboard
 
 เปิด `http://127.0.0.1:8000/?mode=api`. ใช้ named volumes เก็บ Postgres และ raw/export data. หากใช้ password ที่มี reserved URL characters ต้อง encode ให้ถูกต้องก่อนสร้าง DATABASE_URL. ห้ามใช้ `docker compose down -v` หากต้องเก็บข้อมูล
 
-## Airflow (Optional / ยังไม่ทดสอบ Runtime)
+## Airflow (ผ่าน Runtime Integration ใน Docker)
 
 `dags/gold_analytics_dag.py` สำหรับ Airflow 2.10.x มี extract/validate/load → model readiness/evaluation → export. ค่า `schedule=None` จึงเริ่มด้วย Manual Trigger. ตั้ง `GOLD_PROJECT_DIR`, `GOLD_PIPELINE_PYTHON` ไปยัง Python 3.12 venv ที่ติดตั้ง dependencies และ `DATABASE_URL` ตามต้องการ. ไม่มีการอ้างว่ารัน Airflow UI ผ่านแล้ว
 
@@ -84,14 +84,18 @@ python -m tools.verify_api
 - [Actual live ingest](evidence/live-refresh.txt), [SQL coverage](evidence/database-summary.json), [UPSERT/persistence checks](evidence/runtime-verification.json), [HTTP API checks](evidence/api-tests.json)
 - [Published CSV](data/published/observations.csv), [snapshot JSON](data/published/snapshot.json), [hash manifest](data/published/manifest.json)
 
-GitHub Actions มี CI และ workflow **Refresh real market data** ที่เริ่มด้วย `workflow_dispatch` เท่านั้น ยังไม่ได้ตั้งรันตามเวลาอัตโนมัติ
+GitHub Actions มี CI, Runtime Integration และ **Refresh real market data** ทุกวัน 13:17 น. ตามเวลาไทย พร้อม Manual Trigger โดยทดสอบรันแรกครบจน Pages rebuild ผ่านแล้ว
 
 ## ขอบเขตที่ต้องอ่านก่อนประเมินผลงาน
 
-- World Bank ที่ดึงได้ระบุ Updated on October 02, 2026 และข้อมูลล่าสุด September 2026; ไม่ติดป้ายว่าเป็นราคาวันนี้
+- World Bank ที่ดึงได้ระบุ Updated on November 03, 2026 และข้อมูลล่าสุด October 2026; ไม่ติดป้ายว่าเป็นราคาวันนี้
 - Monthly history, spot quotes และ FX reference rate เป็นคนละชุดข้อมูล ไม่รวมกราฟ/หน่วยอย่างผิดความหมาย
 - ML ใช้ข้อมูล monthly ปี 2000 เป็นต้นไปและ features ที่ lag แล้ว ข้อมูลเป็น current-vintage ไม่ใช่ point-in-time backtest
-- ยังไม่ทดสอบ PostgreSQL, Docker หรือ Airflow runtime ในสภาพแวดล้อม Work นี้; SQLite, CLI, local HTTP API และ Web Dashboard มีหลักฐานแยกกัน
+- PostgreSQL, Docker และ Airflow ผ่าน Runtime Integration บน GitHub-hosted runner แล้ว; Work เครื่องนี้ไม่มี Docker จึงไม่ได้รัน Container ภายใน Work และยังไม่มี Airflow UI หรือ PostgreSQL ที่โฮสต์ถาวร
 - งานรอบนี้พัฒนาจาก concept repository ปัจจุบัน ไม่ใช่การกู้คืนระบบเก่าหรือผลทดสอบเดิม
 
 หน้า showcase เดิมและ scope เก่าเก็บไว้ใน `docs/archive/` โดยระบุว่าเป็น concept ที่ยังไม่มี runtime ยืนยัน
+
+## Verified Docker / PostgreSQL / Airflow and automation
+
+Runtime integration and the first complete daily-refresh path passed on GitHub Actions. Daily schedule: 13:17 Asia/Bangkok. See [actual runtime acceptance](docs/RUNTIME_ACCEPTANCE.md), [current refresh status](data/published/refresh-status.json) and raw logs in evidence/runtime. This is ephemeral batch execution with Git-persisted exports, not a permanently hosted Airflow UI or PostgreSQL service.

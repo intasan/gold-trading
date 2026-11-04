@@ -6,7 +6,7 @@
 - Download inspected from its Monthly prices link: https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx
 - Dataset catalogue/license: https://datacatalog.worldbank.org/search/dataset/0038238/commodity-prices-history-and-projections — Public / CC BY 4.0. Attribution: World Bank, Commodity Price Data (The Pink Sheet). This project extracts and reformats selected columns; it is not endorsed by the World Bank.
 - Parsed `Monthly Prices`: find Gold/Silver header row; verify `($/troy oz)` for Gold, Silver and Platinum. Accept rows labeled YYYYMmm; no interpolation of missing values.
-- Observed workbook release label: Updated on October 02, 2026. Coverage inspected: January 1960–September 2026. Treat this as the source response observed, not a promise of up-to-date market prices.
+- Observed workbook release label: Updated on November 03, 2026. Coverage inspected: January 1960–October 2026. Treat this as the source response observed, not a promise of up-to-date market prices.
 - `observed_at=YYYY-MM-01` denotes the **monthly period**, not a first-day price or exact publication timestamp.
 
 ## 2. Gold API

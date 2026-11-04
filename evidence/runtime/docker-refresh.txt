@@ -1,0 +1,89 @@
+{
+  "id": "d8951eba-2cac-46ce-afd1-6d110b9a095c",
+  "started_at": "2026-11-04T06:53:14.116389Z",
+  "finished_at": "2026-11-04T06:53:15.155628Z",
+  "status": "success",
+  "sources": {
+    "frankfurter": {
+      "status": "success",
+      "extracted_rows": 1,
+      "inserted_rows": 1,
+      "existing_rows": 0,
+      "error": null,
+      "provenance": {
+        "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+        "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T06:53:14.237332Z",
+        "sha256": "b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f",
+        "cached": false,
+        "file": "frankfurter-b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f.json"
+      }
+    },
+    "gold_api_xag": {
+      "status": "success",
+      "extracted_rows": 1,
+      "inserted_rows": 1,
+      "existing_rows": 0,
+      "error": null,
+      "provenance": {
+        "url": "https://api.gold-api.com/price/XAG",
+        "final_url": "https://api.gold-api.com/price/XAG",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T06:53:14.350634Z",
+        "sha256": "827d76a0523a4f7ca7fb2168b27d6ffd246ccf8625330867e8e97668a985892e",
+        "cached": false,
+        "file": "gold_api_xag-827d76a0523a4f7ca7fb2168b27d6ffd246ccf8625330867e8e97668a985892e.json"
+      }
+    },
+    "gold_api_xau": {
+      "status": "success",
+      "extracted_rows": 1,
+      "inserted_rows": 1,
+      "existing_rows": 0,
+      "error": null,
+      "provenance": {
+        "url": "https://api.gold-api.com/price/XAU",
+        "final_url": "https://api.gold-api.com/price/XAU",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T06:53:14.352362Z",
+        "sha256": "394129f83aad30cf7d61de7b7eafa957fcf85290dd811b19175da124c726f40f",
+        "cached": false,
+        "file": "gold_api_xau-394129f83aad30cf7d61de7b7eafa957fcf85290dd811b19175da124c726f40f.json"
+      }
+    },
+    "worldbank": {
+      "status": "success",
+      "extracted_rows": 2406,
+      "inserted_rows": 3,
+      "existing_rows": 2403,
+      "error": null,
+      "provenance": {
+        "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+        "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T06:53:14.484496Z",
+        "sha256": "3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2",
+        "cached": false,
+        "file": "worldbank-3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2.xlsx",
+        "release_label": "Updated on November 03, 2026"
+      }
+    }
+  }
+}
+{
+  "database_rows": 2412,
+  "model_status": "evaluated",
+  "reason": null,
+  "model_metrics": {
+    "mae": 138.1439614616178,
+    "rmse": 183.5701089528679,
+    "mape_percent": 3.8215156100723124
+  },
+  "naive_metrics": {
+    "mae": 135.47222222222223,
+    "rmse": 178.68011454365404,
+    "mape_percent": 3.802231917159584
+  },
+  "beats_naive_mae": false
+}

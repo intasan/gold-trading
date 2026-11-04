@@ -7,7 +7,7 @@ flowchart TD
  WB["World Bank monthly workbook"] --> V["Parse and validate"]
  Q["Gold API spot quotes"] --> V
  FX["Frankfurter reference rate"] --> V
- V --> DB["SQLite tested / PostgreSQL optional"]
+ V --> DB["SQLite tested / PostgreSQL integration verified"]
  DB --> M["Lagged monthly features and walk-forward evaluation"]
  DB --> E["JSON and CSV export"]
  M --> E
@@ -37,7 +37,7 @@ A reviewer should be able to inspect where a price came from, its unit/frequency
 
 `observations` primary key: `(source, series, frequency, observed_at)`. Existing keys are updated with the provider's returned value and retrieval/hash provenance. Source batches are validated before transactional UPSERT; a failed source does not clear old observations. `pipeline_runs` and `source_runs` store actual ingest outcomes. `model_runs` stores model status and the full research evaluation JSON.
 
-SQLite is the verified local runtime. PostgreSQL uses the same source schema with DOUBLE PRECISION and psycopg placeholders; its runtime is explicitly untested here.
+SQLite is verified locally. PostgreSQL 16.15 is verified in Docker on GitHub Actions, including idempotent replay, restart persistence, real ingestion and read-only API. See RUNTIME_ACCEPTANCE.md for the isolated runtime boundary.
 
 ## API and delivery
 
@@ -49,4 +49,4 @@ SQLite is the verified local runtime. PostgreSQL uses the same source schema wit
 
 ## Orchestration
 
-Core CLI stages are ingest → model → export (`refresh` runs all). Airflow has a manual DAG for these stages. GitHub has offline CI plus a manual refresh workflow, replaying previously recorded observations before adding newly fetched data. Provider credentials are never needed by the frontend.
+Core CLI stages are ingest → model → export (`refresh` runs all). Airflow has a manual DAG for these stages. GitHub has offline CI, Docker/PostgreSQL/Airflow integration and a daily 13:17 Bangkok refresh workflow, replaying previously recorded observations before adding newly fetched data. Airflow is executed through its DAG CLI in ephemeral Docker containers, not a hosted scheduler. Provider credentials are never needed by the frontend.

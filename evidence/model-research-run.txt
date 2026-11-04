@@ -1,0 +1,73 @@
+{
+  "selection_scope": "2010 onward through month before final 36 months; choose lowest validation MAE, no holdout tuning",
+  "historical_holdout_disclosure": "The existing 36-month holdout has already been viewed in a prior model. This is a reused retrospective benchmark, not a newly unseen prospective test.",
+  "promotion_criteria": {
+    "mae_gain_min": 0.05,
+    "rmse_gain_min": 0.05,
+    "winning_annual_folds_min": 2,
+    "total_annual_folds": 3
+  },
+  "selected": "naive_0",
+  "test_start": "2023-11-01",
+  "test_end": "2026-10-01",
+  "model_metrics": {
+    "mae": 135.47222222222223,
+    "rmse": 178.68011454365404,
+    "mape_percent": 3.802231917159584
+  },
+  "naive_metrics": {
+    "mae": 135.47222222222223,
+    "rmse": 178.68011454365404,
+    "mape_percent": 3.802231917159584
+  },
+  "mae_gain": 0.0,
+  "rmse_gain": 0.0,
+  "folds": [
+    {
+      "start": "2023-11-01",
+      "end": "2024-10-01",
+      "model": {
+        "mae": 70.5,
+        "rmse": 86.8341330737324,
+        "mape_percent": 3.0258537203903795
+      },
+      "naive": {
+        "mae": 70.5,
+        "rmse": 86.8341330737324,
+        "mape_percent": 3.0258537203903795
+      },
+      "beats_mae": false
+    },
+    {
+      "start": "2024-11-01",
+      "end": "2025-10-01",
+      "model": {
+        "mae": 123.16666666666667,
+        "rmse": 172.20094850687283,
+        "mape_percent": 3.6323090167588874
+      },
+      "naive": {
+        "mae": 123.16666666666667,
+        "rmse": 172.20094850687283,
+        "mape_percent": 3.6323090167588874
+      },
+      "beats_mae": false
+    },
+    {
+      "start": "2025-11-01",
+      "end": "2026-10-01",
+      "model": {
+        "mae": 212.75,
+        "rmse": 242.04631099578168,
+        "mape_percent": 4.7485330143294835
+      },
+      "naive": {
+        "mae": 212.75,
+        "rmse": 242.04631099578168,
+        "mape_percent": 4.7485330143294835
+      },
+      "beats_mae": false
+    }
+  ],
+  "passes_retrospective_gate": false
+}

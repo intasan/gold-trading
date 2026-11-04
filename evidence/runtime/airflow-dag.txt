@@ -1,0 +1,921 @@
+ Container gold-trading-postgres-1 Running 
+ Container gold-trading-postgres-1 Waiting 
+ Container gold-trading-postgres-1 Healthy 
+ Container gold-trading-airflow-run-9e3fe3113a42 Creating 
+ Container gold-trading-airflow-run-9e3fe3113a42 Created 
+
+DB: sqlite:////opt/airflow/airflow.db
+Performing upgrade to the metadata database sqlite:////opt/airflow/airflow.db
+[2026-11-04T06:53:26.585+0000] {migration.py:207} INFO - Context impl SQLiteImpl.
+[2026-11-04T06:53:26.586+0000] {migration.py:210} INFO - Will assume non-transactional DDL.
+[2026-11-04T06:53:26.587+0000] {migration.py:207} INFO - Context impl SQLiteImpl.
+[2026-11-04T06:53:26.587+0000] {migration.py:210} INFO - Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running stamp_revision  -> 5f2621c13b39
+Database migrating done!
+[2026-11-04T06:53:28.839+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/gold-trading/dags
+[2026-11-04T06:53:28.872+0000] {dag.py:4435} INFO - dagrun id: gold_analytics_pipeline
+[2026-11-04T06:53:28.878+0000] {dag.py:4451} INFO - created dagrun <DagRun gold_analytics_pipeline @ 2026-11-04 00:00:00+00:00: manual__2026-11-04T00:00:00+00:00, state:running, queued_at: None. externally triggered: False>
+[2026-11-04T06:53:28.894+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=extract_validate_load map_index=-1
+[2026-11-04T06:53:28.894+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: gold_analytics_pipeline.extract_validate_load manual__2026-11-04T00:00:00+00:00 [scheduled]>
+[2026-11-04 06:53:29,274] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='extract_validate_load' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+[2026-11-04T06:53:29.274+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='extract_validate_load' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+[2026-11-04T06:53:29.278+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-11-04 06:53:29,303] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-11-04T06:53:29.303+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-11-04 06:53:29,303] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading ingest']
+[2026-11-04T06:53:29.303+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading ingest']
+[2026-11-04 06:53:29,316] {subprocess.py:99} INFO - Output:
+[2026-11-04T06:53:29.316+0000] {subprocess.py:99} INFO - Output:
+[2026-11-04 06:53:30,636] {subprocess.py:106} INFO - {
+[2026-11-04T06:53:30.636+0000] {subprocess.py:106} INFO - {
+[2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "id": "55808c81-6707-4e41-a681-43b6da51cb2b",
+[2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "id": "55808c81-6707-4e41-a681-43b6da51cb2b",
+[2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "started_at": "2026-11-04T06:53:29.693984Z",
+[2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "started_at": "2026-11-04T06:53:29.693984Z",
+[2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "finished_at": "2026-11-04T06:53:30.633423Z",
+[2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "finished_at": "2026-11-04T06:53:30.633423Z",
+[2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "status": "success",
+[2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "status": "success",
+[2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "sources": {
+[2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "sources": {
+[2026-11-04 06:53:30,637] {subprocess.py:106} INFO -     "frankfurter": {
+[2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -     "frankfurter": {
+[2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "extracted_rows": 1,
+[2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "extracted_rows": 1,
+[2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "inserted_rows": 0,
+[2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "inserted_rows": 0,
+[2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "existing_rows": 1,
+[2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "existing_rows": 1,
+[2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+[2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+[2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+[2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+[2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.806508Z",
+[2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.806508Z",
+[2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "sha256": "b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f",
+[2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "sha256": "b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f",
+[2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "file": "frankfurter-b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f.json"
+[2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "file": "frankfurter-b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f.json"
+[2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       }
+[2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       }
+[2026-11-04 06:53:30,640] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:30,640] {subprocess.py:106} INFO -     "gold_api_xau": {
+[2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -     "gold_api_xau": {
+[2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "extracted_rows": 1,
+[2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "extracted_rows": 1,
+[2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "inserted_rows": 1,
+[2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "inserted_rows": 1,
+[2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "existing_rows": 0,
+[2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "existing_rows": 0,
+[2026-11-04 06:53:30,641] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04 06:53:30,641] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAU",
+[2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAU",
+[2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAU",
+[2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAU",
+[2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.998155Z",
+[2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.998155Z",
+[2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "sha256": "88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc",
+[2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "sha256": "88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc",
+[2026-11-04 06:53:30,642] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04 06:53:30,642] {subprocess.py:106} INFO -         "file": "gold_api_xau-88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc.json"
+[2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -         "file": "gold_api_xau-88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc.json"
+[2026-11-04 06:53:30,642] {subprocess.py:106} INFO -       }
+[2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -       }
+[2026-11-04 06:53:30,642] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:30,642] {subprocess.py:106} INFO -     "gold_api_xag": {
+[2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -     "gold_api_xag": {
+[2026-11-04 06:53:30,642] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "extracted_rows": 1,
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "extracted_rows": 1,
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "inserted_rows": 1,
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "inserted_rows": 1,
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "existing_rows": 0,
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "existing_rows": 0,
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAG",
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAG",
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAG",
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAG",
+[2026-11-04 06:53:30,643] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:30.006120Z",
+[2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:30.006120Z",
+[2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "sha256": "4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8",
+[2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "sha256": "4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8",
+[2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "file": "gold_api_xag-4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8.json"
+[2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "file": "gold_api_xag-4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8.json"
+[2026-11-04 06:53:30,644] {subprocess.py:106} INFO -       }
+[2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -       }
+[2026-11-04 06:53:30,644] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:30,645] {subprocess.py:106} INFO -     "worldbank": {
+[2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -     "worldbank": {
+[2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "status": "success",
+[2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "extracted_rows": 2406,
+[2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "extracted_rows": 2406,
+[2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "inserted_rows": 0,
+[2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "inserted_rows": 0,
+[2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "existing_rows": 2406,
+[2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "existing_rows": 2406,
+[2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "error": null,
+[2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "provenance": {
+[2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+[2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+[2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+[2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+[2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "http_status": 200,
+[2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.848029Z",
+[2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.848029Z",
+[2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "sha256": "3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2",
+[2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "sha256": "3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2",
+[2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "cached": false,
+[2026-11-04 06:53:30,647] {subprocess.py:106} INFO -         "file": "worldbank-3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2.xlsx",
+[2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -         "file": "worldbank-3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2.xlsx",
+[2026-11-04 06:53:30,647] {subprocess.py:106} INFO -         "release_label": "Updated on November 03, 2026"
+[2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -         "release_label": "Updated on November 03, 2026"
+[2026-11-04 06:53:30,647] {subprocess.py:106} INFO -       }
+[2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -       }
+[2026-11-04 06:53:30,647] {subprocess.py:106} INFO -     }
+[2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -     }
+[2026-11-04 06:53:30,648] {subprocess.py:106} INFO -   }
+[2026-11-04T06:53:30.648+0000] {subprocess.py:106} INFO -   }
+[2026-11-04 06:53:30,648] {subprocess.py:106} INFO - }
+[2026-11-04T06:53:30.648+0000] {subprocess.py:106} INFO - }
+[2026-11-04 06:53:30,711] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-11-04T06:53:30.711+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-11-04T06:53:30.722+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-11-04T06:53:30.723+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=gold_analytics_pipeline, task_id=extract_validate_load, run_id=manual__2026-11-04T00:00:00+00:00, execution_date=20261104T000000, start_date=, end_date=20261104T065330
+[2026-11-04T06:53:30.731+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=extract_validate_load map_index=-1
+[2026-11-04T06:53:30.739+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=evaluate_if_sufficient_history map_index=-1
+[2026-11-04T06:53:30.739+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: gold_analytics_pipeline.evaluate_if_sufficient_history manual__2026-11-04T00:00:00+00:00 [scheduled]>
+[2026-11-04 06:53:30,751] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='evaluate_if_sufficient_history' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+[2026-11-04T06:53:30.751+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='evaluate_if_sufficient_history' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+[2026-11-04T06:53:30.751+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-11-04 06:53:30,752] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-11-04T06:53:30.752+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-11-04 06:53:30,752] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading model']
+[2026-11-04T06:53:30.752+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading model']
+[2026-11-04 06:53:30,763] {subprocess.py:99} INFO - Output:
+[2026-11-04T06:53:30.763+0000] {subprocess.py:99} INFO - Output:
+[2026-11-04 06:53:32,473] {subprocess.py:106} INFO - {
+[2026-11-04T06:53:32.473+0000] {subprocess.py:106} INFO - {
+[2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "status": "evaluated",
+[2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "status": "evaluated",
+[2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "evaluated_at": "2026-11-04T06:53:31.822065Z",
+[2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "evaluated_at": "2026-11-04T06:53:31.822065Z",
+[2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "frequency": "monthly",
+[2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "frequency": "monthly",
+[2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "target": "Next observed monthly average gold price, USD/troy oz",
+[2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "target": "Next observed monthly average gold price, USD/troy oz",
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -   "series_start": "2000-01-01",
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -   "series_start": "2000-01-01",
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -   "feature_columns": [
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -   "feature_columns": [
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_1",
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_1",
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_3",
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_3",
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_6",
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_6",
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_12",
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_12",
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "mean_ratio_3",
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "mean_ratio_3",
+[2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "mean_ratio_12",
+[2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "mean_ratio_12",
+[2026-11-04 06:53:32,476] {subprocess.py:106} INFO -     "volatility_6",
+[2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -     "volatility_6",
+[2026-11-04 06:53:32,476] {subprocess.py:106} INFO -     "silver_return_1",
+[2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -     "silver_return_1",
+[2026-11-04 06:53:32,476] {subprocess.py:106} INFO -     "platinum_return_1"
+[2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -     "platinum_return_1"
+[2026-11-04 06:53:32,476] {subprocess.py:106} INFO -   ],
+[2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -   ],
+[2026-11-04 06:53:32,476] {subprocess.py:106} INFO -   "min_training_rows": 180,
+[2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -   "min_training_rows": 180,
+[2026-11-04 06:53:32,476] {subprocess.py:106} INFO -   "holdout_rows": 36,
+[2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -   "holdout_rows": 36,
+[2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "eligible_rows": 309,
+[2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "eligible_rows": 309,
+[2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "input_sha256": "5c9ac09cda9bbd8c8a3cf384d096d80a726227ac7dee92bb5f958be171b0d7c9",
+[2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "input_sha256": "5c9ac09cda9bbd8c8a3cf384d096d80a726227ac7dee92bb5f958be171b0d7c9",
+[2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "method": "Expanding-window, one-observation-ahead; fixed hyperparameters; no random split",
+[2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "method": "Expanding-window, one-observation-ahead; fixed hyperparameters; no random split",
+[2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "limitations": [
+[2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "limitations": [
+[2026-11-04 06:53:32,477] {subprocess.py:106} INFO -     "Current-vintage World Bank data; historical revisions/publication lags are not backtested point-in-time.",
+[2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -     "Current-vintage World Bank data; historical revisions/publication lags are not backtested point-in-time.",
+[2026-11-04 06:53:32,477] {subprocess.py:106} INFO -     "Monthly-average research is separate from the spot quotes and FX reference rates.",
+[2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -     "Monthly-average research is separate from the spot quotes and FX reference rates.",
+[2026-11-04 06:53:32,477] {subprocess.py:106} INFO -     "No fees, positions, profit/backtest returns or investment recommendation are modeled."
+[2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -     "No fees, positions, profit/backtest returns or investment recommendation are modeled."
+[2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   ],
+[2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   ],
+[2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "promotion_status": "not_promoted",
+[2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "promotion_status": "not_promoted",
+[2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "reason": null,
+[2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "reason": null,
+[2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "model_name": "HistGradientBoostingRegressor on log returns",
+[2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "model_name": "HistGradientBoostingRegressor on log returns",
+[2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "sklearn_version": "1.8.0",
+[2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "sklearn_version": "1.8.0",
+[2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "parameters": {
+[2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "parameters": {
+[2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "max_iter": 80,
+[2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "max_iter": 80,
+[2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "max_depth": 3,
+[2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "max_depth": 3,
+[2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "min_samples_leaf": 20,
+[2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "min_samples_leaf": 20,
+[2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "l2_regularization": 10.0,
+[2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "l2_regularization": 10.0,
+[2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "random_state": 42,
+[2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "random_state": 42,
+[2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "early_stopping": false
+[2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "early_stopping": false
+[2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   },
+[2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   },
+[2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "training_rows_before_holdout": 273,
+[2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "training_rows_before_holdout": 273,
+[2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "test_start": "2023-11-01",
+[2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "test_start": "2023-11-01",
+[2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "test_end": "2026-10-01",
+[2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "test_end": "2026-10-01",
+[2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "model_metrics": {
+[2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "model_metrics": {
+[2026-11-04 06:53:32,480] {subprocess.py:106} INFO -     "mae": 138.1439614616178,
+[2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -     "mae": 138.1439614616178,
+[2026-11-04 06:53:32,481] {subprocess.py:106} INFO -     "rmse": 183.5701089528679,
+[2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -     "rmse": 183.5701089528679,
+[2026-11-04 06:53:32,481] {subprocess.py:106} INFO -     "mape_percent": 3.8215156100723124
+[2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -     "mape_percent": 3.8215156100723124
+[2026-11-04 06:53:32,481] {subprocess.py:106} INFO -   },
+[2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -   },
+[2026-11-04 06:53:32,481] {subprocess.py:106} INFO -   "naive_metrics": {
+[2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -   "naive_metrics": {
+[2026-11-04 06:53:32,482] {subprocess.py:106} INFO -     "mae": 135.47222222222223,
+[2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -     "mae": 135.47222222222223,
+[2026-11-04 06:53:32,482] {subprocess.py:106} INFO -     "rmse": 178.68011454365404,
+[2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -     "rmse": 178.68011454365404,
+[2026-11-04 06:53:32,482] {subprocess.py:106} INFO -     "mape_percent": 3.802231917159584
+[2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -     "mape_percent": 3.802231917159584
+[2026-11-04 06:53:32,482] {subprocess.py:106} INFO -   },
+[2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -   },
+[2026-11-04 06:53:32,482] {subprocess.py:106} INFO -   "beats_naive_mae": false,
+[2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -   "beats_naive_mae": false,
+[2026-11-04 06:53:32,482] {subprocess.py:106} INFO -   "predictions": [
+[2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -   "predictions": [
+[2026-11-04 06:53:32,483] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "period": "2023-11-01",
+[2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "period": "2023-11-01",
+[2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "train_last_period": "2023-10-01",
+[2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "train_last_period": "2023-10-01",
+[2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "actual": 1984.0,
+[2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "actual": 1984.0,
+[2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "model": 1931.562252087298,
+[2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "model": 1931.562252087298,
+[2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "naive": 1916.0,
+[2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "naive": 1916.0,
+[2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "training_rows": 273
+[2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "training_rows": 273
+[2026-11-04 06:53:32,484] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,484] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "period": "2023-12-01",
+[2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "period": "2023-12-01",
+[2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "train_last_period": "2023-11-01",
+[2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "train_last_period": "2023-11-01",
+[2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "actual": 2026.0,
+[2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "actual": 2026.0,
+[2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "model": 2023.3155938332018,
+[2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "model": 2023.3155938332018,
+[2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "naive": 1984.0,
+[2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "naive": 1984.0,
+[2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "training_rows": 274
+[2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "training_rows": 274
+[2026-11-04 06:53:32,485] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,485] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "period": "2024-01-01",
+[2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "period": "2024-01-01",
+[2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "train_last_period": "2023-12-01",
+[2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "train_last_period": "2023-12-01",
+[2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "actual": 2034.0,
+[2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "actual": 2034.0,
+[2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "model": 2075.353734838028,
+[2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "model": 2075.353734838028,
+[2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "naive": 2026.0,
+[2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "naive": 2026.0,
+[2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "training_rows": 275
+[2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "training_rows": 275
+[2026-11-04 06:53:32,486] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,486] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "period": "2024-02-01",
+[2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "period": "2024-02-01",
+[2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "train_last_period": "2024-01-01",
+[2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-01-01",
+[2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "actual": 2023.0,
+[2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "actual": 2023.0,
+[2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "model": 2085.664955495155,
+[2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "model": 2085.664955495155,
+[2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "naive": 2034.0,
+[2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "naive": 2034.0,
+[2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "training_rows": 276
+[2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "training_rows": 276
+[2026-11-04 06:53:32,488] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,488] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "period": "2024-03-01",
+[2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "period": "2024-03-01",
+[2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "train_last_period": "2024-02-01",
+[2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-02-01",
+[2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "actual": 2158.0,
+[2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "actual": 2158.0,
+[2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "model": 2011.4964430860143,
+[2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "model": 2011.4964430860143,
+[2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "naive": 2023.0,
+[2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "naive": 2023.0,
+[2026-11-04 06:53:32,489] {subprocess.py:106} INFO -       "training_rows": 277
+[2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -       "training_rows": 277
+[2026-11-04 06:53:32,489] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,489] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,489] {subprocess.py:106} INFO -       "period": "2024-04-01",
+[2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -       "period": "2024-04-01",
+[2026-11-04 06:53:32,489] {subprocess.py:106} INFO -       "train_last_period": "2024-03-01",
+[2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-03-01",
+[2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "actual": 2331.0,
+[2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "actual": 2331.0,
+[2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "model": 2207.231761802689,
+[2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "model": 2207.231761802689,
+[2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "naive": 2158.0,
+[2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "naive": 2158.0,
+[2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "training_rows": 278
+[2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "training_rows": 278
+[2026-11-04 06:53:32,490] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,490] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "period": "2024-05-01",
+[2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "period": "2024-05-01",
+[2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "train_last_period": "2024-04-01",
+[2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-04-01",
+[2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "actual": 2351.0,
+[2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "actual": 2351.0,
+[2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "model": 2385.30899998429,
+[2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "model": 2385.30899998429,
+[2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "naive": 2331.0,
+[2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "naive": 2331.0,
+[2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "training_rows": 279
+[2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "training_rows": 279
+[2026-11-04 06:53:32,491] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,492] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "period": "2024-06-01",
+[2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "period": "2024-06-01",
+[2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "train_last_period": "2024-05-01",
+[2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-05-01",
+[2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "actual": 2326.0,
+[2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "actual": 2326.0,
+[2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "model": 2290.854477217121,
+[2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "model": 2290.854477217121,
+[2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "naive": 2351.0,
+[2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "naive": 2351.0,
+[2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "training_rows": 280
+[2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "training_rows": 280
+[2026-11-04 06:53:32,493] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,493] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "period": "2024-07-01",
+[2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "period": "2024-07-01",
+[2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "train_last_period": "2024-06-01",
+[2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-06-01",
+[2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "actual": 2398.0,
+[2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "actual": 2398.0,
+[2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "model": 2335.348265060732,
+[2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "model": 2335.348265060732,
+[2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "naive": 2326.0,
+[2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "naive": 2326.0,
+[2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "training_rows": 281
+[2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "training_rows": 281
+[2026-11-04 06:53:32,494] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,494] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "period": "2024-08-01",
+[2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "period": "2024-08-01",
+[2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "train_last_period": "2024-07-01",
+[2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-07-01",
+[2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "actual": 2470.0,
+[2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "actual": 2470.0,
+[2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "model": 2424.3620116014513,
+[2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "model": 2424.3620116014513,
+[2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "naive": 2398.0,
+[2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "naive": 2398.0,
+[2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "training_rows": 282
+[2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "training_rows": 282
+[2026-11-04 06:53:32,495] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,495] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "period": "2024-09-01",
+[2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "period": "2024-09-01",
+[2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "train_last_period": "2024-08-01",
+[2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-08-01",
+[2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "actual": 2571.0,
+[2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "actual": 2571.0,
+[2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "model": 2495.035037217354,
+[2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "model": 2495.035037217354,
+[2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "naive": 2470.0,
+[2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "naive": 2470.0,
+[2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "training_rows": 283
+[2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "training_rows": 283
+[2026-11-04 06:53:32,496] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,496] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "period": "2024-10-01",
+[2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "period": "2024-10-01",
+[2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "train_last_period": "2024-09-01",
+[2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-09-01",
+[2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "actual": 2690.0,
+[2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "actual": 2690.0,
+[2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "model": 2625.6068713288564,
+[2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "model": 2625.6068713288564,
+[2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "naive": 2571.0,
+[2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "naive": 2571.0,
+[2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "training_rows": 284
+[2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "training_rows": 284
+[2026-11-04 06:53:32,497] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,498] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "period": "2024-11-01",
+[2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "period": "2024-11-01",
+[2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "train_last_period": "2024-10-01",
+[2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-10-01",
+[2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "actual": 2651.0,
+[2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "actual": 2651.0,
+[2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "model": 2765.482957359632,
+[2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "model": 2765.482957359632,
+[2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "naive": 2690.0,
+[2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "naive": 2690.0,
+[2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "training_rows": 285
+[2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "training_rows": 285
+[2026-11-04 06:53:32,499] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,499] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "period": "2024-12-01",
+[2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "period": "2024-12-01",
+[2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "train_last_period": "2024-11-01",
+[2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-11-01",
+[2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "actual": 2648.0,
+[2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "actual": 2648.0,
+[2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "model": 2636.326668380734,
+[2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "model": 2636.326668380734,
+[2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "naive": 2651.0,
+[2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "naive": 2651.0,
+[2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "training_rows": 286
+[2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "training_rows": 286
+[2026-11-04 06:53:32,500] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,500] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "period": "2025-01-01",
+[2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "period": "2025-01-01",
+[2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "train_last_period": "2024-12-01",
+[2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-12-01",
+[2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "actual": 2710.0,
+[2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "actual": 2710.0,
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "model": 2679.3601003252356,
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "model": 2679.3601003252356,
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "naive": 2648.0,
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "naive": 2648.0,
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "training_rows": 287
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "training_rows": 287
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "period": "2025-02-01",
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "period": "2025-02-01",
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "train_last_period": "2025-01-01",
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-01-01",
+[2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "actual": 2895.0,
+[2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "actual": 2895.0,
+[2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "model": 2731.2076207074574,
+[2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "model": 2731.2076207074574,
+[2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "naive": 2710.0,
+[2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "naive": 2710.0,
+[2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "training_rows": 288
+[2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "training_rows": 288
+[2026-11-04 06:53:32,502] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,502] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "period": "2025-03-01",
+[2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "period": "2025-03-01",
+[2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "train_last_period": "2025-02-01",
+[2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-02-01",
+[2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "actual": 2983.0,
+[2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "actual": 2983.0,
+[2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "model": 3022.0227743009605,
+[2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "model": 3022.0227743009605,
+[2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "naive": 2895.0,
+[2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "naive": 2895.0,
+[2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "training_rows": 289
+[2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "training_rows": 289
+[2026-11-04 06:53:32,503] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,503] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "period": "2025-04-01",
+[2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "period": "2025-04-01",
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "train_last_period": "2025-03-01",
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-03-01",
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "actual": 3218.0,
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "actual": 3218.0,
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "model": 3000.9002522375963,
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "model": 3000.9002522375963,
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "naive": 2983.0,
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "naive": 2983.0,
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "training_rows": 290
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "training_rows": 290
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "period": "2025-05-01",
+[2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "period": "2025-05-01",
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "train_last_period": "2025-04-01",
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-04-01",
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "actual": 3309.0,
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "actual": 3309.0,
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "model": 3201.876235213168,
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "model": 3201.876235213168,
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "naive": 3218.0,
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "naive": 3218.0,
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "training_rows": 291
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "training_rows": 291
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "period": "2025-06-01",
+[2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "period": "2025-06-01",
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "train_last_period": "2025-05-01",
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-05-01",
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "actual": 3353.0,
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "actual": 3353.0,
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "model": 3327.0345947419137,
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "model": 3327.0345947419137,
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "naive": 3309.0,
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "naive": 3309.0,
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "training_rows": 292
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "training_rows": 292
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "period": "2025-07-01",
+[2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "period": "2025-07-01",
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "train_last_period": "2025-06-01",
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-06-01",
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "actual": 3340.0,
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "actual": 3340.0,
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "model": 3436.586072262412,
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "model": 3436.586072262412,
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "naive": 3353.0,
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "naive": 3353.0,
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "training_rows": 293
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "training_rows": 293
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "period": "2025-08-01",
+[2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "period": "2025-08-01",
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "train_last_period": "2025-07-01",
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-07-01",
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "actual": 3368.0,
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "actual": 3368.0,
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "model": 3396.96752460998,
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "model": 3396.96752460998,
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "naive": 3340.0,
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "naive": 3340.0,
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "training_rows": 294
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "training_rows": 294
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "period": "2025-09-01",
+[2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "period": "2025-09-01",
+[2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "train_last_period": "2025-08-01",
+[2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-08-01",
+[2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "actual": 3668.0,
+[2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "actual": 3668.0,
+[2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "model": 3476.676773980643,
+[2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "model": 3476.676773980643,
+[2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "naive": 3368.0,
+[2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "naive": 3368.0,
+[2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "training_rows": 295
+[2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "training_rows": 295
+[2026-11-04 06:53:32,509] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,509] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "period": "2025-10-01",
+[2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "period": "2025-10-01",
+[2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "train_last_period": "2025-09-01",
+[2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-09-01",
+[2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "actual": 4058.0,
+[2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "actual": 4058.0,
+[2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "model": 3815.472489357493,
+[2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "model": 3815.472489357493,
+[2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "naive": 3668.0,
+[2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "naive": 3668.0,
+[2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "training_rows": 296
+[2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "training_rows": 296
+[2026-11-04 06:53:32,510] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "period": "2025-11-01",
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "period": "2025-11-01",
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "train_last_period": "2025-10-01",
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-10-01",
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "actual": 4087.0,
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "actual": 4087.0,
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "model": 3980.8294984164304,
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "model": 3980.8294984164304,
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "naive": 4058.0,
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "naive": 4058.0,
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "training_rows": 297
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "training_rows": 297
+[2026-11-04 06:53:32,511] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "period": "2025-12-01",
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "period": "2025-12-01",
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "train_last_period": "2025-11-01",
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-11-01",
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "actual": 4309.0,
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "actual": 4309.0,
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "model": 4006.8567991578234,
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "model": 4006.8567991578234,
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "naive": 4087.0,
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "naive": 4087.0,
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "training_rows": 298
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "training_rows": 298
+[2026-11-04 06:53:32,512] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,513] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "period": "2026-01-01",
+[2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "period": "2026-01-01",
+[2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "train_last_period": "2025-12-01",
+[2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-12-01",
+[2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "actual": 4753.0,
+[2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "actual": 4753.0,
+[2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "model": 4207.433507005148,
+[2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "model": 4207.433507005148,
+[2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "naive": 4309.0,
+[2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "naive": 4309.0,
+[2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "training_rows": 299
+[2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "training_rows": 299
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "period": "2026-02-01",
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "period": "2026-02-01",
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "train_last_period": "2026-01-01",
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-01-01",
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "actual": 5020.0,
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "actual": 5020.0,
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "model": 4743.121963580297,
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "model": 4743.121963580297,
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "naive": 4753.0,
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "naive": 4753.0,
+[2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "training_rows": 300
+[2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "training_rows": 300
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "period": "2026-03-01",
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "period": "2026-03-01",
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "train_last_period": "2026-02-01",
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-02-01",
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "actual": 4856.0,
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "actual": 4856.0,
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "model": 5026.651477905706,
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "model": 5026.651477905706,
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "naive": 5020.0,
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "naive": 5020.0,
+[2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "training_rows": 301
+[2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "training_rows": 301
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "period": "2026-04-01",
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "period": "2026-04-01",
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "train_last_period": "2026-03-01",
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-03-01",
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "actual": 4721.0,
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "actual": 4721.0,
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "model": 4889.045763161067,
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "model": 4889.045763161067,
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "naive": 4856.0,
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "naive": 4856.0,
+[2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "training_rows": 302
+[2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "training_rows": 302
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "period": "2026-05-01",
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "period": "2026-05-01",
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "train_last_period": "2026-04-01",
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-04-01",
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "actual": 4587.0,
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "actual": 4587.0,
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "model": 4667.877911945785,
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "model": 4667.877911945785,
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "naive": 4721.0,
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "naive": 4721.0,
+[2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "training_rows": 303
+[2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "training_rows": 303
+[2026-11-04 06:53:32,518] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,518] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "period": "2026-06-01",
+[2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "period": "2026-06-01",
+[2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "train_last_period": "2026-05-01",
+[2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-05-01",
+[2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "actual": 4228.0,
+[2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "actual": 4228.0,
+[2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "model": 4667.778771362524,
+[2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "model": 4667.778771362524,
+[2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "naive": 4587.0,
+[2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "naive": 4587.0,
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "training_rows": 304
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "training_rows": 304
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "period": "2026-07-01",
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "period": "2026-07-01",
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "train_last_period": "2026-06-01",
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-06-01",
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "actual": 4073.0,
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "actual": 4073.0,
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "model": 4264.1447612046495,
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "model": 4264.1447612046495,
+[2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "naive": 4228.0,
+[2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "naive": 4228.0,
+[2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "training_rows": 305
+[2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "training_rows": 305
+[2026-11-04 06:53:32,520] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,520] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "period": "2026-08-01",
+[2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "period": "2026-08-01",
+[2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "train_last_period": "2026-07-01",
+[2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-07-01",
+[2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "actual": 4411.0,
+[2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "actual": 4411.0,
+[2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "model": 4073.871673536891,
+[2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "model": 4073.871673536891,
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "naive": 4073.0,
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "naive": 4073.0,
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "training_rows": 306
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "training_rows": 306
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "period": "2026-09-01",
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "period": "2026-09-01",
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "train_last_period": "2026-08-01",
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-08-01",
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "actual": 4319.0,
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "actual": 4319.0,
+[2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "model": 4469.426617933303,
+[2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "model": 4469.426617933303,
+[2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "naive": 4411.0,
+[2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "naive": 4411.0,
+[2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "training_rows": 307
+[2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "training_rows": 307
+[2026-11-04 06:53:32,522] {subprocess.py:106} INFO -     },
+[2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -     },
+[2026-11-04 06:53:32,522] {subprocess.py:106} INFO -     {
+[2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -     {
+[2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "period": "2026-10-01",
+[2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "period": "2026-10-01",
+[2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "train_last_period": "2026-09-01",
+[2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-09-01",
+[2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "actual": 4105.0,
+[2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "actual": 4105.0,
+[2026-11-04 06:53:32,523] {subprocess.py:106} INFO -       "model": 4292.6511801302995,
+[2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -       "model": 4292.6511801302995,
+[2026-11-04 06:53:32,523] {subprocess.py:106} INFO -       "naive": 4319.0,
+[2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -       "naive": 4319.0,
+[2026-11-04 06:53:32,523] {subprocess.py:106} INFO -       "training_rows": 308
+[2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -       "training_rows": 308
+[2026-11-04 06:53:32,523] {subprocess.py:106} INFO -     }
+[2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -     }
+[2026-11-04 06:53:32,523] {subprocess.py:106} INFO -   ],
+[2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -   ],
+[2026-11-04 06:53:32,523] {subprocess.py:106} INFO -   "forecast": null
+[2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -   "forecast": null
+[2026-11-04 06:53:32,523] {subprocess.py:106} INFO - }
+[2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO - }
+[2026-11-04 06:53:32,606] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-11-04T06:53:32.606+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-11-04T06:53:32.617+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-11-04T06:53:32.617+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=gold_analytics_pipeline, task_id=evaluate_if_sufficient_history, run_id=manual__2026-11-04T00:00:00+00:00, execution_date=20261104T000000, start_date=, end_date=20261104T065332
+[2026-11-04T06:53:32.623+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=evaluate_if_sufficient_history map_index=-1
+[2026-11-04T06:53:32.630+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=export_snapshot map_index=-1
+[2026-11-04T06:53:32.630+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: gold_analytics_pipeline.export_snapshot manual__2026-11-04T00:00:00+00:00 [scheduled]>
+[2026-11-04 06:53:32,640] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='export_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+[2026-11-04T06:53:32.640+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='export_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+[2026-11-04T06:53:32.641+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-11-04 06:53:32,641] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-11-04T06:53:32.641+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-11-04 06:53:32,641] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading export']
+[2026-11-04T06:53:32.641+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading export']
+[2026-11-04 06:53:32,652] {subprocess.py:99} INFO - Output:
+[2026-11-04T06:53:32.652+0000] {subprocess.py:99} INFO - Output:
+[2026-11-04 06:53:33,038] {subprocess.py:106} INFO - {
+[2026-11-04T06:53:33.038+0000] {subprocess.py:106} INFO - {
+[2026-11-04 06:53:33,038] {subprocess.py:106} INFO -   "quality": {
+[2026-11-04T06:53:33.038+0000] {subprocess.py:106} INFO -   "quality": {
+[2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "duplicate_keys": 0,
+[2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "duplicate_keys": 0,
+[2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "invalid_prices": 0,
+[2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "invalid_prices": 0,
+[2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "rows": 2414,
+[2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "rows": 2414,
+[2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "monthly_average_and_spot_are_separate": true
+[2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "monthly_average_and_spot_are_separate": true
+[2026-11-04 06:53:33,039] {subprocess.py:106} INFO -   }
+[2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -   }
+[2026-11-04 06:53:33,039] {subprocess.py:106} INFO - }
+[2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO - }
+[2026-11-04 06:53:33,091] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-11-04T06:53:33.091+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-11-04T06:53:33.099+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-11-04T06:53:33.100+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=gold_analytics_pipeline, task_id=export_snapshot, run_id=manual__2026-11-04T00:00:00+00:00, execution_date=20261104T000000, start_date=, end_date=20261104T065333
+[2026-11-04T06:53:33.106+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=export_snapshot map_index=-1
+[2026-11-04T06:53:33.108+0000] {dagrun.py:854} INFO - Marking run <DagRun gold_analytics_pipeline @ 2026-11-04 00:00:00+00:00: manual__2026-11-04T00:00:00+00:00, state:running, queued_at: None. externally triggered: False> successful
+[2026-11-04T06:53:33.109+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=gold_analytics_pipeline, execution_date=2026-11-04 00:00:00+00:00, run_id=manual__2026-11-04T00:00:00+00:00, run_start_date=2026-11-04 00:00:00+00:00, run_end_date=2026-11-04 06:53:33.109412+00:00, run_duration=24813.109412, state=success, external_trigger=False, run_type=manual, data_interval_start=2026-11-04 00:00:00+00:00, data_interval_end=2026-11-04 00:00:00+00:00, dag_hash=None

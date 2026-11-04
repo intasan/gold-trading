@@ -1,5 +1,5 @@
 """Pre-holdout candidate selection. Final holdout is reused historical evidence, not unseen future data."""
-import csv,json
+import csv,json,hashlib
 from pathlib import Path
 import numpy as np,pandas as pd
 from sklearn.linear_model import Ridge
@@ -35,5 +35,5 @@ folds=[]
 for start in range(0,36,12):
  pp=pred[start:start+12];mm=metrics([p['actual'] for p in pp],[p['model'] for p in pp]);nn=metrics([p['actual'] for p in pp],[p['naive'] for p in pp]);folds.append({'start':pp[0]['period'],'end':pp[-1]['period'],'model':mm,'naive':nn,'beats_mae':mm['mae']<nn['mae']})
 passed=chosen!='naive_0' and gain>=.05 and rgain>=.05 and sum(x['beats_mae'] for x in folds)>=2
-report={'selection_scope':'2010 onward through month before final 36 months; choose lowest validation MAE, no holdout tuning','historical_holdout_disclosure':'The existing 36-month holdout has already been viewed in a prior model. This is a reused retrospective benchmark, not a newly unseen prospective test.','promotion_criteria':{'mae_gain_min':.05,'rmse_gain_min':.05,'winning_annual_folds_min':2,'total_annual_folds':3},'validation_metrics':validation,'selected':chosen,'test_start':pred[0]['period'],'test_end':pred[-1]['period'],'model_metrics':m,'naive_metrics':n,'mae_gain':gain,'rmse_gain':rgain,'folds':folds,'passes_retrospective_gate':passed,'predictions':pred}
+report={'input_csv_sha256':hashlib.sha256((R/'data/published/observations.csv').read_bytes()).hexdigest(),'selection_scope':'2010 onward through month before final 36 months; choose lowest validation MAE, no holdout tuning','historical_holdout_disclosure':'The existing 36-month holdout has already been viewed in a prior model. This is a reused retrospective benchmark, not a newly unseen prospective test.','promotion_criteria':{'mae_gain_min':.05,'rmse_gain_min':.05,'winning_annual_folds_min':2,'total_annual_folds':3},'validation_metrics':validation,'selected':chosen,'test_start':pred[0]['period'],'test_end':pred[-1]['period'],'model_metrics':m,'naive_metrics':n,'mae_gain':gain,'rmse_gain':rgain,'folds':folds,'passes_retrospective_gate':passed,'predictions':pred}
 (R/'evidence/model-research.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k not in ['predictions','validation_metrics']},indent=2))

@@ -1,0 +1,1707 @@
+﻿2026-11-04T06:51:27.0965955Z Current runner version: '2.338.2'
+2026-11-04T06:51:27.0984070Z ##[group]Runner Image Provisioner
+2026-11-04T06:51:27.0984749Z Hosted Compute Agent
+2026-11-04T06:51:27.0985133Z Version: 20261028.624
+2026-11-04T06:51:27.0985527Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-04T06:51:27.0986036Z Build Date: 2026-10-28T21:51:42Z
+2026-11-04T06:51:27.0986494Z Worker ID: {096d61cf-82f7-4421-bcad-7240642133d4}
+2026-11-04T06:51:27.0986969Z Region: southcentralus
+2026-11-04T06:51:27.0987378Z Cloud: Azure
+2026-11-04T06:51:27.0987724Z ##[endgroup]
+2026-11-04T06:51:27.0988718Z ##[group]Operating System
+2026-11-04T06:51:27.0989112Z Ubuntu
+2026-11-04T06:51:27.0989476Z 26.04.1
+2026-11-04T06:51:27.0989858Z LTS
+2026-11-04T06:51:27.0990180Z ##[endgroup]
+2026-11-04T06:51:27.0990544Z ##[group]Runner Image
+2026-11-04T06:51:27.0990966Z Image: ubuntu-26.04
+2026-11-04T06:51:27.0991322Z Version: 20261101.186.1
+2026-11-04T06:51:27.0992134Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-04T06:51:27.0993368Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-04T06:51:27.0993994Z ##[endgroup]
+2026-11-04T06:51:27.0994709Z ##[group]GITHUB_TOKEN Permissions
+2026-11-04T06:51:27.0995914Z Contents: read
+2026-11-04T06:51:27.0996275Z Metadata: read
+2026-11-04T06:51:27.0996677Z ##[endgroup]
+2026-11-04T06:51:27.0998154Z Secret source: Actions
+2026-11-04T06:51:27.0998785Z Cache mode: write
+2026-11-04T06:51:27.0999224Z Prepare workflow directory
+2026-11-04T06:51:27.1273275Z Prepare all required actions
+2026-11-04T06:51:27.1307687Z Getting action download info
+2026-11-04T06:51:27.3921178Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-04T06:51:27.5202117Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-04T06:51:27.6911299Z Complete job name: integration
+2026-11-04T06:51:27.7492078Z ##[group]Run actions/checkout@v4
+2026-11-04T06:51:27.7492530Z with:
+2026-11-04T06:51:27.7492781Z   repository: intasan/gold-trading
+2026-11-04T06:51:27.7494982Z   token: ***
+2026-11-04T06:51:27.7495224Z   ssh-strict: true
+2026-11-04T06:51:27.7495470Z   ssh-user: git
+2026-11-04T06:51:27.7495725Z   persist-credentials: true
+2026-11-04T06:51:27.7495995Z   clean: true
+2026-11-04T06:51:27.7496249Z   sparse-checkout-cone-mode: true
+2026-11-04T06:51:27.7496543Z   fetch-depth: 1
+2026-11-04T06:51:27.7496792Z   fetch-tags: false
+2026-11-04T06:51:27.7497038Z   show-progress: true
+2026-11-04T06:51:27.7497290Z   lfs: false
+2026-11-04T06:51:27.7497526Z   submodules: false
+2026-11-04T06:51:27.7497917Z   set-safe-directory: true
+2026-11-04T06:51:27.7498203Z   allow-unsafe-pr-checkout: false
+2026-11-04T06:51:27.7498556Z env:
+2026-11-04T06:51:27.7498817Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:51:27.7499140Z ##[endgroup]
+2026-11-04T06:51:27.9455946Z Syncing repository: intasan/gold-trading
+2026-11-04T06:51:27.9457967Z ##[group]Getting Git version info
+2026-11-04T06:51:27.9458815Z Working directory is '/home/runner/work/gold-trading/gold-trading'
+2026-11-04T06:51:27.9459791Z [command]/usr/bin/git version
+2026-11-04T06:51:27.9463118Z git version 2.56.0
+2026-11-04T06:51:27.9478810Z ##[endgroup]
+2026-11-04T06:51:27.9489477Z Temporarily overriding HOME='/home/runner/work/_temp/558b5601-51e0-4eb5-bd23-7563f2b5362b' before making global git config changes
+2026-11-04T06:51:27.9490761Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T06:51:27.9493340Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gold-trading/gold-trading
+2026-11-04T06:51:27.9553247Z Deleting the contents of '/home/runner/work/gold-trading/gold-trading'
+2026-11-04T06:51:27.9558200Z ##[group]Initializing the repository
+2026-11-04T06:51:27.9561936Z [command]/usr/bin/git init /home/runner/work/gold-trading/gold-trading
+2026-11-04T06:51:27.9660470Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-04T06:51:27.9661698Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-04T06:51:27.9662745Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-04T06:51:27.9663344Z hint: call:
+2026-11-04T06:51:27.9663683Z hint:
+2026-11-04T06:51:27.9664105Z hint: 	git config --global init.defaultBranch <name>
+2026-11-04T06:51:27.9664787Z hint:
+2026-11-04T06:51:27.9665237Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-04T06:51:27.9665867Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-04T06:51:27.9666421Z hint:
+2026-11-04T06:51:27.9666879Z hint: 	git branch -m <name>
+2026-11-04T06:51:27.9667261Z hint:
+2026-11-04T06:51:27.9667722Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-04T06:51:27.9673169Z Initialized empty Git repository in /home/runner/work/gold-trading/gold-trading/.git/
+2026-11-04T06:51:27.9684497Z [command]/usr/bin/git remote add origin https://github.com/intasan/gold-trading
+2026-11-04T06:51:27.9741202Z ##[endgroup]
+2026-11-04T06:51:27.9744100Z ##[group]Disabling automatic garbage collection
+2026-11-04T06:51:27.9744796Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-04T06:51:27.9781045Z ##[endgroup]
+2026-11-04T06:51:27.9781484Z ##[group]Setting up auth
+2026-11-04T06:51:27.9787598Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T06:51:27.9820752Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T06:51:28.0227616Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T06:51:28.0258454Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T06:51:28.0515545Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T06:51:28.0550343Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T06:51:28.0833383Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-04T06:51:28.0888697Z ##[endgroup]
+2026-11-04T06:51:28.0889605Z ##[group]Fetching the repository
+2026-11-04T06:51:28.0897189Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4821f47802c28addb44b51833895b1c47beb7387:refs/remotes/origin/main
+2026-11-04T06:51:28.4840438Z From https://github.com/intasan/gold-trading
+2026-11-04T06:51:28.4841294Z  * [new ref]         4821f47802c28addb44b51833895b1c47beb7387 -> origin/main
+2026-11-04T06:51:28.4843835Z ##[endgroup]
+2026-11-04T06:51:28.4844617Z ##[group]Determining the checkout info
+2026-11-04T06:51:28.4846251Z ##[endgroup]
+2026-11-04T06:51:28.4851776Z [command]/usr/bin/git sparse-checkout disable
+2026-11-04T06:51:28.4897326Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-04T06:51:28.4925230Z ##[group]Checking out the ref
+2026-11-04T06:51:28.4928362Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-04T06:51:28.5019565Z Switched to a new branch 'main'
+2026-11-04T06:51:28.5022256Z branch 'main' set up to track 'origin/main'.
+2026-11-04T06:51:28.5028093Z ##[endgroup]
+2026-11-04T06:51:28.5067505Z [command]/usr/bin/git log -1 --format=%H
+2026-11-04T06:51:28.5088866Z 4821f47802c28addb44b51833895b1c47beb7387
+2026-11-04T06:51:28.5273276Z ##[group]Run mkdir -p evidence/runtime
+2026-11-04T06:51:28.5273696Z [36;1mmkdir -p evidence/runtime[0m
+2026-11-04T06:51:28.5274039Z [36;1mdocker compose up -d --wait postgres[0m
+2026-11-04T06:51:28.5274408Z [36;1mdocker compose build pipeline dashboard[0m
+2026-11-04T06:51:28.5275087Z [36;1mdocker compose -f docker-compose.yml -f docker-compose.integration.yml build airflow[0m
+2026-11-04T06:51:28.5320841Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T06:51:28.5321208Z env:
+2026-11-04T06:51:28.5321477Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:51:28.5321801Z ##[endgroup]
+2026-11-04T06:51:30.7815826Z  Image postgres:16-alpine Pulling 
+2026-11-04T06:51:31.5513370Z  7b229517ed22 Pulling fs layer 0B
+2026-11-04T06:51:31.5514403Z  7ea8819886f9 Pulling fs layer 0B
+2026-11-04T06:51:31.5514989Z  f121f7f3dec1 Pulling fs layer 0B
+2026-11-04T06:51:31.5515334Z  42065dcfea93 Pulling fs layer 0B
+2026-11-04T06:51:31.5515785Z  9f477227db48 Pulling fs layer 0B
+2026-11-04T06:51:31.5516077Z  d3f6cab92edc Pulling fs layer 0B
+2026-11-04T06:51:31.5516370Z  768bbab50810 Pulling fs layer 0B
+2026-11-04T06:51:31.5516745Z  d982e6c592c4 Pulling fs layer 0B
+2026-11-04T06:51:31.5517033Z  a735dce41235 Pulling fs layer 0B
+2026-11-04T06:51:31.5517355Z  22df74fd5323 Pulling fs layer 0B
+2026-11-04T06:51:31.5517618Z  911527e7800c Pulling fs layer 0B
+2026-11-04T06:51:31.6866139Z  42065dcfea93 Download complete 0B
+2026-11-04T06:51:31.6868691Z  7b229517ed22 Downloading 2.097MB
+2026-11-04T06:51:31.7877126Z  d3f6cab92edc Download complete 0B
+2026-11-04T06:51:31.7882543Z  911527e7800c Download complete 0B
+2026-11-04T06:51:31.7893798Z  7b229517ed22 Download complete 0B
+2026-11-04T06:51:31.7901456Z  7ea8819886f9 Download complete 0B
+2026-11-04T06:51:31.7908608Z  768bbab50810 Download complete 0B
+2026-11-04T06:51:31.7911165Z  d982e6c592c4 Download complete 0B
+2026-11-04T06:51:31.7923060Z  a735dce41235 Download complete 0B
+2026-11-04T06:51:31.7925261Z  22df74fd5323 Download complete 0B
+2026-11-04T06:51:31.7929359Z  9f477227db48 Download complete 0B
+2026-11-04T06:51:31.7932427Z  f121f7f3dec1 Downloading 22.02MB
+2026-11-04T06:51:31.8047560Z  7b229517ed22 Extracting 1B
+2026-11-04T06:51:31.8869052Z  b3e0ec4a3ace Download complete 0B
+2026-11-04T06:51:31.8871623Z  9f4aa3a44541 Downloading 598kB
+2026-11-04T06:51:31.8872465Z  f121f7f3dec1 Downloading 57.67MB
+2026-11-04T06:51:31.8880044Z  42065dcfea93 Extracting 1B
+2026-11-04T06:51:31.8904702Z  7b229517ed22 Pull complete 0B
+2026-11-04T06:51:31.8929768Z  768bbab50810 Pull complete 0B
+2026-11-04T06:51:31.8960488Z  d982e6c592c4 Pull complete 0B
+2026-11-04T06:51:31.8980738Z  a735dce41235 Pull complete 0B
+2026-11-04T06:51:31.9857690Z  9f4aa3a44541 Download complete 0B
+2026-11-04T06:51:31.9859229Z  f121f7f3dec1 Downloading 105.9MB
+2026-11-04T06:51:31.9865542Z  42065dcfea93 Pull complete 0B
+2026-11-04T06:51:32.0856260Z  f121f7f3dec1 Downloading 111.3MB
+2026-11-04T06:51:32.1859037Z  f121f7f3dec1 Downloading 111.3MB
+2026-11-04T06:51:32.2862998Z  f121f7f3dec1 Downloading 111.3MB
+2026-11-04T06:51:32.3864121Z  f121f7f3dec1 Downloading 111.3MB
+2026-11-04T06:51:32.4854933Z  f121f7f3dec1 Downloading 111.3MB
+2026-11-04T06:51:32.5864740Z  f121f7f3dec1 Download complete 0B
+2026-11-04T06:51:32.5923385Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:32.6913064Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:32.7913779Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:32.8935040Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:32.9929975Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:33.0939345Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:33.1913659Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:33.2911686Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:33.3912247Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:33.4918091Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:33.5915259Z  f121f7f3dec1 Extracting 1B
+2026-11-04T06:51:33.6917363Z  f121f7f3dec1 Extracting 2B
+2026-11-04T06:51:33.7900648Z  f121f7f3dec1 Extracting 2B
+2026-11-04T06:51:33.8906652Z  f121f7f3dec1 Pull complete 0B
+2026-11-04T06:51:34.0877332Z  7ea8819886f9 Extracting 1B
+2026-11-04T06:51:34.1878791Z  7ea8819886f9 Pull complete 0B
+2026-11-04T06:51:34.3305916Z  d3f6cab92edc Pull complete 0B
+2026-11-04T06:51:34.3317232Z  911527e7800c Pull complete 0B
+2026-11-04T06:51:34.3328458Z  22df74fd5323 Pull complete 0B
+2026-11-04T06:51:34.3331111Z  9f477227db48 Pull complete 0B
+2026-11-04T06:51:34.3342167Z  Image postgres:16-alpine Pulled 
+2026-11-04T06:51:34.3662214Z  Network gold-trading_default Creating 
+2026-11-04T06:51:34.3917303Z  Network gold-trading_default Created 
+2026-11-04T06:51:34.3921993Z  Volume gold-trading_pgdata Creating 
+2026-11-04T06:51:34.3931227Z  Volume gold-trading_pgdata Created 
+2026-11-04T06:51:34.3937341Z  Container gold-trading-postgres-1 Creating 
+2026-11-04T06:51:36.5616893Z  Container gold-trading-postgres-1 Created 
+2026-11-04T06:51:36.5695299Z  Container gold-trading-postgres-1 Starting 
+2026-11-04T06:51:36.7412251Z  Container gold-trading-postgres-1 Started 
+2026-11-04T06:51:36.7412738Z  Container gold-trading-postgres-1 Waiting 
+2026-11-04T06:51:42.2432069Z  Container gold-trading-postgres-1 Healthy 
+2026-11-04T06:51:46.6975051Z  Image gold-trading-dashboard Building 
+2026-11-04T06:51:46.6975392Z  Image gold-trading-pipeline Building 
+2026-11-04T06:51:46.9371847Z #1 [internal] load local bake definitions
+2026-11-04T06:51:47.0874164Z #1 reading from stdin 1.03kB done
+2026-11-04T06:51:47.0874748Z #1 DONE 0.0s
+2026-11-04T06:51:47.5082162Z 
+2026-11-04T06:51:47.5082696Z #2 [pipeline internal] load build definition from Dockerfile
+2026-11-04T06:51:47.5083068Z #2 transferring dockerfile: 394B 0.0s done
+2026-11-04T06:51:47.5083230Z #2 DONE 0.0s
+2026-11-04T06:51:47.5083303Z 
+2026-11-04T06:51:47.5083399Z #3 [auth] library/python:pull token for registry-1.docker.io
+2026-11-04T06:51:47.6586192Z #3 DONE 0.0s
+2026-11-04T06:51:47.6586354Z 
+2026-11-04T06:51:47.6586521Z #4 [dashboard internal] load metadata for docker.io/library/python:3.12-slim
+2026-11-04T06:51:48.1934337Z #4 DONE 0.7s
+2026-11-04T06:51:48.1934535Z 
+2026-11-04T06:51:48.1934657Z #5 [pipeline internal] load .dockerignore
+2026-11-04T06:51:48.1934859Z #5 transferring context: 100B done
+2026-11-04T06:51:48.1935009Z #5 DONE 0.0s
+2026-11-04T06:51:48.1935080Z 
+2026-11-04T06:51:48.1935149Z #6 [dashboard internal] load build context
+2026-11-04T06:51:48.1935376Z #6 transferring context: 801.01kB 0.0s done
+2026-11-04T06:51:48.1935632Z #6 DONE 0.0s
+2026-11-04T06:51:48.1935737Z 
+2026-11-04T06:51:48.1936156Z #7 [dashboard 1/6] FROM docker.io/library/python:3.12-slim@sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30
+2026-11-04T06:51:48.1936820Z #7 resolve docker.io/library/python:3.12-slim@sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30 0.0s done
+2026-11-04T06:51:48.1937238Z #7 sha256:acca7542dfc736e9ce20cbefc58b2d09822276d15d4a0c531531a6f1b057928e 251B / 251B 0.1s done
+2026-11-04T06:51:48.4166315Z #7 sha256:acca7542dfc736e9ce20cbefc58b2d09822276d15d4a0c531531a6f1b057928e 251B / 251B 0.1s done
+2026-11-04T06:51:48.4166830Z #7 sha256:f574edac59d9f092df596f54e5b52656c803fd3ae30825b8ee5a189ed05f63d3 0B / 12.12MB 0.2s
+2026-11-04T06:51:48.4167265Z #7 sha256:3eb77115150676568f88e2957181b8f7e3014e797f1ce8cd640086dfbed45e35 1.29MB / 1.29MB 0.3s done
+2026-11-04T06:51:48.4167665Z #7 sha256:6fc242d221a673263eabd14a9ad9584d3177c96e5cb504c891497338e2f912f5 0B / 29.86MB 0.2s
+2026-11-04T06:51:48.5744211Z #7 sha256:f574edac59d9f092df596f54e5b52656c803fd3ae30825b8ee5a189ed05f63d3 12.12MB / 12.12MB 0.3s done
+2026-11-04T06:51:48.5744860Z #7 sha256:3eb77115150676568f88e2957181b8f7e3014e797f1ce8cd640086dfbed45e35 1.29MB / 1.29MB 0.3s done
+2026-11-04T06:51:48.5745307Z #7 sha256:6fc242d221a673263eabd14a9ad9584d3177c96e5cb504c891497338e2f912f5 22.02MB / 29.86MB 0.3s
+2026-11-04T06:51:48.5747662Z #7 sha256:6fc242d221a673263eabd14a9ad9584d3177c96e5cb504c891497338e2f912f5 29.86MB / 29.86MB 0.5s
+2026-11-04T06:51:48.7488402Z #7 sha256:6fc242d221a673263eabd14a9ad9584d3177c96e5cb504c891497338e2f912f5 29.86MB / 29.86MB 0.5s done
+2026-11-04T06:51:48.7489401Z #7 extracting sha256:6fc242d221a673263eabd14a9ad9584d3177c96e5cb504c891497338e2f912f5
+2026-11-04T06:51:49.0453899Z #7 extracting sha256:6fc242d221a673263eabd14a9ad9584d3177c96e5cb504c891497338e2f912f5 0.4s done
+2026-11-04T06:51:49.2429088Z #7 extracting sha256:6fc242d221a673263eabd14a9ad9584d3177c96e5cb504c891497338e2f912f5 0.4s done
+2026-11-04T06:51:49.2430243Z #7 extracting sha256:3eb77115150676568f88e2957181b8f7e3014e797f1ce8cd640086dfbed45e35 0.0s done
+2026-11-04T06:51:49.2431010Z #7 extracting sha256:f574edac59d9f092df596f54e5b52656c803fd3ae30825b8ee5a189ed05f63d3
+2026-11-04T06:51:49.3063558Z #7 extracting sha256:f574edac59d9f092df596f54e5b52656c803fd3ae30825b8ee5a189ed05f63d3 0.2s done
+2026-11-04T06:51:49.4628158Z #7 extracting sha256:f574edac59d9f092df596f54e5b52656c803fd3ae30825b8ee5a189ed05f63d3 0.2s done
+2026-11-04T06:51:49.4628581Z #7 extracting sha256:acca7542dfc736e9ce20cbefc58b2d09822276d15d4a0c531531a6f1b057928e done
+2026-11-04T06:51:49.4628842Z #7 DONE 1.2s
+2026-11-04T06:51:49.4628918Z 
+2026-11-04T06:51:49.4629014Z #8 [dashboard 2/6] WORKDIR /app
+2026-11-04T06:51:50.4052793Z #8 DONE 0.9s
+2026-11-04T06:51:50.4052986Z 
+2026-11-04T06:51:50.4053155Z #9 [pipeline 3/6] COPY requirements.txt requirements-postgres.txt ./
+2026-11-04T06:51:50.4053391Z #9 DONE 0.0s
+2026-11-04T06:51:50.4053512Z 
+2026-11-04T06:51:50.4053996Z #10 [pipeline 4/6] RUN pip install --no-cache-dir -r requirements-postgres.txt && useradd --uid 10001 --create-home pipeline
+2026-11-04T06:51:51.3676494Z #10 1.113 Collecting pandas==2.2.3 (from -r /app/requirements.txt (line 1))
+2026-11-04T06:51:51.5651430Z #10 1.160   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+2026-11-04T06:51:51.5775866Z #10 1.323 Collecting numpy==2.3.5 (from -r /app/requirements.txt (line 2))
+2026-11-04T06:51:51.6906846Z #10 1.337   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-04T06:51:51.6907411Z #10 1.362 Collecting openpyxl==3.1.5 (from -r /app/requirements.txt (line 3))
+2026-11-04T06:51:51.6907975Z #10 1.375   Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+2026-11-04T06:51:51.6908396Z #10 1.421 Collecting scikit-learn==1.8.0 (from -r /app/requirements.txt (line 4))
+2026-11-04T06:51:51.8016821Z #10 1.436   Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+2026-11-04T06:51:51.8017685Z #10 1.459 Collecting psycopg<4,>=3.2 (from psycopg[binary]<4,>=3.2->-r requirements-postgres.txt (line 2))
+2026-11-04T06:51:51.8018378Z #10 1.471   Downloading psycopg-3.3.7-py3-none-any.whl.metadata (4.4 kB)
+2026-11-04T06:51:51.8018883Z #10 1.494 Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r /app/requirements.txt (line 1))
+2026-11-04T06:51:51.8019433Z #10 1.506   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-04T06:51:51.8019939Z #10 1.534 Collecting pytz>=2020.1 (from pandas==2.2.3->-r /app/requirements.txt (line 1))
+2026-11-04T06:51:51.9352087Z #10 1.547   Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+2026-11-04T06:51:51.9352675Z #10 1.566 Collecting tzdata>=2022.7 (from pandas==2.2.3->-r /app/requirements.txt (line 1))
+2026-11-04T06:51:51.9353171Z #10 1.579   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-04T06:51:51.9353653Z #10 1.595 Collecting et-xmlfile (from openpyxl==3.1.5->-r /app/requirements.txt (line 3))
+2026-11-04T06:51:51.9354133Z #10 1.608   Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+2026-11-04T06:51:52.0432627Z #10 1.680 Collecting scipy>=1.10.0 (from scikit-learn==1.8.0->-r /app/requirements.txt (line 4))
+2026-11-04T06:51:52.0435269Z #10 1.693   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-04T06:51:52.0436175Z #10 1.721 Collecting joblib>=1.3.0 (from scikit-learn==1.8.0->-r /app/requirements.txt (line 4))
+2026-11-04T06:51:52.0437594Z #10 1.736   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+2026-11-04T06:51:52.0440549Z #10 1.752 Collecting threadpoolctl>=3.2.0 (from scikit-learn==1.8.0->-r /app/requirements.txt (line 4))
+2026-11-04T06:51:52.0440883Z #10 1.765   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+2026-11-04T06:51:52.1525300Z #10 1.788 Collecting typing-extensions>=4.6 (from psycopg<4,>=3.2->psycopg[binary]<4,>=3.2->-r requirements-postgres.txt (line 2))
+2026-11-04T06:51:52.1526081Z #10 1.802   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-04T06:51:52.1526445Z #10 1.898 Collecting psycopg-binary==3.3.7 (from psycopg[binary]<4,>=3.2->-r requirements-postgres.txt (line 2))
+2026-11-04T06:51:52.2888921Z #10 1.911   Downloading psycopg_binary-3.3.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+2026-11-04T06:51:52.2889764Z #10 1.928 Collecting cloudpickle>=3.0 (from joblib>=1.3.0->scikit-learn==1.8.0->-r /app/requirements.txt (line 4))
+2026-11-04T06:51:52.2890392Z #10 1.941   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+2026-11-04T06:51:52.2890909Z #10 1.960 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+2026-11-04T06:51:52.3969370Z #10 2.034    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 214.6 MB/s eta 0:00:00
+2026-11-04T06:51:52.3970115Z #10 2.047 Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+2026-11-04T06:51:52.3970982Z #10 2.085    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 455.5 MB/s eta 0:00:00
+2026-11-04T06:51:52.3971435Z #10 2.098 Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+2026-11-04T06:51:52.3971948Z #10 2.110 Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (8.9 MB)
+2026-11-04T06:51:52.3972560Z #10 2.129    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 513.7 MB/s eta 0:00:00
+2026-11-04T06:51:52.3972934Z #10 2.142 Downloading psycopg-3.3.7-py3-none-any.whl (216 kB)
+2026-11-04T06:51:52.5265602Z #10 2.156 Downloading psycopg_binary-3.3.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.3 MB)
+2026-11-04T06:51:52.5266403Z #10 2.166    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 601.1 MB/s eta 0:00:00
+2026-11-04T06:51:52.5266668Z #10 2.179 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+2026-11-04T06:51:52.5266928Z #10 2.191 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-04T06:51:52.5267173Z #10 2.204 Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+2026-11-04T06:51:52.5267478Z #10 2.217 Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-04T06:51:52.7030614Z #10 2.272    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 669.6 MB/s eta 0:00:00
+2026-11-04T06:51:52.7031166Z #10 2.284 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+2026-11-04T06:51:52.7031684Z #10 2.297 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-04T06:51:52.7032079Z #10 2.309 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-04T06:51:52.7032460Z #10 2.322 Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+2026-11-04T06:51:52.7032692Z #10 2.334 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+2026-11-04T06:51:52.7033312Z #10 2.448 Installing collected packages: pytz, tzdata, typing-extensions, threadpoolctl, psycopg-binary, numpy, et-xmlfile, cloudpickle, scipy, python-dateutil, psycopg, openpyxl, joblib, scikit-learn, pandas
+2026-11-04T06:52:01.5981337Z #10 11.10 Successfully installed cloudpickle-3.1.2 et-xmlfile-2.0.0 joblib-1.6.0 numpy-2.3.5 openpyxl-3.1.5 pandas-2.2.3 psycopg-3.3.7 psycopg-binary-3.3.7 python-dateutil-4.0.0 pytz-2026.6 scikit-learn-1.8.0 scipy-1.18.1 threadpoolctl-3.7.0 typing-extensions-4.16.0 tzdata-2026.6
+2026-11-04T06:52:01.5983138Z #10 11.10 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-11-04T06:52:01.5983856Z #10 11.19 
+2026-11-04T06:52:01.5984023Z #10 11.19 [notice] A new release of pip is available: 25.0.1 -> 26.3
+2026-11-04T06:52:01.5984253Z #10 11.19 [notice] To update, run: pip install --upgrade pip
+2026-11-04T06:52:03.9875791Z #10 DONE 13.6s
+2026-11-04T06:52:03.9875957Z 
+2026-11-04T06:52:03.9876102Z #11 [dashboard 5/6] COPY --chown=pipeline:pipeline . .
+2026-11-04T06:52:04.0974521Z #11 DONE 0.1s
+2026-11-04T06:52:04.0974863Z 
+2026-11-04T06:52:04.0975366Z #12 [pipeline 6/6] RUN mkdir -p /app/data/raw && chown -R pipeline:pipeline /app/data
+2026-11-04T06:52:04.2507469Z #12 DONE 0.1s
+2026-11-04T06:52:04.2507665Z 
+2026-11-04T06:52:04.2507880Z #13 [dashboard] exporting to image
+2026-11-04T06:52:04.2508087Z #13 exporting layers
+2026-11-04T06:52:13.0954709Z #13 exporting layers 9.0s done
+2026-11-04T06:52:13.3442119Z #13 exporting manifest sha256:f8b1a6c3ee48558475d202afeb14bfd5d9f095fa116aca440572cfc66e295cdf done
+2026-11-04T06:52:13.3442851Z #13 exporting config sha256:0846e2360a79101f3ce650b117dddd2830facefdb533eae9dc61d376bfc184fa done
+2026-11-04T06:52:13.3443544Z #13 exporting attestation manifest sha256:3fcf5a09d52282f021e8e8f2096372cbc45e493e140b30460902cbcefbfb2d98 0.0s done
+2026-11-04T06:52:13.3444294Z #13 exporting manifest list sha256:62a40c00061ee6725a4e02a376ba5d908a7afdeaf1c9e9ebec23d766c7b20922 done
+2026-11-04T06:52:13.3444837Z #13 naming to docker.io/library/gold-trading-dashboard:latest done
+2026-11-04T06:52:13.3445257Z #13 unpacking to docker.io/library/gold-trading-dashboard:latest
+2026-11-04T06:52:14.2447028Z #13 ...
+2026-11-04T06:52:14.2447210Z 
+2026-11-04T06:52:14.2447303Z #14 [pipeline] exporting to image
+2026-11-04T06:52:14.2447508Z #14 exporting layers 9.0s done
+2026-11-04T06:52:14.2447935Z #14 exporting manifest sha256:1c80c66cf44060672de653677582ef334819f29703a4378c096fe15d51ab8e0d done
+2026-11-04T06:52:14.2448440Z #14 exporting config sha256:04fa4e983e747a2c8a7bda224f620950b704c167d5ed65b01ed568a3dfdacedc done
+2026-11-04T06:52:14.2448918Z #14 exporting attestation manifest sha256:ba5d75f234c3ace4e863f3e755de8418694dd37fd4b8a4d03d95e05662d52ffc 0.0s done
+2026-11-04T06:52:14.2449409Z #14 exporting manifest list sha256:439417ba37206ae956e837bc1dd949500f9c69a995e69d68755ac951fabe42cd done
+2026-11-04T06:52:14.2449761Z #14 naming to docker.io/library/gold-trading-pipeline:latest done
+2026-11-04T06:52:14.2450112Z #14 unpacking to docker.io/library/gold-trading-pipeline:latest
+2026-11-04T06:52:15.9239955Z #14 ...
+2026-11-04T06:52:15.9240141Z 
+2026-11-04T06:52:15.9240221Z #13 [dashboard] exporting to image
+2026-11-04T06:52:15.9240604Z #13 unpacking to docker.io/library/gold-trading-dashboard:latest 2.7s done
+2026-11-04T06:52:16.0079482Z #13 DONE 11.8s
+2026-11-04T06:52:16.0079661Z 
+2026-11-04T06:52:16.0079779Z #14 [pipeline] exporting to image
+2026-11-04T06:52:16.0080121Z #14 unpacking to docker.io/library/gold-trading-pipeline:latest 2.7s done
+2026-11-04T06:52:16.0080389Z #14 DONE 11.8s
+2026-11-04T06:52:16.0080458Z 
+2026-11-04T06:52:16.0080549Z #15 [dashboard] resolving provenance for metadata file
+2026-11-04T06:52:16.0080728Z #15 DONE 0.0s
+2026-11-04T06:52:16.0080798Z 
+2026-11-04T06:52:16.0080943Z #16 [pipeline] resolving provenance for metadata file
+2026-11-04T06:52:16.0081211Z #16 DONE 0.0s
+2026-11-04T06:52:16.0081421Z  Image gold-trading-pipeline Built 
+2026-11-04T06:52:16.0081672Z  Image gold-trading-dashboard Built 
+2026-11-04T06:52:16.0737604Z  Image gold-trading-airflow Building 
+2026-11-04T06:52:16.1363878Z #1 [internal] load local bake definitions
+2026-11-04T06:52:16.3088884Z #1 reading from stdin 560B done
+2026-11-04T06:52:16.3089306Z #1 DONE 0.0s
+2026-11-04T06:52:16.3089900Z 
+2026-11-04T06:52:16.3090058Z #2 [internal] load build definition from Dockerfile.airflow
+2026-11-04T06:52:16.3090377Z #2 transferring dockerfile: 504B done
+2026-11-04T06:52:16.3090612Z #2 DONE 0.0s
+2026-11-04T06:52:16.3090878Z 
+2026-11-04T06:52:16.3091583Z #3 [auth] apache/airflow:pull token for registry-1.docker.io
+2026-11-04T06:52:16.4591705Z #3 DONE 0.0s
+2026-11-04T06:52:16.4591888Z 
+2026-11-04T06:52:16.4592046Z #4 [internal] load metadata for docker.io/apache/airflow:2.10.5-python3.12
+2026-11-04T06:52:16.8687358Z #4 DONE 0.7s
+2026-11-04T06:52:16.9988603Z 
+2026-11-04T06:52:16.9989715Z #5 [internal] load .dockerignore
+2026-11-04T06:52:16.9990093Z #5 transferring context: 100B done
+2026-11-04T06:52:16.9990336Z #5 DONE 0.0s
+2026-11-04T06:52:16.9990439Z 
+2026-11-04T06:52:16.9990535Z #6 [internal] load build context
+2026-11-04T06:52:16.9990856Z #6 transferring context: 2.90kB done
+2026-11-04T06:52:16.9991082Z #6 DONE 0.0s
+2026-11-04T06:52:16.9991193Z 
+2026-11-04T06:52:16.9991564Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:16.9992366Z #7 resolve docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79 0.0s done
+2026-11-04T06:52:16.9992886Z #7 DONE 0.1s
+2026-11-04T06:52:17.1092189Z 
+2026-11-04T06:52:17.1093105Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:17.1094027Z #7 sha256:fd954a022bd647dd23b95d621a60fdaa9ce4e310cf697de1fba82925b8c2f795 420B / 420B 0.1s done
+2026-11-04T06:52:17.1094590Z #7 sha256:03d58b7b4a9ae47c27abadb6d6a5ff54005409a2dd56f338b714b91080d592de 422B / 422B 0.1s done
+2026-11-04T06:52:17.2165448Z #7 sha256:fe8d2ae2dfe6e1ef15b23573e7d3033f8e163811ce194ab96b4665a09776b528 115B / 115B 0.1s done
+2026-11-04T06:52:17.2166053Z #7 sha256:606dfa134f384d4d34de6579b14c584843b70dca7f93f0a7f50e6ce7923d3db1 1.06kB / 1.06kB 0.1s done
+2026-11-04T06:52:17.2166693Z #7 sha256:f168a33d645f6ab31273354c25831b8bc8d49c33663abc74f2ce2248ecfbfc6a 6.94kB / 6.94kB 0.2s done
+2026-11-04T06:52:17.2167318Z #7 sha256:0fb9bea9ca302f9dd06ac84c6704e06e740a31dd81189f909c278bfb83d5b853 5.21kB / 5.21kB 0.1s done
+2026-11-04T06:52:17.2167956Z #7 sha256:d39edfc767eacd1c894073a4cbedc17fc829db0e1d1bb94382f1e157c62fc022 291B / 291B 0.1s done
+2026-11-04T06:52:17.2168624Z #7 sha256:dd6d4e19378443a0693f0aa6eab36520f3e22e734133c8b9112a3af5cb2eb8e4 492B / 492B 0.1s done
+2026-11-04T06:52:17.3286595Z #7 sha256:569fdf2b5b57d2ef19d839d9909ec390efda5bd9a68b2acee1767a96c796fdb2 3.87kB / 3.87kB 0.1s done
+2026-11-04T06:52:17.3287427Z #7 sha256:bb52c308e36bbf177b62ba923cd89b079f2eed9dd1644dea91cb030de68c1c36 17.52kB / 17.52kB 0.1s done
+2026-11-04T06:52:17.3287979Z #7 sha256:b1a9f46cf8fa12136c4bc3536908a2baf4dd497bdfdcf96a1ba49454b30dc96a 2.03kB / 2.03kB 0.1s done
+2026-11-04T06:52:17.3288549Z #7 sha256:60c48da778535b4ad8d391a4acb0cbab87e56018df9e2a1a92ca05d5b2363467 2.31kB / 2.31kB 0.1s done
+2026-11-04T06:52:17.4691668Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 3.15MB / 277.26MB 0.2s
+2026-11-04T06:52:17.4692750Z #7 sha256:5ecf2e5848a4b330c734d1be6c2727a7404aeefe7eb5195987729e37708187d6 8.39MB / 22.20MB 0.2s
+2026-11-04T06:52:17.4695070Z #7 sha256:5b72f0d3e49f3d2c52f86b25508ad0ca41e6051220f6df131ba20cb7b80ac863 1.51kB / 1.51kB 0.1s done
+2026-11-04T06:52:17.4695692Z #7 sha256:45030c7e10a370aea64094c4629beff53fc1924880059dc7741b05e453855ee4 8.39MB / 89.53MB 0.2s
+2026-11-04T06:52:17.6178797Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 38.80MB / 277.26MB 0.3s
+2026-11-04T06:52:17.6179541Z #7 sha256:5ecf2e5848a4b330c734d1be6c2727a7404aeefe7eb5195987729e37708187d6 22.20MB / 22.20MB 0.3s done
+2026-11-04T06:52:17.6180327Z #7 sha256:45030c7e10a370aea64094c4629beff53fc1924880059dc7741b05e453855ee4 40.89MB / 89.53MB 0.3s
+2026-11-04T06:52:17.6180983Z #7 sha256:c9727c30039be8bdf097ec15cf087909dae79104c19fe8be4b112311d8ec313c 249B / 249B 0.1s done
+2026-11-04T06:52:17.7628465Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 78.64MB / 277.26MB 0.5s
+2026-11-04T06:52:17.7629063Z #7 sha256:58c78b362c25f1cdbfefdd75299091505ffd471fef75355a11827eef47c3afbb 3.51MB / 3.51MB 0.2s
+2026-11-04T06:52:17.7630010Z #7 sha256:6eae4ea23f4a71978313de5e8f11764f33a3eabecf18c7119fb8d61010a47bee 13.65MB / 13.65MB 0.2s done
+2026-11-04T06:52:17.9148151Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 116.39MB / 277.26MB 0.6s
+2026-11-04T06:52:17.9148596Z #7 sha256:45030c7e10a370aea64094c4629beff53fc1924880059dc7741b05e453855ee4 74.45MB / 89.53MB 0.5s
+2026-11-04T06:52:17.9149209Z #7 sha256:58c78b362c25f1cdbfefdd75299091505ffd471fef75355a11827eef47c3afbb 3.51MB / 3.51MB 0.2s done
+2026-11-04T06:52:17.9149568Z #7 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 28.21MB / 28.21MB 0.2s
+2026-11-04T06:52:18.0648507Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 153.09MB / 277.26MB 0.8s
+2026-11-04T06:52:18.0649890Z #7 sha256:45030c7e10a370aea64094c4629beff53fc1924880059dc7741b05e453855ee4 89.53MB / 89.53MB 0.6s
+2026-11-04T06:52:18.2157622Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 200.28MB / 277.26MB 0.9s
+2026-11-04T06:52:18.3678736Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 233.83MB / 277.26MB 1.1s
+2026-11-04T06:52:18.5561395Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 277.26MB / 277.26MB 1.4s
+2026-11-04T06:52:18.5561929Z #7 sha256:45030c7e10a370aea64094c4629beff53fc1924880059dc7741b05e453855ee4 89.53MB / 89.53MB 1.1s done
+2026-11-04T06:52:18.5562343Z #7 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 28.21MB / 28.21MB 0.6s done
+2026-11-04T06:52:18.5562693Z #7 extracting sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260
+2026-11-04T06:52:19.9062382Z #7 extracting sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 1.4s done
+2026-11-04T06:52:19.9063060Z #7 extracting sha256:58c78b362c25f1cdbfefdd75299091505ffd471fef75355a11827eef47c3afbb
+2026-11-04T06:52:20.1343762Z #7 sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 277.26MB / 277.26MB 2.7s done
+2026-11-04T06:52:20.1344252Z #7 extracting sha256:58c78b362c25f1cdbfefdd75299091505ffd471fef75355a11827eef47c3afbb 0.2s done
+2026-11-04T06:52:20.1344606Z #7 extracting sha256:6eae4ea23f4a71978313de5e8f11764f33a3eabecf18c7119fb8d61010a47bee
+2026-11-04T06:52:20.2246154Z #7 extracting sha256:6eae4ea23f4a71978313de5e8f11764f33a3eabecf18c7119fb8d61010a47bee 0.2s done
+2026-11-04T06:52:20.2246671Z #7 DONE 3.3s
+2026-11-04T06:52:20.3836446Z 
+2026-11-04T06:52:20.3837537Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:20.3838370Z #7 extracting sha256:c9727c30039be8bdf097ec15cf087909dae79104c19fe8be4b112311d8ec313c done
+2026-11-04T06:52:20.3838948Z #7 extracting sha256:5b72f0d3e49f3d2c52f86b25508ad0ca41e6051220f6df131ba20cb7b80ac863 done
+2026-11-04T06:52:20.3839498Z #7 extracting sha256:45030c7e10a370aea64094c4629beff53fc1924880059dc7741b05e453855ee4
+2026-11-04T06:52:21.2106833Z #7 extracting sha256:45030c7e10a370aea64094c4629beff53fc1924880059dc7741b05e453855ee4 1.0s done
+2026-11-04T06:52:21.2107399Z #7 DONE 4.3s
+2026-11-04T06:52:21.3727297Z 
+2026-11-04T06:52:21.3728490Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:21.3729183Z #7 extracting sha256:60c48da778535b4ad8d391a4acb0cbab87e56018df9e2a1a92ca05d5b2363467 done
+2026-11-04T06:52:21.3729703Z #7 extracting sha256:b1a9f46cf8fa12136c4bc3536908a2baf4dd497bdfdcf96a1ba49454b30dc96a done
+2026-11-04T06:52:21.3730260Z #7 extracting sha256:5ecf2e5848a4b330c734d1be6c2727a7404aeefe7eb5195987729e37708187d6
+2026-11-04T06:52:21.6280785Z #7 extracting sha256:5ecf2e5848a4b330c734d1be6c2727a7404aeefe7eb5195987729e37708187d6 0.4s done
+2026-11-04T06:52:21.6281101Z #7 DONE 4.7s
+2026-11-04T06:52:21.7786886Z 
+2026-11-04T06:52:21.7789132Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:21.7790872Z #7 extracting sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654
+2026-11-04T06:52:28.5133154Z #7 extracting sha256:8f24f0ddb993d9d94d5fa5895bb09430ac5acd8c12965339b89ab8ccee70c654 6.9s done
+2026-11-04T06:52:28.5133634Z #7 DONE 11.6s
+2026-11-04T06:52:28.6222926Z 
+2026-11-04T06:52:28.6223808Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:28.6224786Z #7 extracting sha256:f168a33d645f6ab31273354c25831b8bc8d49c33663abc74f2ce2248ecfbfc6a done
+2026-11-04T06:52:28.6225356Z #7 extracting sha256:bb52c308e36bbf177b62ba923cd89b079f2eed9dd1644dea91cb030de68c1c36 0.0s done
+2026-11-04T06:52:28.6225794Z #7 extracting sha256:569fdf2b5b57d2ef19d839d9909ec390efda5bd9a68b2acee1767a96c796fdb2 0.0s done
+2026-11-04T06:52:28.6226145Z #7 extracting sha256:dd6d4e19378443a0693f0aa6eab36520f3e22e734133c8b9112a3af5cb2eb8e4 0.0s done
+2026-11-04T06:52:28.6226663Z #7 extracting sha256:d39edfc767eacd1c894073a4cbedc17fc829db0e1d1bb94382f1e157c62fc022 done
+2026-11-04T06:52:28.6227009Z #7 extracting sha256:0fb9bea9ca302f9dd06ac84c6704e06e740a31dd81189f909c278bfb83d5b853 done
+2026-11-04T06:52:28.6227470Z #7 extracting sha256:606dfa134f384d4d34de6579b14c584843b70dca7f93f0a7f50e6ce7923d3db1 0.0s done
+2026-11-04T06:52:28.6228021Z #7 DONE 11.7s
+2026-11-04T06:52:28.7231038Z 
+2026-11-04T06:52:28.7231972Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:28.7232694Z #7 extracting sha256:fe8d2ae2dfe6e1ef15b23573e7d3033f8e163811ce194ab96b4665a09776b528 0.0s done
+2026-11-04T06:52:28.7233266Z #7 extracting sha256:03d58b7b4a9ae47c27abadb6d6a5ff54005409a2dd56f338b714b91080d592de 0.1s done
+2026-11-04T06:52:28.7233845Z #7 extracting sha256:fd954a022bd647dd23b95d621a60fdaa9ce4e310cf697de1fba82925b8c2f795 0.0s done
+2026-11-04T06:52:28.7234233Z #7 DONE 11.8s
+2026-11-04T06:52:28.8329423Z 
+2026-11-04T06:52:28.8330253Z #7 [1/5] FROM docker.io/apache/airflow:2.10.5-python3.12@sha256:6499a680a93463846d3a6be980e85d601dc97b0d81e82eed9ef5e5cb9da31b79
+2026-11-04T06:52:28.8330734Z #7 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0.1s done
+2026-11-04T06:52:28.8331091Z #7 DONE 11.9s
+2026-11-04T06:52:28.8331193Z 
+2026-11-04T06:52:28.8331390Z #8 [2/5] RUN python -m venv /opt/gold-venv && chown -R airflow:root /opt/gold-venv
+2026-11-04T06:52:37.1416679Z #8 DONE 8.3s
+2026-11-04T06:52:37.3220743Z 
+2026-11-04T06:52:37.3221482Z #9 [3/5] COPY requirements.txt requirements-postgres.txt /tmp/gold-requirements/
+2026-11-04T06:52:37.3221794Z #9 DONE 0.0s
+2026-11-04T06:52:37.3221871Z 
+2026-11-04T06:52:37.3222081Z #10 [4/5] RUN /opt/gold-venv/bin/pip install --no-cache-dir -r /tmp/gold-requirements/requirements-postgres.txt
+2026-11-04T06:52:37.7288110Z #10 0.557 Collecting pandas==2.2.3 (from -r /tmp/gold-requirements/requirements.txt (line 1))
+2026-11-04T06:52:37.9535753Z #10 0.632   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+2026-11-04T06:52:38.0375788Z #10 0.866 Collecting numpy==2.3.5 (from -r /tmp/gold-requirements/requirements.txt (line 2))
+2026-11-04T06:52:38.1714312Z #10 0.881   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-04T06:52:38.1714841Z #10 0.912 Collecting openpyxl==3.1.5 (from -r /tmp/gold-requirements/requirements.txt (line 3))
+2026-11-04T06:52:38.1715255Z #10 0.926   Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+2026-11-04T06:52:38.1715580Z #10 1.000 Collecting scikit-learn==1.8.0 (from -r /tmp/gold-requirements/requirements.txt (line 4))
+2026-11-04T06:52:38.2721334Z #10 1.014   Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+2026-11-04T06:52:38.2722127Z #10 1.045 Collecting psycopg<4,>=3.2 (from psycopg[binary]<4,>=3.2->-r /tmp/gold-requirements/requirements-postgres.txt (line 2))
+2026-11-04T06:52:38.2722722Z #10 1.060   Downloading psycopg-3.3.7-py3-none-any.whl.metadata (4.4 kB)
+2026-11-04T06:52:38.2723585Z #10 1.086 Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r /tmp/gold-requirements/requirements.txt (line 1))
+2026-11-04T06:52:38.2724175Z #10 1.101   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-04T06:52:38.3791728Z #10 1.143 Collecting pytz>=2020.1 (from pandas==2.2.3->-r /tmp/gold-requirements/requirements.txt (line 1))
+2026-11-04T06:52:38.3792726Z #10 1.157   Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+2026-11-04T06:52:38.3793266Z #10 1.179 Collecting tzdata>=2022.7 (from pandas==2.2.3->-r /tmp/gold-requirements/requirements.txt (line 1))
+2026-11-04T06:52:38.3793814Z #10 1.193   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-04T06:52:38.3794376Z #10 1.208 Collecting et-xmlfile (from openpyxl==3.1.5->-r /tmp/gold-requirements/requirements.txt (line 3))
+2026-11-04T06:52:38.5093943Z #10 1.222   Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+2026-11-04T06:52:38.5094610Z #10 1.338 Collecting scipy>=1.10.0 (from scikit-learn==1.8.0->-r /tmp/gold-requirements/requirements.txt (line 4))
+2026-11-04T06:52:38.6301680Z #10 1.352   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-04T06:52:38.6302412Z #10 1.388 Collecting joblib>=1.3.0 (from scikit-learn==1.8.0->-r /tmp/gold-requirements/requirements.txt (line 4))
+2026-11-04T06:52:38.6303047Z #10 1.402   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+2026-11-04T06:52:38.6303611Z #10 1.420 Collecting threadpoolctl>=3.2.0 (from scikit-learn==1.8.0->-r /tmp/gold-requirements/requirements.txt (line 4))
+2026-11-04T06:52:38.6304183Z #10 1.434   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+2026-11-04T06:52:38.6304857Z #10 1.459 Collecting typing-extensions>=4.6 (from psycopg<4,>=3.2->psycopg[binary]<4,>=3.2->-r /tmp/gold-requirements/requirements-postgres.txt (line 2))
+2026-11-04T06:52:38.7953264Z #10 1.473   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-04T06:52:38.8052075Z #10 1.634 Collecting psycopg-binary==3.3.7 (from psycopg[binary]<4,>=3.2->-r /tmp/gold-requirements/requirements-postgres.txt (line 2))
+2026-11-04T06:52:38.9825224Z #10 1.648   Downloading psycopg_binary-3.3.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+2026-11-04T06:52:38.9826062Z #10 1.669 Collecting cloudpickle>=3.0 (from joblib>=1.3.0->scikit-learn==1.8.0->-r /tmp/gold-requirements/requirements.txt (line 4))
+2026-11-04T06:52:38.9826848Z #10 1.683   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+2026-11-04T06:52:38.9827452Z #10 1.709 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+2026-11-04T06:52:39.0828556Z #10 1.811    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 148.6 MB/s eta 0:00:00
+2026-11-04T06:52:39.0828960Z #10 1.827 Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+2026-11-04T06:52:39.0829378Z #10 1.883    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 312.3 MB/s eta 0:00:00
+2026-11-04T06:52:39.0829637Z #10 1.897 Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+2026-11-04T06:52:39.0829963Z #10 1.911 Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (8.9 MB)
+2026-11-04T06:52:39.1890647Z #10 1.948    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 257.6 MB/s eta 0:00:00
+2026-11-04T06:52:39.1891290Z #10 1.962 Downloading psycopg-3.3.7-py3-none-any.whl (216 kB)
+2026-11-04T06:52:39.1891876Z #10 1.977 Downloading psycopg_binary-3.3.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.3 MB)
+2026-11-04T06:52:39.1892406Z #10 1.988    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 553.4 MB/s eta 0:00:00
+2026-11-04T06:52:39.1892669Z #10 2.003 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+2026-11-04T06:52:39.1892905Z #10 2.018 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-04T06:52:39.3000455Z #10 2.032 Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+2026-11-04T06:52:39.3000843Z #10 2.047 Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-04T06:52:39.3001485Z #10 2.100    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 686.0 MB/s eta 0:00:00
+2026-11-04T06:52:39.3001876Z #10 2.115 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+2026-11-04T06:52:39.3002133Z #10 2.129 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-04T06:52:39.4691371Z #10 2.143 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-04T06:52:39.4691693Z #10 2.157 Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+2026-11-04T06:52:39.4691935Z #10 2.171 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+2026-11-04T06:52:39.4692457Z #10 2.298 Installing collected packages: pytz, tzdata, typing-extensions, threadpoolctl, psycopg-binary, numpy, et-xmlfile, cloudpickle, scipy, python-dateutil, psycopg, openpyxl, joblib, scikit-learn, pandas
+2026-11-04T06:52:48.8623082Z #10 11.69 Successfully installed cloudpickle-3.1.2 et-xmlfile-2.0.0 joblib-1.6.0 numpy-2.3.5 openpyxl-3.1.5 pandas-2.2.3 psycopg-3.3.7 psycopg-binary-3.3.7 python-dateutil-4.0.0 pytz-2026.6 scikit-learn-1.8.0 scipy-1.18.1 threadpoolctl-3.7.0 typing-extensions-4.16.0 tzdata-2026.6
+2026-11-04T06:52:48.9854513Z #10 11.81 
+2026-11-04T06:52:48.9854906Z #10 11.81 [notice] A new release of pip is available: 24.3.1 -> 26.3
+2026-11-04T06:52:48.9855256Z #10 11.81 [notice] To update, run: python3.12 -m pip install --upgrade pip
+2026-11-04T06:52:50.3500295Z #10 DONE 13.2s
+2026-11-04T06:52:50.5838253Z 
+2026-11-04T06:52:50.5839069Z #11 [5/5] COPY --chown=airflow:root . /opt/airflow/gold-trading
+2026-11-04T06:52:50.5839454Z #11 DONE 0.1s
+2026-11-04T06:52:50.5839572Z 
+2026-11-04T06:52:50.5839655Z #12 exporting to image
+2026-11-04T06:52:50.5839866Z #12 exporting layers
+2026-11-04T06:52:59.0914122Z #12 exporting layers 8.7s done
+2026-11-04T06:52:59.2599649Z #12 exporting manifest sha256:844619d10aa9a5dddbe5d6f3084d9b9d85e94b4d49fa8e78cfc8bd0b0e699346 done
+2026-11-04T06:52:59.2600380Z #12 exporting config sha256:52b771eb58c37ebc5cbb43bcd2f196dfa1dcffeb6a59462b1a3526d4ffd71fa8 done
+2026-11-04T06:52:59.2601106Z #12 exporting attestation manifest sha256:70f7a8a3bb216d0fa5589066bfa2627000f66ce7cd634f1f3fb61263e624f051 done
+2026-11-04T06:52:59.2601849Z #12 exporting manifest list sha256:16af41347d9d057a52c5490bff0e3b3b8113aa7759fbe03d5ca2f88de63078ee done
+2026-11-04T06:52:59.2602443Z #12 naming to docker.io/library/gold-trading-airflow:latest done
+2026-11-04T06:52:59.2602870Z #12 unpacking to docker.io/library/gold-trading-airflow:latest
+2026-11-04T06:53:01.1363967Z #12 unpacking to docker.io/library/gold-trading-airflow:latest 2.0s done
+2026-11-04T06:53:01.2083706Z #12 DONE 10.7s
+2026-11-04T06:53:01.2084038Z  Image gold-trading-airflow Built 
+2026-11-04T06:53:01.2084174Z 
+2026-11-04T06:53:01.2084252Z #13 resolving provenance for metadata file
+2026-11-04T06:53:01.2084421Z #13 DONE 0.0s
+2026-11-04T06:53:01.2154579Z ##[group]Run docker compose run --rm pipeline python -m tools.verify_postgres | tee evidence/runtime/postgres-before.txt
+2026-11-04T06:53:01.2155071Z [36;1mdocker compose run --rm pipeline python -m tools.verify_postgres | tee evidence/runtime/postgres-before.txt[0m
+2026-11-04T06:53:01.2155372Z [36;1mdocker compose restart postgres[0m
+2026-11-04T06:53:01.2155575Z [36;1mdocker compose up -d --wait postgres[0m
+2026-11-04T06:53:01.2155883Z [36;1mdocker compose run --rm pipeline python -m tools.verify_postgres | tee evidence/runtime/postgres-after-restart.txt[0m
+2026-11-04T06:53:01.2200491Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T06:53:01.2200688Z env:
+2026-11-04T06:53:01.2200830Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:53:01.2201002Z ##[endgroup]
+2026-11-04T06:53:01.2859807Z  Volume gold-trading_pipeline-data Creating 
+2026-11-04T06:53:01.2865222Z  Volume gold-trading_pipeline-data Created 
+2026-11-04T06:53:01.2933386Z  Container gold-trading-postgres-1 Running 
+2026-11-04T06:53:01.3307354Z  Container gold-trading-postgres-1 Waiting 
+2026-11-04T06:53:01.8325540Z  Container gold-trading-postgres-1 Healthy 
+2026-11-04T06:53:01.8325961Z  Container gold-trading-pipeline-run-4b3123500f08 Creating 
+2026-11-04T06:53:04.2412606Z  Container gold-trading-pipeline-run-4b3123500f08 Created 
+2026-11-04T06:53:05.6362752Z {"postgres_version": "PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit", "real_recorded_rows": 2406, "database_rows": 2406, "second_replay": [0, 2406], "reopen_persistent": true}
+2026-11-04T06:53:05.8331913Z  Container gold-trading-postgres-1 Restarting 
+2026-11-04T06:53:06.0017266Z  Container gold-trading-postgres-1 Started 
+2026-11-04T06:53:06.0861067Z  Container gold-trading-postgres-1 Running 
+2026-11-04T06:53:06.0916293Z  Container gold-trading-postgres-1 Waiting 
+2026-11-04T06:53:11.0927031Z  Container gold-trading-postgres-1 Healthy 
+2026-11-04T06:53:11.1618461Z  Container gold-trading-postgres-1 Running 
+2026-11-04T06:53:11.1925761Z  Container gold-trading-postgres-1 Waiting 
+2026-11-04T06:53:11.6941823Z  Container gold-trading-postgres-1 Healthy 
+2026-11-04T06:53:11.6942192Z  Container gold-trading-pipeline-run-2262a1da426e Creating 
+2026-11-04T06:53:11.7189265Z  Container gold-trading-pipeline-run-2262a1da426e Created 
+2026-11-04T06:53:12.9139818Z {"postgres_version": "PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit", "real_recorded_rows": 2406, "database_rows": 2406, "second_replay": [0, 2406], "reopen_persistent": true}
+2026-11-04T06:53:13.0378663Z ##[group]Run docker compose run --rm pipeline | tee evidence/runtime/docker-refresh.txt
+2026-11-04T06:53:13.0379054Z [36;1mdocker compose run --rm pipeline | tee evidence/runtime/docker-refresh.txt[0m
+2026-11-04T06:53:13.0379295Z [36;1mdocker compose up -d dashboard[0m
+2026-11-04T06:53:13.0379674Z [36;1mcurl --fail --retry-all-errors --retry 12 --retry-delay 2 --retry-connrefused http://127.0.0.1:8000/api/health | tee evidence/runtime/api-health.json[0m
+2026-11-04T06:53:13.0380116Z [36;1mcurl --fail http://127.0.0.1:8000/api/snapshot > evidence/runtime/api-snapshot.json[0m
+2026-11-04T06:53:13.0423981Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T06:53:13.0424170Z env:
+2026-11-04T06:53:13.0424328Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:53:13.0424499Z ##[endgroup]
+2026-11-04T06:53:13.1104005Z  Container gold-trading-postgres-1 Running 
+2026-11-04T06:53:13.1452439Z  Container gold-trading-postgres-1 Waiting 
+2026-11-04T06:53:13.6491753Z  Container gold-trading-postgres-1 Healthy 
+2026-11-04T06:53:13.6492168Z  Container gold-trading-pipeline-run-f3d6fa301b56 Creating 
+2026-11-04T06:53:13.6681462Z  Container gold-trading-pipeline-run-f3d6fa301b56 Created 
+2026-11-04T06:53:16.4289096Z {
+2026-11-04T06:53:16.4289417Z   "id": "d8951eba-2cac-46ce-afd1-6d110b9a095c",
+2026-11-04T06:53:16.4289699Z   "started_at": "2026-11-04T06:53:14.116389Z",
+2026-11-04T06:53:16.4289910Z   "finished_at": "2026-11-04T06:53:15.155628Z",
+2026-11-04T06:53:16.4290088Z   "status": "success",
+2026-11-04T06:53:16.4290212Z   "sources": {
+2026-11-04T06:53:16.4290332Z     "frankfurter": {
+2026-11-04T06:53:16.4290470Z       "status": "success",
+2026-11-04T06:53:16.4290624Z       "extracted_rows": 1,
+2026-11-04T06:53:16.4290822Z       "inserted_rows": 1,
+2026-11-04T06:53:16.4290964Z       "existing_rows": 0,
+2026-11-04T06:53:16.4291116Z       "error": null,
+2026-11-04T06:53:16.4291258Z       "provenance": {
+2026-11-04T06:53:16.4291486Z         "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+2026-11-04T06:53:16.4291731Z         "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+2026-11-04T06:53:16.4291932Z         "http_status": 200,
+2026-11-04T06:53:16.4292091Z         "retrieved_at": "2026-11-04T06:53:14.237332Z",
+2026-11-04T06:53:16.4292333Z         "sha256": "b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f",
+2026-11-04T06:53:16.4292568Z         "cached": false,
+2026-11-04T06:53:16.4292815Z         "file": "frankfurter-b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f.json"
+2026-11-04T06:53:16.4293076Z       }
+2026-11-04T06:53:16.4293182Z     },
+2026-11-04T06:53:16.4293294Z     "gold_api_xag": {
+2026-11-04T06:53:16.4293424Z       "status": "success",
+2026-11-04T06:53:16.4293774Z       "extracted_rows": 1,
+2026-11-04T06:53:16.4293906Z       "inserted_rows": 1,
+2026-11-04T06:53:16.4294035Z       "existing_rows": 0,
+2026-11-04T06:53:16.4294163Z       "error": null,
+2026-11-04T06:53:16.4294283Z       "provenance": {
+2026-11-04T06:53:16.4294445Z         "url": "https://api.gold-api.com/price/XAG",
+2026-11-04T06:53:16.4294743Z         "final_url": "https://api.gold-api.com/price/XAG",
+2026-11-04T06:53:16.4310762Z         "http_status": 200,
+2026-11-04T06:53:16.4311022Z         "retrieved_at": "2026-11-04T06:53:14.350634Z",
+2026-11-04T06:53:16.4311396Z         "sha256": "827d76a0523a4f7ca7fb2168b27d6ffd246ccf8625330867e8e97668a985892e",
+2026-11-04T06:53:16.4312151Z         "cached": false,
+2026-11-04T06:53:16.4312507Z         "file": "gold_api_xag-827d76a0523a4f7ca7fb2168b27d6ffd246ccf8625330867e8e97668a985892e.json"
+2026-11-04T06:53:16.4312877Z       }
+2026-11-04T06:53:16.4313027Z     },
+2026-11-04T06:53:16.4313185Z     "gold_api_xau": {
+2026-11-04T06:53:16.4313378Z       "status": "success",
+2026-11-04T06:53:16.4313585Z       "extracted_rows": 1,
+2026-11-04T06:53:16.4313776Z       "inserted_rows": 1,
+2026-11-04T06:53:16.4313966Z       "existing_rows": 0,
+2026-11-04T06:53:16.4314154Z       "error": null,
+2026-11-04T06:53:16.4314564Z       "provenance": {
+2026-11-04T06:53:16.4314787Z         "url": "https://api.gold-api.com/price/XAU",
+2026-11-04T06:53:16.4315077Z         "final_url": "https://api.gold-api.com/price/XAU",
+2026-11-04T06:53:16.4315340Z         "http_status": 200,
+2026-11-04T06:53:16.4315567Z         "retrieved_at": "2026-11-04T06:53:14.352362Z",
+2026-11-04T06:53:16.4315936Z         "sha256": "394129f83aad30cf7d61de7b7eafa957fcf85290dd811b19175da124c726f40f",
+2026-11-04T06:53:16.4316292Z         "cached": false,
+2026-11-04T06:53:16.4316658Z         "file": "gold_api_xau-394129f83aad30cf7d61de7b7eafa957fcf85290dd811b19175da124c726f40f.json"
+2026-11-04T06:53:16.4317053Z       }
+2026-11-04T06:53:16.4317215Z     },
+2026-11-04T06:53:16.4317385Z     "worldbank": {
+2026-11-04T06:53:16.4317577Z       "status": "success",
+2026-11-04T06:53:16.4317919Z       "extracted_rows": 2406,
+2026-11-04T06:53:16.4318133Z       "inserted_rows": 3,
+2026-11-04T06:53:16.4318341Z       "existing_rows": 2403,
+2026-11-04T06:53:16.4318555Z       "error": null,
+2026-11-04T06:53:16.4318686Z       "provenance": {
+2026-11-04T06:53:16.4319023Z         "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+2026-11-04T06:53:16.4319556Z         "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+2026-11-04T06:53:16.4319896Z         "http_status": 200,
+2026-11-04T06:53:16.4320045Z         "retrieved_at": "2026-11-04T06:53:14.484496Z",
+2026-11-04T06:53:16.4320302Z         "sha256": "3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2",
+2026-11-04T06:53:16.4320654Z         "cached": false,
+2026-11-04T06:53:16.4320901Z         "file": "worldbank-3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2.xlsx",
+2026-11-04T06:53:16.4321190Z         "release_label": "Updated on November 03, 2026"
+2026-11-04T06:53:16.4321353Z       }
+2026-11-04T06:53:16.4321455Z     }
+2026-11-04T06:53:16.4321561Z   }
+2026-11-04T06:53:16.4321664Z }
+2026-11-04T06:53:16.4321762Z {
+2026-11-04T06:53:16.4321871Z   "database_rows": 2412,
+2026-11-04T06:53:16.4322006Z   "model_status": "evaluated",
+2026-11-04T06:53:16.4322144Z   "reason": null,
+2026-11-04T06:53:16.4322265Z   "model_metrics": {
+2026-11-04T06:53:16.4322390Z     "mae": 138.1439614616178,
+2026-11-04T06:53:16.4322526Z     "rmse": 183.5701089528679,
+2026-11-04T06:53:16.4322821Z     "mape_percent": 3.8215156100723124
+2026-11-04T06:53:16.4323031Z   },
+2026-11-04T06:53:16.4323194Z   "naive_metrics": {
+2026-11-04T06:53:16.4323382Z     "mae": 135.47222222222223,
+2026-11-04T06:53:16.4323591Z     "rmse": 178.68011454365404,
+2026-11-04T06:53:16.4323804Z     "mape_percent": 3.802231917159584
+2026-11-04T06:53:16.4324196Z   },
+2026-11-04T06:53:16.4324367Z   "beats_naive_mae": false
+2026-11-04T06:53:16.4324570Z }
+2026-11-04T06:53:16.7293481Z  Container gold-trading-postgres-1 Running 
+2026-11-04T06:53:16.7293899Z  Container gold-trading-dashboard-1 Creating 
+2026-11-04T06:53:16.7481330Z  Container gold-trading-dashboard-1 Created 
+2026-11-04T06:53:16.7577027Z  Container gold-trading-postgres-1 Waiting 
+2026-11-04T06:53:17.2591780Z  Container gold-trading-postgres-1 Healthy 
+2026-11-04T06:53:17.2592048Z  Container gold-trading-dashboard-1 Starting 
+2026-11-04T06:53:17.3666987Z  Container gold-trading-dashboard-1 Started 
+2026-11-04T06:53:17.3792870Z   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+2026-11-04T06:53:17.3793445Z                                  Dload  Upload  Total   Spent   Left   Speed
+2026-11-04T06:53:17.3793819Z 
+2026-11-04T06:53:17.3802489Z   0      0   0      0   0      0      0      0                              0
+2026-11-04T06:53:17.3802871Z curl: (56) Recv failure: Connection reset by peer
+2026-11-04T06:53:17.3803329Z Warning: Problem (retrying all errors). Will retry in 2 seconds. 12 retries 
+2026-11-04T06:53:17.3803693Z Warning: left.
+2026-11-04T06:53:19.3825555Z 
+2026-11-04T06:53:19.5019764Z   0      0   0      0   0      0      0      0                              0
+2026-11-04T06:53:19.5020072Z 100     56 100     56   0      0    471      0                              0
+2026-11-04T06:53:19.5020306Z 100     56 100     56   0      0    470      0                              0
+2026-11-04T06:53:19.5020524Z 100     56 100     56   0      0    470      0                              0
+2026-11-04T06:53:19.5079355Z   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+2026-11-04T06:53:19.5079691Z                                  Dload  Upload  Total   Spent   Left   Speed
+2026-11-04T06:53:19.5079854Z 
+2026-11-04T06:53:19.5289687Z   0      0   0      0   0      0      0      0                              0
+2026-11-04T06:53:19.5290207Z 100 109.2k 100 109.2k   0      0  5.06M      0                              0
+2026-11-04T06:53:19.5290829Z 100 109.2k 100 109.2k   0      0  5.05M      0                              0
+2026-11-04T06:53:19.5291199Z 100 109.2k 100 109.2k   0      0  5.04M      0                              0
+2026-11-04T06:53:19.5301880Z {"ok": true, "rows": 2412, "pipeline_status": "success"}
+2026-11-04T06:53:19.5327024Z ##[group]Run docker compose -f docker-compose.yml -f docker-compose.integration.yml run --rm airflow bash -c 'airflow db migrate && airflow dags test gold_analytics_pipeline 2026-11-04' 2>&1 | tee evidence/runtime/airflow-dag.txt
+2026-11-04T06:53:19.5328092Z [36;1mdocker compose -f docker-compose.yml -f docker-compose.integration.yml run --rm airflow bash -c 'airflow db migrate && airflow dags test gold_analytics_pipeline 2026-11-04' 2>&1 | tee evidence/runtime/airflow-dag.txt[0m
+2026-11-04T06:53:19.5370781Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T06:53:19.5370973Z env:
+2026-11-04T06:53:19.5371124Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:53:19.5371298Z ##[endgroup]
+2026-11-04T06:53:19.6167729Z  Container gold-trading-postgres-1 Running 
+2026-11-04T06:53:19.6622851Z  Container gold-trading-postgres-1 Waiting 
+2026-11-04T06:53:20.1641213Z  Container gold-trading-postgres-1 Healthy 
+2026-11-04T06:53:20.1641737Z  Container gold-trading-airflow-run-9e3fe3113a42 Creating 
+2026-11-04T06:53:20.1915672Z  Container gold-trading-airflow-run-9e3fe3113a42 Created 
+2026-11-04T06:53:24.8166505Z 
+2026-11-04T06:53:26.5870311Z DB: sqlite:////opt/airflow/airflow.db
+2026-11-04T06:53:26.5870748Z Performing upgrade to the metadata database sqlite:////opt/airflow/airflow.db
+2026-11-04T06:53:26.5871253Z [2026-11-04T06:53:26.585+0000] {migration.py:207} INFO - Context impl SQLiteImpl.
+2026-11-04T06:53:26.5871737Z [2026-11-04T06:53:26.586+0000] {migration.py:210} INFO - Will assume non-transactional DDL.
+2026-11-04T06:53:26.5873953Z [2026-11-04T06:53:26.587+0000] {migration.py:207} INFO - Context impl SQLiteImpl.
+2026-11-04T06:53:26.5879631Z [2026-11-04T06:53:26.587+0000] {migration.py:210} INFO - Will assume non-transactional DDL.
+2026-11-04T06:53:26.7244156Z INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+2026-11-04T06:53:26.7244649Z INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+2026-11-04T06:53:26.8381499Z INFO  [alembic.runtime.migration] Running stamp_revision  -> 5f2621c13b39
+2026-11-04T06:53:26.8537418Z Database migrating done!
+2026-11-04T06:53:28.8414853Z [2026-11-04T06:53:28.839+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/gold-trading/dags
+2026-11-04T06:53:28.8729438Z [2026-11-04T06:53:28.872+0000] {dag.py:4435} INFO - dagrun id: gold_analytics_pipeline
+2026-11-04T06:53:28.8790552Z [2026-11-04T06:53:28.878+0000] {dag.py:4451} INFO - created dagrun <DagRun gold_analytics_pipeline @ 2026-11-04 00:00:00+00:00: manual__2026-11-04T00:00:00+00:00, state:running, queued_at: None. externally triggered: False>
+2026-11-04T06:53:28.8951240Z [2026-11-04T06:53:28.894+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=extract_validate_load map_index=-1
+2026-11-04T06:53:28.8954131Z [2026-11-04T06:53:28.894+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: gold_analytics_pipeline.extract_validate_load manual__2026-11-04T00:00:00+00:00 [scheduled]>
+2026-11-04T06:53:29.2756107Z [2026-11-04 06:53:29,274] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='extract_validate_load' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+2026-11-04T06:53:29.2757326Z [2026-11-04T06:53:29.274+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='extract_validate_load' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+2026-11-04T06:53:29.2792801Z [2026-11-04T06:53:29.278+0000] {taskinstance.py:732} INFO - ::endgroup::
+2026-11-04T06:53:29.3034760Z [2026-11-04 06:53:29,303] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+2026-11-04T06:53:29.3036135Z [2026-11-04T06:53:29.303+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+2026-11-04T06:53:29.3040848Z [2026-11-04 06:53:29,303] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading ingest']
+2026-11-04T06:53:29.3042365Z [2026-11-04T06:53:29.303+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading ingest']
+2026-11-04T06:53:29.3164515Z [2026-11-04 06:53:29,316] {subprocess.py:99} INFO - Output:
+2026-11-04T06:53:29.3167327Z [2026-11-04T06:53:29.316+0000] {subprocess.py:99} INFO - Output:
+2026-11-04T06:53:30.6390944Z [2026-11-04 06:53:30,636] {subprocess.py:106} INFO - {
+2026-11-04T06:53:30.6392762Z [2026-11-04T06:53:30.636+0000] {subprocess.py:106} INFO - {
+2026-11-04T06:53:30.6393546Z [2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "id": "55808c81-6707-4e41-a681-43b6da51cb2b",
+2026-11-04T06:53:30.6394426Z [2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "id": "55808c81-6707-4e41-a681-43b6da51cb2b",
+2026-11-04T06:53:30.6395288Z [2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "started_at": "2026-11-04T06:53:29.693984Z",
+2026-11-04T06:53:30.6396272Z [2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "started_at": "2026-11-04T06:53:29.693984Z",
+2026-11-04T06:53:30.6397289Z [2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "finished_at": "2026-11-04T06:53:30.633423Z",
+2026-11-04T06:53:30.6398046Z [2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "finished_at": "2026-11-04T06:53:30.633423Z",
+2026-11-04T06:53:30.6399072Z [2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "status": "success",
+2026-11-04T06:53:30.6399916Z [2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "status": "success",
+2026-11-04T06:53:30.6401119Z [2026-11-04 06:53:30,637] {subprocess.py:106} INFO -   "sources": {
+2026-11-04T06:53:30.6401987Z [2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -   "sources": {
+2026-11-04T06:53:30.6402431Z [2026-11-04 06:53:30,637] {subprocess.py:106} INFO -     "frankfurter": {
+2026-11-04T06:53:30.6402958Z [2026-11-04T06:53:30.637+0000] {subprocess.py:106} INFO -     "frankfurter": {
+2026-11-04T06:53:30.6403534Z [2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6404083Z [2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6404719Z [2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "extracted_rows": 1,
+2026-11-04T06:53:30.6405226Z [2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "extracted_rows": 1,
+2026-11-04T06:53:30.6405793Z [2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "inserted_rows": 0,
+2026-11-04T06:53:30.6406367Z [2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "inserted_rows": 0,
+2026-11-04T06:53:30.6406906Z [2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "existing_rows": 1,
+2026-11-04T06:53:30.6407550Z [2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "existing_rows": 1,
+2026-11-04T06:53:30.6408185Z [2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6408856Z [2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6409342Z [2026-11-04 06:53:30,638] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6409866Z [2026-11-04T06:53:30.638+0000] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6410547Z [2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+2026-11-04T06:53:30.6411283Z [2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+2026-11-04T06:53:30.6412080Z [2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+2026-11-04T06:53:30.6412974Z [2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+2026-11-04T06:53:30.6413733Z [2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6414413Z [2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6415011Z [2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.806508Z",
+2026-11-04T06:53:30.6415763Z [2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.806508Z",
+2026-11-04T06:53:30.6416407Z [2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "sha256": "b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f",
+2026-11-04T06:53:30.6417266Z [2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "sha256": "b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f",
+2026-11-04T06:53:30.6418157Z [2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6418798Z [2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6419659Z [2026-11-04 06:53:30,639] {subprocess.py:106} INFO -         "file": "frankfurter-b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f.json"
+2026-11-04T06:53:30.6420620Z [2026-11-04T06:53:30.639+0000] {subprocess.py:106} INFO -         "file": "frankfurter-b4b6c6b58b126316e56178e3269de85fd14de7912b12d6c71c3839be8e8c1d3f.json"
+2026-11-04T06:53:30.6421261Z [2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6421768Z [2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6422143Z [2026-11-04 06:53:30,640] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:30.6422644Z [2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:30.6423146Z [2026-11-04 06:53:30,640] {subprocess.py:106} INFO -     "gold_api_xau": {
+2026-11-04T06:53:30.6423754Z [2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -     "gold_api_xau": {
+2026-11-04T06:53:30.6424285Z [2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6424833Z [2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6425363Z [2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "extracted_rows": 1,
+2026-11-04T06:53:30.6425929Z [2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "extracted_rows": 1,
+2026-11-04T06:53:30.6426551Z [2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "inserted_rows": 1,
+2026-11-04T06:53:30.6427092Z [2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "inserted_rows": 1,
+2026-11-04T06:53:30.6427630Z [2026-11-04 06:53:30,640] {subprocess.py:106} INFO -       "existing_rows": 0,
+2026-11-04T06:53:30.6428380Z [2026-11-04T06:53:30.640+0000] {subprocess.py:106} INFO -       "existing_rows": 0,
+2026-11-04T06:53:30.6429007Z [2026-11-04 06:53:30,641] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6429667Z [2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6430286Z [2026-11-04 06:53:30,641] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6430813Z [2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6431394Z [2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAU",
+2026-11-04T06:53:30.6432088Z [2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAU",
+2026-11-04T06:53:30.6432822Z [2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAU",
+2026-11-04T06:53:30.6433535Z [2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAU",
+2026-11-04T06:53:30.6434217Z [2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6434973Z [2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6435563Z [2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.998155Z",
+2026-11-04T06:53:30.6436230Z [2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.998155Z",
+2026-11-04T06:53:30.6437084Z [2026-11-04 06:53:30,641] {subprocess.py:106} INFO -         "sha256": "88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc",
+2026-11-04T06:53:30.6438073Z [2026-11-04T06:53:30.641+0000] {subprocess.py:106} INFO -         "sha256": "88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc",
+2026-11-04T06:53:30.6438880Z [2026-11-04 06:53:30,642] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6439430Z [2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6440122Z [2026-11-04 06:53:30,642] {subprocess.py:106} INFO -         "file": "gold_api_xau-88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc.json"
+2026-11-04T06:53:30.6441159Z [2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -         "file": "gold_api_xau-88361bfc7762359328079bb7e7d7e963c0342588b8377bf9425a76aaa7d6cafc.json"
+2026-11-04T06:53:30.6441835Z [2026-11-04 06:53:30,642] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6442354Z [2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6442839Z [2026-11-04 06:53:30,642] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:30.6443282Z [2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:30.6443846Z [2026-11-04 06:53:30,642] {subprocess.py:106} INFO -     "gold_api_xag": {
+2026-11-04T06:53:30.6444500Z [2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -     "gold_api_xag": {
+2026-11-04T06:53:30.6445192Z [2026-11-04 06:53:30,642] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6445676Z [2026-11-04T06:53:30.642+0000] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6446228Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "extracted_rows": 1,
+2026-11-04T06:53:30.6446849Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "extracted_rows": 1,
+2026-11-04T06:53:30.6447365Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "inserted_rows": 1,
+2026-11-04T06:53:30.6448057Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "inserted_rows": 1,
+2026-11-04T06:53:30.6448705Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "existing_rows": 0,
+2026-11-04T06:53:30.6449240Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "existing_rows": 0,
+2026-11-04T06:53:30.6449782Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6450236Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6450748Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6451420Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6452103Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAG",
+2026-11-04T06:53:30.6452711Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -         "url": "https://api.gold-api.com/price/XAG",
+2026-11-04T06:53:30.6453288Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAG",
+2026-11-04T06:53:30.6454096Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -         "final_url": "https://api.gold-api.com/price/XAG",
+2026-11-04T06:53:30.6454647Z [2026-11-04 06:53:30,643] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6455254Z [2026-11-04T06:53:30.643+0000] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6455902Z [2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:30.006120Z",
+2026-11-04T06:53:30.6456766Z [2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:30.006120Z",
+2026-11-04T06:53:30.6457549Z [2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "sha256": "4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8",
+2026-11-04T06:53:30.6459079Z [2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "sha256": "4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8",
+2026-11-04T06:53:30.6459648Z [2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6460058Z [2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6460677Z [2026-11-04 06:53:30,644] {subprocess.py:106} INFO -         "file": "gold_api_xag-4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8.json"
+2026-11-04T06:53:30.6461520Z [2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -         "file": "gold_api_xag-4524748be4fd35245e2eaecd713a10fb83644bb5a482734ddd156071a63a77a8.json"
+2026-11-04T06:53:30.6462021Z [2026-11-04 06:53:30,644] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6462371Z [2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6462591Z [2026-11-04 06:53:30,644] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:30.6462802Z [2026-11-04T06:53:30.644+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:30.6463100Z [2026-11-04 06:53:30,645] {subprocess.py:106} INFO -     "worldbank": {
+2026-11-04T06:53:30.6463351Z [2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -     "worldbank": {
+2026-11-04T06:53:30.6463683Z [2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6464166Z [2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "status": "success",
+2026-11-04T06:53:30.6464513Z [2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "extracted_rows": 2406,
+2026-11-04T06:53:30.6464808Z [2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "extracted_rows": 2406,
+2026-11-04T06:53:30.6465232Z [2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "inserted_rows": 0,
+2026-11-04T06:53:30.6465493Z [2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "inserted_rows": 0,
+2026-11-04T06:53:30.6465807Z [2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "existing_rows": 2406,
+2026-11-04T06:53:30.6466127Z [2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "existing_rows": 2406,
+2026-11-04T06:53:30.6466440Z [2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6467981Z [2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "error": null,
+2026-11-04T06:53:30.6468391Z [2026-11-04 06:53:30,645] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6468820Z [2026-11-04T06:53:30.645+0000] {subprocess.py:106} INFO -       "provenance": {
+2026-11-04T06:53:30.6469596Z [2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+2026-11-04T06:53:30.6470681Z [2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+2026-11-04T06:53:30.6471749Z [2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+2026-11-04T06:53:30.6472811Z [2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+2026-11-04T06:53:30.6473594Z [2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6474018Z [2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "http_status": 200,
+2026-11-04T06:53:30.6474727Z [2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.848029Z",
+2026-11-04T06:53:30.6475322Z [2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "retrieved_at": "2026-11-04T06:53:29.848029Z",
+2026-11-04T06:53:30.6475970Z [2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "sha256": "3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2",
+2026-11-04T06:53:30.6476717Z [2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "sha256": "3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2",
+2026-11-04T06:53:30.6477300Z [2026-11-04 06:53:30,646] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6477723Z [2026-11-04T06:53:30.646+0000] {subprocess.py:106} INFO -         "cached": false,
+2026-11-04T06:53:30.6478622Z [2026-11-04 06:53:30,647] {subprocess.py:106} INFO -         "file": "worldbank-3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2.xlsx",
+2026-11-04T06:53:30.6479478Z [2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -         "file": "worldbank-3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2.xlsx",
+2026-11-04T06:53:30.6480169Z [2026-11-04 06:53:30,647] {subprocess.py:106} INFO -         "release_label": "Updated on November 03, 2026"
+2026-11-04T06:53:30.6480712Z [2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -         "release_label": "Updated on November 03, 2026"
+2026-11-04T06:53:30.6481159Z [2026-11-04 06:53:30,647] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6482060Z [2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -       }
+2026-11-04T06:53:30.6482403Z [2026-11-04 06:53:30,647] {subprocess.py:106} INFO -     }
+2026-11-04T06:53:30.6483389Z [2026-11-04T06:53:30.647+0000] {subprocess.py:106} INFO -     }
+2026-11-04T06:53:30.6483722Z [2026-11-04 06:53:30,648] {subprocess.py:106} INFO -   }
+2026-11-04T06:53:30.6484040Z [2026-11-04T06:53:30.648+0000] {subprocess.py:106} INFO -   }
+2026-11-04T06:53:30.6484358Z [2026-11-04 06:53:30,648] {subprocess.py:106} INFO - }
+2026-11-04T06:53:30.6485319Z [2026-11-04T06:53:30.648+0000] {subprocess.py:106} INFO - }
+2026-11-04T06:53:30.7121009Z [2026-11-04 06:53:30,711] {subprocess.py:110} INFO - Command exited with return code 0
+2026-11-04T06:53:30.7122158Z [2026-11-04T06:53:30.711+0000] {subprocess.py:110} INFO - Command exited with return code 0
+2026-11-04T06:53:30.7235167Z [2026-11-04T06:53:30.722+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+2026-11-04T06:53:30.7236840Z [2026-11-04T06:53:30.723+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=gold_analytics_pipeline, task_id=extract_validate_load, run_id=manual__2026-11-04T00:00:00+00:00, execution_date=20261104T000000, start_date=, end_date=20261104T065330
+2026-11-04T06:53:30.7314203Z [2026-11-04T06:53:30.731+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=extract_validate_load map_index=-1
+2026-11-04T06:53:30.7399146Z [2026-11-04T06:53:30.739+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=evaluate_if_sufficient_history map_index=-1
+2026-11-04T06:53:30.7403068Z [2026-11-04T06:53:30.739+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: gold_analytics_pipeline.evaluate_if_sufficient_history manual__2026-11-04T00:00:00+00:00 [scheduled]>
+2026-11-04T06:53:30.7516042Z [2026-11-04 06:53:30,751] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='evaluate_if_sufficient_history' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+2026-11-04T06:53:30.7518078Z [2026-11-04T06:53:30.751+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='evaluate_if_sufficient_history' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+2026-11-04T06:53:30.7519775Z [2026-11-04T06:53:30.751+0000] {taskinstance.py:732} INFO - ::endgroup::
+2026-11-04T06:53:30.7522046Z [2026-11-04 06:53:30,752] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+2026-11-04T06:53:30.7523634Z [2026-11-04T06:53:30.752+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+2026-11-04T06:53:30.7526386Z [2026-11-04 06:53:30,752] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading model']
+2026-11-04T06:53:30.7528477Z [2026-11-04T06:53:30.752+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading model']
+2026-11-04T06:53:30.7635783Z [2026-11-04 06:53:30,763] {subprocess.py:99} INFO - Output:
+2026-11-04T06:53:30.7638028Z [2026-11-04T06:53:30.763+0000] {subprocess.py:99} INFO - Output:
+2026-11-04T06:53:32.4760373Z [2026-11-04 06:53:32,473] {subprocess.py:106} INFO - {
+2026-11-04T06:53:32.4761049Z [2026-11-04T06:53:32.473+0000] {subprocess.py:106} INFO - {
+2026-11-04T06:53:32.4770144Z [2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "status": "evaluated",
+2026-11-04T06:53:32.4771413Z [2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "status": "evaluated",
+2026-11-04T06:53:32.4772303Z [2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "evaluated_at": "2026-11-04T06:53:31.822065Z",
+2026-11-04T06:53:32.4773260Z [2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "evaluated_at": "2026-11-04T06:53:31.822065Z",
+2026-11-04T06:53:32.4773734Z [2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "frequency": "monthly",
+2026-11-04T06:53:32.4774162Z [2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "frequency": "monthly",
+2026-11-04T06:53:32.4776384Z [2026-11-04 06:53:32,474] {subprocess.py:106} INFO -   "target": "Next observed monthly average gold price, USD/troy oz",
+2026-11-04T06:53:32.4778060Z [2026-11-04T06:53:32.474+0000] {subprocess.py:106} INFO -   "target": "Next observed monthly average gold price, USD/troy oz",
+2026-11-04T06:53:32.4778597Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -   "series_start": "2000-01-01",
+2026-11-04T06:53:32.4779041Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -   "series_start": "2000-01-01",
+2026-11-04T06:53:32.4779473Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -   "feature_columns": [
+2026-11-04T06:53:32.4779879Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -   "feature_columns": [
+2026-11-04T06:53:32.4780268Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_1",
+2026-11-04T06:53:32.4780639Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_1",
+2026-11-04T06:53:32.4781008Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_3",
+2026-11-04T06:53:32.4781299Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_3",
+2026-11-04T06:53:32.4781684Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_6",
+2026-11-04T06:53:32.4781939Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_6",
+2026-11-04T06:53:32.4782202Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "return_12",
+2026-11-04T06:53:32.4782442Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "return_12",
+2026-11-04T06:53:32.4782723Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "mean_ratio_3",
+2026-11-04T06:53:32.4783082Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "mean_ratio_3",
+2026-11-04T06:53:32.4783327Z [2026-11-04 06:53:32,475] {subprocess.py:106} INFO -     "mean_ratio_12",
+2026-11-04T06:53:32.4783570Z [2026-11-04T06:53:32.475+0000] {subprocess.py:106} INFO -     "mean_ratio_12",
+2026-11-04T06:53:32.4783820Z [2026-11-04 06:53:32,476] {subprocess.py:106} INFO -     "volatility_6",
+2026-11-04T06:53:32.4784139Z [2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -     "volatility_6",
+2026-11-04T06:53:32.4784475Z [2026-11-04 06:53:32,476] {subprocess.py:106} INFO -     "silver_return_1",
+2026-11-04T06:53:32.4785691Z [2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -     "silver_return_1",
+2026-11-04T06:53:32.4786073Z [2026-11-04 06:53:32,476] {subprocess.py:106} INFO -     "platinum_return_1"
+2026-11-04T06:53:32.4786775Z [2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -     "platinum_return_1"
+2026-11-04T06:53:32.4787164Z [2026-11-04 06:53:32,476] {subprocess.py:106} INFO -   ],
+2026-11-04T06:53:32.4787503Z [2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -   ],
+2026-11-04T06:53:32.4788590Z [2026-11-04 06:53:32,476] {subprocess.py:106} INFO -   "min_training_rows": 180,
+2026-11-04T06:53:32.4789026Z [2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -   "min_training_rows": 180,
+2026-11-04T06:53:32.4789453Z [2026-11-04 06:53:32,476] {subprocess.py:106} INFO -   "holdout_rows": 36,
+2026-11-04T06:53:32.4789854Z [2026-11-04T06:53:32.476+0000] {subprocess.py:106} INFO -   "holdout_rows": 36,
+2026-11-04T06:53:32.4790255Z [2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "eligible_rows": 309,
+2026-11-04T06:53:32.4790675Z [2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "eligible_rows": 309,
+2026-11-04T06:53:32.4791273Z [2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "input_sha256": "5c9ac09cda9bbd8c8a3cf384d096d80a726227ac7dee92bb5f958be171b0d7c9",
+2026-11-04T06:53:32.4792045Z [2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "input_sha256": "5c9ac09cda9bbd8c8a3cf384d096d80a726227ac7dee92bb5f958be171b0d7c9",
+2026-11-04T06:53:32.4792860Z [2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "method": "Expanding-window, one-observation-ahead; fixed hyperparameters; no random split",
+2026-11-04T06:53:32.4793540Z [2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "method": "Expanding-window, one-observation-ahead; fixed hyperparameters; no random split",
+2026-11-04T06:53:32.4796388Z [2026-11-04 06:53:32,477] {subprocess.py:106} INFO -   "limitations": [
+2026-11-04T06:53:32.4796783Z [2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -   "limitations": [
+2026-11-04T06:53:32.4797446Z [2026-11-04 06:53:32,477] {subprocess.py:106} INFO -     "Current-vintage World Bank data; historical revisions/publication lags are not backtested point-in-time.",
+2026-11-04T06:53:32.4799026Z [2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -     "Current-vintage World Bank data; historical revisions/publication lags are not backtested point-in-time.",
+2026-11-04T06:53:32.4799902Z [2026-11-04 06:53:32,477] {subprocess.py:106} INFO -     "Monthly-average research is separate from the spot quotes and FX reference rates.",
+2026-11-04T06:53:32.4800669Z [2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -     "Monthly-average research is separate from the spot quotes and FX reference rates.",
+2026-11-04T06:53:32.4801445Z [2026-11-04 06:53:32,477] {subprocess.py:106} INFO -     "No fees, positions, profit/backtest returns or investment recommendation are modeled."
+2026-11-04T06:53:32.4802219Z [2026-11-04T06:53:32.477+0000] {subprocess.py:106} INFO -     "No fees, positions, profit/backtest returns or investment recommendation are modeled."
+2026-11-04T06:53:32.4802721Z [2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   ],
+2026-11-04T06:53:32.4803040Z [2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   ],
+2026-11-04T06:53:32.4803305Z [2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "promotion_status": "not_promoted",
+2026-11-04T06:53:32.4803619Z [2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "promotion_status": "not_promoted",
+2026-11-04T06:53:32.4803979Z [2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "reason": null,
+2026-11-04T06:53:32.4804255Z [2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "reason": null,
+2026-11-04T06:53:32.4804732Z [2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "model_name": "HistGradientBoostingRegressor on log returns",
+2026-11-04T06:53:32.4805182Z [2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "model_name": "HistGradientBoostingRegressor on log returns",
+2026-11-04T06:53:32.4806273Z [2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "sklearn_version": "1.8.0",
+2026-11-04T06:53:32.4806836Z [2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "sklearn_version": "1.8.0",
+2026-11-04T06:53:32.4807262Z [2026-11-04 06:53:32,478] {subprocess.py:106} INFO -   "parameters": {
+2026-11-04T06:53:32.4807648Z [2026-11-04T06:53:32.478+0000] {subprocess.py:106} INFO -   "parameters": {
+2026-11-04T06:53:32.4808580Z [2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "max_iter": 80,
+2026-11-04T06:53:32.4808968Z [2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "max_iter": 80,
+2026-11-04T06:53:32.4809356Z [2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "max_depth": 3,
+2026-11-04T06:53:32.4809741Z [2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "max_depth": 3,
+2026-11-04T06:53:32.4810146Z [2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "min_samples_leaf": 20,
+2026-11-04T06:53:32.4810573Z [2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "min_samples_leaf": 20,
+2026-11-04T06:53:32.4811017Z [2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "l2_regularization": 10.0,
+2026-11-04T06:53:32.4811454Z [2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "l2_regularization": 10.0,
+2026-11-04T06:53:32.4811877Z [2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "random_state": 42,
+2026-11-04T06:53:32.4812293Z [2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "random_state": 42,
+2026-11-04T06:53:32.4812710Z [2026-11-04 06:53:32,479] {subprocess.py:106} INFO -     "early_stopping": false
+2026-11-04T06:53:32.4813003Z [2026-11-04T06:53:32.479+0000] {subprocess.py:106} INFO -     "early_stopping": false
+2026-11-04T06:53:32.4813342Z [2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   },
+2026-11-04T06:53:32.4813548Z [2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   },
+2026-11-04T06:53:32.4813809Z [2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "training_rows_before_holdout": 273,
+2026-11-04T06:53:32.4814123Z [2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "training_rows_before_holdout": 273,
+2026-11-04T06:53:32.4814415Z [2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "test_start": "2023-11-01",
+2026-11-04T06:53:32.4814684Z [2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "test_start": "2023-11-01",
+2026-11-04T06:53:32.4815016Z [2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "test_end": "2026-10-01",
+2026-11-04T06:53:32.4815435Z [2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "test_end": "2026-10-01",
+2026-11-04T06:53:32.4815840Z [2026-11-04 06:53:32,480] {subprocess.py:106} INFO -   "model_metrics": {
+2026-11-04T06:53:32.4816256Z [2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -   "model_metrics": {
+2026-11-04T06:53:32.4816662Z [2026-11-04 06:53:32,480] {subprocess.py:106} INFO -     "mae": 138.1439614616178,
+2026-11-04T06:53:32.4817098Z [2026-11-04T06:53:32.480+0000] {subprocess.py:106} INFO -     "mae": 138.1439614616178,
+2026-11-04T06:53:32.4817557Z [2026-11-04 06:53:32,481] {subprocess.py:106} INFO -     "rmse": 183.5701089528679,
+2026-11-04T06:53:32.4818136Z [2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -     "rmse": 183.5701089528679,
+2026-11-04T06:53:32.4818595Z [2026-11-04 06:53:32,481] {subprocess.py:106} INFO -     "mape_percent": 3.8215156100723124
+2026-11-04T06:53:32.4819104Z [2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -     "mape_percent": 3.8215156100723124
+2026-11-04T06:53:32.4819528Z [2026-11-04 06:53:32,481] {subprocess.py:106} INFO -   },
+2026-11-04T06:53:32.4820808Z [2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -   },
+2026-11-04T06:53:32.4821170Z [2026-11-04 06:53:32,481] {subprocess.py:106} INFO -   "naive_metrics": {
+2026-11-04T06:53:32.4822131Z [2026-11-04T06:53:32.481+0000] {subprocess.py:106} INFO -   "naive_metrics": {
+2026-11-04T06:53:32.4822553Z [2026-11-04 06:53:32,482] {subprocess.py:106} INFO -     "mae": 135.47222222222223,
+2026-11-04T06:53:32.4824161Z [2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -     "mae": 135.47222222222223,
+2026-11-04T06:53:32.4825400Z [2026-11-04 06:53:32,482] {subprocess.py:106} INFO -     "rmse": 178.68011454365404,
+2026-11-04T06:53:32.4825848Z [2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -     "rmse": 178.68011454365404,
+2026-11-04T06:53:32.4826298Z [2026-11-04 06:53:32,482] {subprocess.py:106} INFO -     "mape_percent": 3.802231917159584
+2026-11-04T06:53:32.4828170Z [2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -     "mape_percent": 3.802231917159584
+2026-11-04T06:53:32.4828590Z [2026-11-04 06:53:32,482] {subprocess.py:106} INFO -   },
+2026-11-04T06:53:32.4828925Z [2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -   },
+2026-11-04T06:53:32.4829301Z [2026-11-04 06:53:32,482] {subprocess.py:106} INFO -   "beats_naive_mae": false,
+2026-11-04T06:53:32.4830376Z [2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -   "beats_naive_mae": false,
+2026-11-04T06:53:32.4830801Z [2026-11-04 06:53:32,482] {subprocess.py:106} INFO -   "predictions": [
+2026-11-04T06:53:32.4831926Z [2026-11-04T06:53:32.482+0000] {subprocess.py:106} INFO -   "predictions": [
+2026-11-04T06:53:32.4832296Z [2026-11-04 06:53:32,483] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4833231Z [2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4833631Z [2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "period": "2023-11-01",
+2026-11-04T06:53:32.4834803Z [2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "period": "2023-11-01",
+2026-11-04T06:53:32.4835267Z [2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "train_last_period": "2023-10-01",
+2026-11-04T06:53:32.4836354Z [2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "train_last_period": "2023-10-01",
+2026-11-04T06:53:32.4837719Z [2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "actual": 1984.0,
+2026-11-04T06:53:32.4838207Z [2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "actual": 1984.0,
+2026-11-04T06:53:32.4838632Z [2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "model": 1931.562252087298,
+2026-11-04T06:53:32.4839735Z [2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "model": 1931.562252087298,
+2026-11-04T06:53:32.4840172Z [2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "naive": 1916.0,
+2026-11-04T06:53:32.4841314Z [2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "naive": 1916.0,
+2026-11-04T06:53:32.4841734Z [2026-11-04 06:53:32,483] {subprocess.py:106} INFO -       "training_rows": 273
+2026-11-04T06:53:32.4842729Z [2026-11-04T06:53:32.483+0000] {subprocess.py:106} INFO -       "training_rows": 273
+2026-11-04T06:53:32.4843131Z [2026-11-04 06:53:32,484] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4844236Z [2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4844924Z [2026-11-04 06:53:32,484] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4845635Z [2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4846185Z [2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "period": "2023-12-01",
+2026-11-04T06:53:32.4847636Z [2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "period": "2023-12-01",
+2026-11-04T06:53:32.4848193Z [2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "train_last_period": "2023-11-01",
+2026-11-04T06:53:32.4849298Z [2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "train_last_period": "2023-11-01",
+2026-11-04T06:53:32.4850706Z [2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "actual": 2026.0,
+2026-11-04T06:53:32.4851117Z [2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "actual": 2026.0,
+2026-11-04T06:53:32.4851551Z [2026-11-04 06:53:32,484] {subprocess.py:106} INFO -       "model": 2023.3155938332018,
+2026-11-04T06:53:32.4852587Z [2026-11-04T06:53:32.484+0000] {subprocess.py:106} INFO -       "model": 2023.3155938332018,
+2026-11-04T06:53:32.4853024Z [2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "naive": 1984.0,
+2026-11-04T06:53:32.4854278Z [2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "naive": 1984.0,
+2026-11-04T06:53:32.4854700Z [2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "training_rows": 274
+2026-11-04T06:53:32.4855717Z [2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "training_rows": 274
+2026-11-04T06:53:32.4856113Z [2026-11-04 06:53:32,485] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4857193Z [2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4857758Z [2026-11-04 06:53:32,485] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4859089Z [2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4859485Z [2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "period": "2024-01-01",
+2026-11-04T06:53:32.4860600Z [2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "period": "2024-01-01",
+2026-11-04T06:53:32.4861067Z [2026-11-04 06:53:32,485] {subprocess.py:106} INFO -       "train_last_period": "2023-12-01",
+2026-11-04T06:53:32.4862363Z [2026-11-04T06:53:32.485+0000] {subprocess.py:106} INFO -       "train_last_period": "2023-12-01",
+2026-11-04T06:53:32.4862819Z [2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "actual": 2034.0,
+2026-11-04T06:53:32.4863804Z [2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "actual": 2034.0,
+2026-11-04T06:53:32.4864238Z [2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "model": 2075.353734838028,
+2026-11-04T06:53:32.4865471Z [2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "model": 2075.353734838028,
+2026-11-04T06:53:32.4866943Z [2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "naive": 2026.0,
+2026-11-04T06:53:32.4867550Z [2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "naive": 2026.0,
+2026-11-04T06:53:32.4868571Z [2026-11-04 06:53:32,486] {subprocess.py:106} INFO -       "training_rows": 275
+2026-11-04T06:53:32.4869004Z [2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -       "training_rows": 275
+2026-11-04T06:53:32.4869389Z [2026-11-04 06:53:32,486] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4870456Z [2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4870794Z [2026-11-04 06:53:32,486] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4871708Z [2026-11-04T06:53:32.486+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4872095Z [2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "period": "2024-02-01",
+2026-11-04T06:53:32.4873465Z [2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "period": "2024-02-01",
+2026-11-04T06:53:32.4873961Z [2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "train_last_period": "2024-01-01",
+2026-11-04T06:53:32.4875134Z [2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-01-01",
+2026-11-04T06:53:32.4875578Z [2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "actual": 2023.0,
+2026-11-04T06:53:32.4877021Z [2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "actual": 2023.0,
+2026-11-04T06:53:32.4877461Z [2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "model": 2085.664955495155,
+2026-11-04T06:53:32.4878162Z [2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "model": 2085.664955495155,
+2026-11-04T06:53:32.4878594Z [2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "naive": 2034.0,
+2026-11-04T06:53:32.4879074Z [2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "naive": 2034.0,
+2026-11-04T06:53:32.4879936Z [2026-11-04 06:53:32,487] {subprocess.py:106} INFO -       "training_rows": 276
+2026-11-04T06:53:32.4880816Z [2026-11-04T06:53:32.487+0000] {subprocess.py:106} INFO -       "training_rows": 276
+2026-11-04T06:53:32.4881308Z [2026-11-04 06:53:32,488] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4882675Z [2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4883150Z [2026-11-04 06:53:32,488] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4884409Z [2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4884863Z [2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "period": "2024-03-01",
+2026-11-04T06:53:32.4885905Z [2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "period": "2024-03-01",
+2026-11-04T06:53:32.4886359Z [2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "train_last_period": "2024-02-01",
+2026-11-04T06:53:32.4887733Z [2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-02-01",
+2026-11-04T06:53:32.4888284Z [2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "actual": 2158.0,
+2026-11-04T06:53:32.4889321Z [2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "actual": 2158.0,
+2026-11-04T06:53:32.4889745Z [2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "model": 2011.4964430860143,
+2026-11-04T06:53:32.4891044Z [2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "model": 2011.4964430860143,
+2026-11-04T06:53:32.4891489Z [2026-11-04 06:53:32,488] {subprocess.py:106} INFO -       "naive": 2023.0,
+2026-11-04T06:53:32.4892541Z [2026-11-04T06:53:32.488+0000] {subprocess.py:106} INFO -       "naive": 2023.0,
+2026-11-04T06:53:32.4892952Z [2026-11-04 06:53:32,489] {subprocess.py:106} INFO -       "training_rows": 277
+2026-11-04T06:53:32.4894210Z [2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -       "training_rows": 277
+2026-11-04T06:53:32.4894616Z [2026-11-04 06:53:32,489] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4895590Z [2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4895927Z [2026-11-04 06:53:32,489] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4897345Z [2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4897897Z [2026-11-04 06:53:32,489] {subprocess.py:106} INFO -       "period": "2024-04-01",
+2026-11-04T06:53:32.4899161Z [2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -       "period": "2024-04-01",
+2026-11-04T06:53:32.4899972Z [2026-11-04 06:53:32,489] {subprocess.py:106} INFO -       "train_last_period": "2024-03-01",
+2026-11-04T06:53:32.4901323Z [2026-11-04T06:53:32.489+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-03-01",
+2026-11-04T06:53:32.4901608Z [2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "actual": 2331.0,
+2026-11-04T06:53:32.4902731Z [2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "actual": 2331.0,
+2026-11-04T06:53:32.4903178Z [2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "model": 2207.231761802689,
+2026-11-04T06:53:32.4904554Z [2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "model": 2207.231761802689,
+2026-11-04T06:53:32.4904981Z [2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "naive": 2158.0,
+2026-11-04T06:53:32.4905970Z [2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "naive": 2158.0,
+2026-11-04T06:53:32.4906554Z [2026-11-04 06:53:32,490] {subprocess.py:106} INFO -       "training_rows": 278
+2026-11-04T06:53:32.4907652Z [2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -       "training_rows": 278
+2026-11-04T06:53:32.4908580Z [2026-11-04 06:53:32,490] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4909555Z [2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4910288Z [2026-11-04 06:53:32,490] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4911562Z [2026-11-04T06:53:32.490+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4911939Z [2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "period": "2024-05-01",
+2026-11-04T06:53:32.4913201Z [2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "period": "2024-05-01",
+2026-11-04T06:53:32.4913836Z [2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "train_last_period": "2024-04-01",
+2026-11-04T06:53:32.4915044Z [2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-04-01",
+2026-11-04T06:53:32.4915599Z [2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "actual": 2351.0,
+2026-11-04T06:53:32.4916929Z [2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "actual": 2351.0,
+2026-11-04T06:53:32.4917299Z [2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "model": 2385.30899998429,
+2026-11-04T06:53:32.4918414Z [2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "model": 2385.30899998429,
+2026-11-04T06:53:32.4918763Z [2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "naive": 2331.0,
+2026-11-04T06:53:32.4919712Z [2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "naive": 2331.0,
+2026-11-04T06:53:32.4920093Z [2026-11-04 06:53:32,491] {subprocess.py:106} INFO -       "training_rows": 279
+2026-11-04T06:53:32.4921309Z [2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -       "training_rows": 279
+2026-11-04T06:53:32.4921714Z [2026-11-04 06:53:32,491] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4922508Z [2026-11-04T06:53:32.491+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4922896Z [2026-11-04 06:53:32,492] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4924002Z [2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4924375Z [2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "period": "2024-06-01",
+2026-11-04T06:53:32.4925240Z [2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "period": "2024-06-01",
+2026-11-04T06:53:32.4925712Z [2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "train_last_period": "2024-05-01",
+2026-11-04T06:53:32.4927012Z [2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-05-01",
+2026-11-04T06:53:32.4927582Z [2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "actual": 2326.0,
+2026-11-04T06:53:32.4928522Z [2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "actual": 2326.0,
+2026-11-04T06:53:32.4928964Z [2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "model": 2290.854477217121,
+2026-11-04T06:53:32.4929434Z [2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "model": 2290.854477217121,
+2026-11-04T06:53:32.4930229Z [2026-11-04 06:53:32,492] {subprocess.py:106} INFO -       "naive": 2351.0,
+2026-11-04T06:53:32.4930979Z [2026-11-04T06:53:32.492+0000] {subprocess.py:106} INFO -       "naive": 2351.0,
+2026-11-04T06:53:32.4931541Z [2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "training_rows": 280
+2026-11-04T06:53:32.4932915Z [2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "training_rows": 280
+2026-11-04T06:53:32.4933312Z [2026-11-04 06:53:32,493] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4934338Z [2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4934562Z [2026-11-04 06:53:32,493] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4935785Z [2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4936176Z [2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "period": "2024-07-01",
+2026-11-04T06:53:32.4937429Z [2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "period": "2024-07-01",
+2026-11-04T06:53:32.4938314Z [2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "train_last_period": "2024-06-01",
+2026-11-04T06:53:32.4939682Z [2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-06-01",
+2026-11-04T06:53:32.4939959Z [2026-11-04 06:53:32,493] {subprocess.py:106} INFO -       "actual": 2398.0,
+2026-11-04T06:53:32.4941101Z [2026-11-04T06:53:32.493+0000] {subprocess.py:106} INFO -       "actual": 2398.0,
+2026-11-04T06:53:32.4941490Z [2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "model": 2335.348265060732,
+2026-11-04T06:53:32.4942707Z [2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "model": 2335.348265060732,
+2026-11-04T06:53:32.4943119Z [2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "naive": 2326.0,
+2026-11-04T06:53:32.4944020Z [2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "naive": 2326.0,
+2026-11-04T06:53:32.4944902Z [2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "training_rows": 281
+2026-11-04T06:53:32.4945449Z [2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "training_rows": 281
+2026-11-04T06:53:32.4946815Z [2026-11-04 06:53:32,494] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4947101Z [2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4947409Z [2026-11-04 06:53:32,494] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4948505Z [2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4949412Z [2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "period": "2024-08-01",
+2026-11-04T06:53:32.4949944Z [2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "period": "2024-08-01",
+2026-11-04T06:53:32.4951172Z [2026-11-04 06:53:32,494] {subprocess.py:106} INFO -       "train_last_period": "2024-07-01",
+2026-11-04T06:53:32.4952273Z [2026-11-04T06:53:32.494+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-07-01",
+2026-11-04T06:53:32.4952884Z [2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "actual": 2470.0,
+2026-11-04T06:53:32.4953761Z [2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "actual": 2470.0,
+2026-11-04T06:53:32.4954491Z [2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "model": 2424.3620116014513,
+2026-11-04T06:53:32.4956171Z [2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "model": 2424.3620116014513,
+2026-11-04T06:53:32.4956609Z [2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "naive": 2398.0,
+2026-11-04T06:53:32.4957571Z [2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "naive": 2398.0,
+2026-11-04T06:53:32.4958843Z [2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "training_rows": 282
+2026-11-04T06:53:32.4959234Z [2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "training_rows": 282
+2026-11-04T06:53:32.4972308Z [2026-11-04 06:53:32,495] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4972881Z [2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4975325Z [2026-11-04 06:53:32,495] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4975687Z [2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4976874Z [2026-11-04 06:53:32,495] {subprocess.py:106} INFO -       "period": "2024-09-01",
+2026-11-04T06:53:32.4978298Z [2026-11-04T06:53:32.495+0000] {subprocess.py:106} INFO -       "period": "2024-09-01",
+2026-11-04T06:53:32.4978764Z [2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "train_last_period": "2024-08-01",
+2026-11-04T06:53:32.4979263Z [2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-08-01",
+2026-11-04T06:53:32.4979727Z [2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "actual": 2571.0,
+2026-11-04T06:53:32.4980127Z [2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "actual": 2571.0,
+2026-11-04T06:53:32.4980496Z [2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "model": 2495.035037217354,
+2026-11-04T06:53:32.4980950Z [2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "model": 2495.035037217354,
+2026-11-04T06:53:32.4981372Z [2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "naive": 2470.0,
+2026-11-04T06:53:32.4981728Z [2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "naive": 2470.0,
+2026-11-04T06:53:32.4982137Z [2026-11-04 06:53:32,496] {subprocess.py:106} INFO -       "training_rows": 283
+2026-11-04T06:53:32.4982567Z [2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -       "training_rows": 283
+2026-11-04T06:53:32.4982898Z [2026-11-04 06:53:32,496] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4983246Z [2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4983582Z [2026-11-04 06:53:32,496] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4983921Z [2026-11-04T06:53:32.496+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4984712Z [2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "period": "2024-10-01",
+2026-11-04T06:53:32.4985354Z [2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "period": "2024-10-01",
+2026-11-04T06:53:32.4985814Z [2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "train_last_period": "2024-09-01",
+2026-11-04T06:53:32.4986485Z [2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-09-01",
+2026-11-04T06:53:32.4987146Z [2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "actual": 2690.0,
+2026-11-04T06:53:32.4987561Z [2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "actual": 2690.0,
+2026-11-04T06:53:32.4988222Z [2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "model": 2625.6068713288564,
+2026-11-04T06:53:32.4988823Z [2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "model": 2625.6068713288564,
+2026-11-04T06:53:32.4989261Z [2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "naive": 2571.0,
+2026-11-04T06:53:32.4989817Z [2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "naive": 2571.0,
+2026-11-04T06:53:32.4990365Z [2026-11-04 06:53:32,497] {subprocess.py:106} INFO -       "training_rows": 284
+2026-11-04T06:53:32.4990800Z [2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -       "training_rows": 284
+2026-11-04T06:53:32.4991316Z [2026-11-04 06:53:32,497] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4991641Z [2026-11-04T06:53:32.497+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4992126Z [2026-11-04 06:53:32,498] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4992455Z [2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.4992967Z [2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "period": "2024-11-01",
+2026-11-04T06:53:32.4993665Z [2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "period": "2024-11-01",
+2026-11-04T06:53:32.4994269Z [2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "train_last_period": "2024-10-01",
+2026-11-04T06:53:32.4994756Z [2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-10-01",
+2026-11-04T06:53:32.4995345Z [2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "actual": 2651.0,
+2026-11-04T06:53:32.4995889Z [2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "actual": 2651.0,
+2026-11-04T06:53:32.4996311Z [2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "model": 2765.482957359632,
+2026-11-04T06:53:32.4996761Z [2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "model": 2765.482957359632,
+2026-11-04T06:53:32.4997198Z [2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "naive": 2690.0,
+2026-11-04T06:53:32.4997586Z [2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "naive": 2690.0,
+2026-11-04T06:53:32.4998173Z [2026-11-04 06:53:32,498] {subprocess.py:106} INFO -       "training_rows": 285
+2026-11-04T06:53:32.4998762Z [2026-11-04T06:53:32.498+0000] {subprocess.py:106} INFO -       "training_rows": 285
+2026-11-04T06:53:32.4999147Z [2026-11-04 06:53:32,499] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4999658Z [2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.4999989Z [2026-11-04 06:53:32,499] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5000459Z [2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5000832Z [2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "period": "2024-12-01",
+2026-11-04T06:53:32.5001402Z [2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "period": "2024-12-01",
+2026-11-04T06:53:32.5002009Z [2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "train_last_period": "2024-11-01",
+2026-11-04T06:53:32.5002500Z [2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-11-01",
+2026-11-04T06:53:32.5003082Z [2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "actual": 2648.0,
+2026-11-04T06:53:32.5003647Z [2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "actual": 2648.0,
+2026-11-04T06:53:32.5004305Z [2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "model": 2636.326668380734,
+2026-11-04T06:53:32.5004768Z [2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "model": 2636.326668380734,
+2026-11-04T06:53:32.5005332Z [2026-11-04 06:53:32,499] {subprocess.py:106} INFO -       "naive": 2651.0,
+2026-11-04T06:53:32.5005731Z [2026-11-04T06:53:32.499+0000] {subprocess.py:106} INFO -       "naive": 2651.0,
+2026-11-04T06:53:32.5006149Z [2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "training_rows": 286
+2026-11-04T06:53:32.5006576Z [2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "training_rows": 286
+2026-11-04T06:53:32.5006953Z [2026-11-04 06:53:32,500] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5007287Z [2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5007618Z [2026-11-04 06:53:32,500] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5008128Z [2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5008494Z [2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "period": "2025-01-01",
+2026-11-04T06:53:32.5009095Z [2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "period": "2025-01-01",
+2026-11-04T06:53:32.5009697Z [2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "train_last_period": "2024-12-01",
+2026-11-04T06:53:32.5010310Z [2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "train_last_period": "2024-12-01",
+2026-11-04T06:53:32.5010760Z [2026-11-04 06:53:32,500] {subprocess.py:106} INFO -       "actual": 2710.0,
+2026-11-04T06:53:32.5011329Z [2026-11-04T06:53:32.500+0000] {subprocess.py:106} INFO -       "actual": 2710.0,
+2026-11-04T06:53:32.5012892Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "model": 2679.3601003252356,
+2026-11-04T06:53:32.5013923Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "model": 2679.3601003252356,
+2026-11-04T06:53:32.5014596Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "naive": 2648.0,
+2026-11-04T06:53:32.5015173Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "naive": 2648.0,
+2026-11-04T06:53:32.5015782Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "training_rows": 287
+2026-11-04T06:53:32.5016314Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "training_rows": 287
+2026-11-04T06:53:32.5016953Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5017388Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5017954Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5018469Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5018945Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "period": "2025-02-01",
+2026-11-04T06:53:32.5019917Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "period": "2025-02-01",
+2026-11-04T06:53:32.5020454Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "train_last_period": "2025-01-01",
+2026-11-04T06:53:32.5022044Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-01-01",
+2026-11-04T06:53:32.5022568Z [2026-11-04 06:53:32,501] {subprocess.py:106} INFO -       "actual": 2895.0,
+2026-11-04T06:53:32.5023100Z [2026-11-04T06:53:32.501+0000] {subprocess.py:106} INFO -       "actual": 2895.0,
+2026-11-04T06:53:32.5023647Z [2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "model": 2731.2076207074574,
+2026-11-04T06:53:32.5024219Z [2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "model": 2731.2076207074574,
+2026-11-04T06:53:32.5024764Z [2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "naive": 2710.0,
+2026-11-04T06:53:32.5025302Z [2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "naive": 2710.0,
+2026-11-04T06:53:32.5025825Z [2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "training_rows": 288
+2026-11-04T06:53:32.5026466Z [2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "training_rows": 288
+2026-11-04T06:53:32.5026970Z [2026-11-04 06:53:32,502] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5027496Z [2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5028155Z [2026-11-04 06:53:32,502] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5028934Z [2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5029620Z [2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "period": "2025-03-01",
+2026-11-04T06:53:32.5030165Z [2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "period": "2025-03-01",
+2026-11-04T06:53:32.5030763Z [2026-11-04 06:53:32,502] {subprocess.py:106} INFO -       "train_last_period": "2025-02-01",
+2026-11-04T06:53:32.5031577Z [2026-11-04T06:53:32.502+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-02-01",
+2026-11-04T06:53:32.5032324Z [2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "actual": 2983.0,
+2026-11-04T06:53:32.5032848Z [2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "actual": 2983.0,
+2026-11-04T06:53:32.5033407Z [2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "model": 3022.0227743009605,
+2026-11-04T06:53:32.5034098Z [2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "model": 3022.0227743009605,
+2026-11-04T06:53:32.5034595Z [2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "naive": 2895.0,
+2026-11-04T06:53:32.5035728Z [2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "naive": 2895.0,
+2026-11-04T06:53:32.5036180Z [2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "training_rows": 289
+2026-11-04T06:53:32.5037642Z [2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "training_rows": 289
+2026-11-04T06:53:32.5038171Z [2026-11-04 06:53:32,503] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5039020Z [2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5039477Z [2026-11-04 06:53:32,503] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5040408Z [2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5040877Z [2026-11-04 06:53:32,503] {subprocess.py:106} INFO -       "period": "2025-04-01",
+2026-11-04T06:53:32.5041746Z [2026-11-04T06:53:32.503+0000] {subprocess.py:106} INFO -       "period": "2025-04-01",
+2026-11-04T06:53:32.5042258Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "train_last_period": "2025-03-01",
+2026-11-04T06:53:32.5043423Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-03-01",
+2026-11-04T06:53:32.5043984Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "actual": 3218.0,
+2026-11-04T06:53:32.5044522Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "actual": 3218.0,
+2026-11-04T06:53:32.5045071Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "model": 3000.9002522375963,
+2026-11-04T06:53:32.5045687Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "model": 3000.9002522375963,
+2026-11-04T06:53:32.5046220Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "naive": 2983.0,
+2026-11-04T06:53:32.5046749Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "naive": 2983.0,
+2026-11-04T06:53:32.5047192Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "training_rows": 290
+2026-11-04T06:53:32.5048176Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "training_rows": 290
+2026-11-04T06:53:32.5048800Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5049438Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5049834Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5050577Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5051077Z [2026-11-04 06:53:32,504] {subprocess.py:106} INFO -       "period": "2025-05-01",
+2026-11-04T06:53:32.5052108Z [2026-11-04T06:53:32.504+0000] {subprocess.py:106} INFO -       "period": "2025-05-01",
+2026-11-04T06:53:32.5052706Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "train_last_period": "2025-04-01",
+2026-11-04T06:53:32.5053323Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-04-01",
+2026-11-04T06:53:32.5053898Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "actual": 3309.0,
+2026-11-04T06:53:32.5054590Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "actual": 3309.0,
+2026-11-04T06:53:32.5055093Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "model": 3201.876235213168,
+2026-11-04T06:53:32.5055667Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "model": 3201.876235213168,
+2026-11-04T06:53:32.5056253Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "naive": 3218.0,
+2026-11-04T06:53:32.5056972Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "naive": 3218.0,
+2026-11-04T06:53:32.5057478Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "training_rows": 291
+2026-11-04T06:53:32.5058667Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "training_rows": 291
+2026-11-04T06:53:32.5059358Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5059809Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5060243Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5060696Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5061107Z [2026-11-04 06:53:32,505] {subprocess.py:106} INFO -       "period": "2025-06-01",
+2026-11-04T06:53:32.5062247Z [2026-11-04T06:53:32.505+0000] {subprocess.py:106} INFO -       "period": "2025-06-01",
+2026-11-04T06:53:32.5062965Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "train_last_period": "2025-05-01",
+2026-11-04T06:53:32.5063592Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-05-01",
+2026-11-04T06:53:32.5064161Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "actual": 3353.0,
+2026-11-04T06:53:32.5064923Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "actual": 3353.0,
+2026-11-04T06:53:32.5065429Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "model": 3327.0345947419137,
+2026-11-04T06:53:32.5066025Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "model": 3327.0345947419137,
+2026-11-04T06:53:32.5066622Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "naive": 3309.0,
+2026-11-04T06:53:32.5067440Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "naive": 3309.0,
+2026-11-04T06:53:32.5067986Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "training_rows": 292
+2026-11-04T06:53:32.5068805Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "training_rows": 292
+2026-11-04T06:53:32.5069259Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5069724Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5070183Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5070975Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5071431Z [2026-11-04 06:53:32,506] {subprocess.py:106} INFO -       "period": "2025-07-01",
+2026-11-04T06:53:32.5072058Z [2026-11-04T06:53:32.506+0000] {subprocess.py:106} INFO -       "period": "2025-07-01",
+2026-11-04T06:53:32.5073467Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "train_last_period": "2025-06-01",
+2026-11-04T06:53:32.5074003Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-06-01",
+2026-11-04T06:53:32.5074572Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "actual": 3340.0,
+2026-11-04T06:53:32.5075104Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "actual": 3340.0,
+2026-11-04T06:53:32.5075646Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "model": 3436.586072262412,
+2026-11-04T06:53:32.5076340Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "model": 3436.586072262412,
+2026-11-04T06:53:32.5076875Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "naive": 3353.0,
+2026-11-04T06:53:32.5077391Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "naive": 3353.0,
+2026-11-04T06:53:32.5082399Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "training_rows": 293
+2026-11-04T06:53:32.5083001Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "training_rows": 293
+2026-11-04T06:53:32.5083520Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5083967Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5084418Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5084885Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5085379Z [2026-11-04 06:53:32,507] {subprocess.py:106} INFO -       "period": "2025-08-01",
+2026-11-04T06:53:32.5085927Z [2026-11-04T06:53:32.507+0000] {subprocess.py:106} INFO -       "period": "2025-08-01",
+2026-11-04T06:53:32.5086503Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "train_last_period": "2025-07-01",
+2026-11-04T06:53:32.5087124Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-07-01",
+2026-11-04T06:53:32.5087677Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "actual": 3368.0,
+2026-11-04T06:53:32.5088281Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "actual": 3368.0,
+2026-11-04T06:53:32.5088824Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "model": 3396.96752460998,
+2026-11-04T06:53:32.5089491Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "model": 3396.96752460998,
+2026-11-04T06:53:32.5090053Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "naive": 3340.0,
+2026-11-04T06:53:32.5090589Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "naive": 3340.0,
+2026-11-04T06:53:32.5091058Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "training_rows": 294
+2026-11-04T06:53:32.5091510Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "training_rows": 294
+2026-11-04T06:53:32.5092007Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5092473Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5092891Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5093344Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5093818Z [2026-11-04 06:53:32,508] {subprocess.py:106} INFO -       "period": "2025-09-01",
+2026-11-04T06:53:32.5094372Z [2026-11-04T06:53:32.508+0000] {subprocess.py:106} INFO -       "period": "2025-09-01",
+2026-11-04T06:53:32.5094944Z [2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "train_last_period": "2025-08-01",
+2026-11-04T06:53:32.5095561Z [2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-08-01",
+2026-11-04T06:53:32.5096118Z [2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "actual": 3668.0,
+2026-11-04T06:53:32.5096630Z [2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "actual": 3668.0,
+2026-11-04T06:53:32.5097176Z [2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "model": 3476.676773980643,
+2026-11-04T06:53:32.5097671Z [2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "model": 3476.676773980643,
+2026-11-04T06:53:32.5098253Z [2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "naive": 3368.0,
+2026-11-04T06:53:32.5098768Z [2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "naive": 3368.0,
+2026-11-04T06:53:32.5099303Z [2026-11-04 06:53:32,509] {subprocess.py:106} INFO -       "training_rows": 295
+2026-11-04T06:53:32.5099898Z [2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -       "training_rows": 295
+2026-11-04T06:53:32.5100350Z [2026-11-04 06:53:32,509] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5100966Z [2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5101402Z [2026-11-04 06:53:32,509] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5101767Z [2026-11-04T06:53:32.509+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5102254Z [2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "period": "2025-10-01",
+2026-11-04T06:53:32.5102892Z [2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "period": "2025-10-01",
+2026-11-04T06:53:32.5103474Z [2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "train_last_period": "2025-09-01",
+2026-11-04T06:53:32.5104306Z [2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-09-01",
+2026-11-04T06:53:32.5104903Z [2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "actual": 4058.0,
+2026-11-04T06:53:32.5105787Z [2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "actual": 4058.0,
+2026-11-04T06:53:32.5106325Z [2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "model": 3815.472489357493,
+2026-11-04T06:53:32.5107048Z [2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "model": 3815.472489357493,
+2026-11-04T06:53:32.5107573Z [2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "naive": 3668.0,
+2026-11-04T06:53:32.5108394Z [2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "naive": 3668.0,
+2026-11-04T06:53:32.5108871Z [2026-11-04 06:53:32,510] {subprocess.py:106} INFO -       "training_rows": 296
+2026-11-04T06:53:32.5109742Z [2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -       "training_rows": 296
+2026-11-04T06:53:32.5110242Z [2026-11-04 06:53:32,510] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5111122Z [2026-11-04T06:53:32.510+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5111601Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5112319Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5112783Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "period": "2025-11-01",
+2026-11-04T06:53:32.5113950Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "period": "2025-11-01",
+2026-11-04T06:53:32.5114472Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "train_last_period": "2025-10-01",
+2026-11-04T06:53:32.5115520Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-10-01",
+2026-11-04T06:53:32.5116081Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "actual": 4087.0,
+2026-11-04T06:53:32.5116607Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "actual": 4087.0,
+2026-11-04T06:53:32.5117262Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "model": 3980.8294984164304,
+2026-11-04T06:53:32.5117883Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "model": 3980.8294984164304,
+2026-11-04T06:53:32.5118908Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "naive": 4058.0,
+2026-11-04T06:53:32.5119338Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "naive": 4058.0,
+2026-11-04T06:53:32.5119869Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -       "training_rows": 297
+2026-11-04T06:53:32.5120476Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -       "training_rows": 297
+2026-11-04T06:53:32.5120941Z [2026-11-04 06:53:32,511] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5122072Z [2026-11-04T06:53:32.511+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5122485Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5123129Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5123870Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "period": "2025-12-01",
+2026-11-04T06:53:32.5124602Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "period": "2025-12-01",
+2026-11-04T06:53:32.5125282Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "train_last_period": "2025-11-01",
+2026-11-04T06:53:32.5125898Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-11-01",
+2026-11-04T06:53:32.5126465Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "actual": 4309.0,
+2026-11-04T06:53:32.5127631Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "actual": 4309.0,
+2026-11-04T06:53:32.5128193Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "model": 4006.8567991578234,
+2026-11-04T06:53:32.5128764Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "model": 4006.8567991578234,
+2026-11-04T06:53:32.5129310Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "naive": 4087.0,
+2026-11-04T06:53:32.5129840Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "naive": 4087.0,
+2026-11-04T06:53:32.5130365Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -       "training_rows": 298
+2026-11-04T06:53:32.5130908Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -       "training_rows": 298
+2026-11-04T06:53:32.5131411Z [2026-11-04 06:53:32,512] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5132310Z [2026-11-04T06:53:32.512+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5132710Z [2026-11-04 06:53:32,513] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5133366Z [2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5133783Z [2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "period": "2026-01-01",
+2026-11-04T06:53:32.5134654Z [2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "period": "2026-01-01",
+2026-11-04T06:53:32.5135180Z [2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "train_last_period": "2025-12-01",
+2026-11-04T06:53:32.5136064Z [2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "train_last_period": "2025-12-01",
+2026-11-04T06:53:32.5136642Z [2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "actual": 4753.0,
+2026-11-04T06:53:32.5137493Z [2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "actual": 4753.0,
+2026-11-04T06:53:32.5138086Z [2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "model": 4207.433507005148,
+2026-11-04T06:53:32.5138661Z [2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "model": 4207.433507005148,
+2026-11-04T06:53:32.5139378Z [2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "naive": 4309.0,
+2026-11-04T06:53:32.5139904Z [2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "naive": 4309.0,
+2026-11-04T06:53:32.5140449Z [2026-11-04 06:53:32,513] {subprocess.py:106} INFO -       "training_rows": 299
+2026-11-04T06:53:32.5141003Z [2026-11-04T06:53:32.513+0000] {subprocess.py:106} INFO -       "training_rows": 299
+2026-11-04T06:53:32.5141468Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5142349Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5142767Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5143905Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5144367Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "period": "2026-02-01",
+2026-11-04T06:53:32.5145048Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "period": "2026-02-01",
+2026-11-04T06:53:32.5145811Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "train_last_period": "2026-01-01",
+2026-11-04T06:53:32.5146457Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-01-01",
+2026-11-04T06:53:32.5147024Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "actual": 5020.0,
+2026-11-04T06:53:32.5147556Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "actual": 5020.0,
+2026-11-04T06:53:32.5148137Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "model": 4743.121963580297,
+2026-11-04T06:53:32.5148791Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "model": 4743.121963580297,
+2026-11-04T06:53:32.5149968Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "naive": 4753.0,
+2026-11-04T06:53:32.5150450Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "naive": 4753.0,
+2026-11-04T06:53:32.5150972Z [2026-11-04 06:53:32,514] {subprocess.py:106} INFO -       "training_rows": 300
+2026-11-04T06:53:32.5151643Z [2026-11-04T06:53:32.514+0000] {subprocess.py:106} INFO -       "training_rows": 300
+2026-11-04T06:53:32.5152130Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5152589Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5153517Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5153927Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5154418Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "period": "2026-03-01",
+2026-11-04T06:53:32.5154976Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "period": "2026-03-01",
+2026-11-04T06:53:32.5155582Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "train_last_period": "2026-02-01",
+2026-11-04T06:53:32.5156392Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-02-01",
+2026-11-04T06:53:32.5156976Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "actual": 4856.0,
+2026-11-04T06:53:32.5157549Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "actual": 4856.0,
+2026-11-04T06:53:32.5158667Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "model": 5026.651477905706,
+2026-11-04T06:53:32.5159475Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "model": 5026.651477905706,
+2026-11-04T06:53:32.5160078Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "naive": 5020.0,
+2026-11-04T06:53:32.5160798Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "naive": 5020.0,
+2026-11-04T06:53:32.5161264Z [2026-11-04 06:53:32,515] {subprocess.py:106} INFO -       "training_rows": 301
+2026-11-04T06:53:32.5162286Z [2026-11-04T06:53:32.515+0000] {subprocess.py:106} INFO -       "training_rows": 301
+2026-11-04T06:53:32.5162778Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5163374Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5163810Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5164619Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5165072Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "period": "2026-04-01",
+2026-11-04T06:53:32.5165782Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "period": "2026-04-01",
+2026-11-04T06:53:32.5166318Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "train_last_period": "2026-03-01",
+2026-11-04T06:53:32.5167175Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-03-01",
+2026-11-04T06:53:32.5167969Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "actual": 4721.0,
+2026-11-04T06:53:32.5168585Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "actual": 4721.0,
+2026-11-04T06:53:32.5169128Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "model": 4889.045763161067,
+2026-11-04T06:53:32.5169701Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "model": 4889.045763161067,
+2026-11-04T06:53:32.5170254Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "naive": 4856.0,
+2026-11-04T06:53:32.5170782Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "naive": 4856.0,
+2026-11-04T06:53:32.5171328Z [2026-11-04 06:53:32,516] {subprocess.py:106} INFO -       "training_rows": 302
+2026-11-04T06:53:32.5172039Z [2026-11-04T06:53:32.516+0000] {subprocess.py:106} INFO -       "training_rows": 302
+2026-11-04T06:53:32.5172519Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5173172Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5173730Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5174325Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5174708Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "period": "2026-05-01",
+2026-11-04T06:53:32.5175488Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "period": "2026-05-01",
+2026-11-04T06:53:32.5176045Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "train_last_period": "2026-04-01",
+2026-11-04T06:53:32.5177490Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-04-01",
+2026-11-04T06:53:32.5178130Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "actual": 4587.0,
+2026-11-04T06:53:32.5178660Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "actual": 4587.0,
+2026-11-04T06:53:32.5179202Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "model": 4667.877911945785,
+2026-11-04T06:53:32.5179759Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "model": 4667.877911945785,
+2026-11-04T06:53:32.5180298Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "naive": 4721.0,
+2026-11-04T06:53:32.5180819Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "naive": 4721.0,
+2026-11-04T06:53:32.5181662Z [2026-11-04 06:53:32,517] {subprocess.py:106} INFO -       "training_rows": 303
+2026-11-04T06:53:32.5182194Z [2026-11-04T06:53:32.517+0000] {subprocess.py:106} INFO -       "training_rows": 303
+2026-11-04T06:53:32.5182701Z [2026-11-04 06:53:32,518] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5183518Z [2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5184071Z [2026-11-04 06:53:32,518] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5184690Z [2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5185396Z [2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "period": "2026-06-01",
+2026-11-04T06:53:32.5185940Z [2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "period": "2026-06-01",
+2026-11-04T06:53:32.5186506Z [2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "train_last_period": "2026-05-01",
+2026-11-04T06:53:32.5187164Z [2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-05-01",
+2026-11-04T06:53:32.5187635Z [2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "actual": 4228.0,
+2026-11-04T06:53:32.5188568Z [2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "actual": 4228.0,
+2026-11-04T06:53:32.5189118Z [2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "model": 4667.778771362524,
+2026-11-04T06:53:32.5190105Z [2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "model": 4667.778771362524,
+2026-11-04T06:53:32.5190646Z [2026-11-04 06:53:32,518] {subprocess.py:106} INFO -       "naive": 4587.0,
+2026-11-04T06:53:32.5191157Z [2026-11-04T06:53:32.518+0000] {subprocess.py:106} INFO -       "naive": 4587.0,
+2026-11-04T06:53:32.5191693Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "training_rows": 304
+2026-11-04T06:53:32.5192596Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "training_rows": 304
+2026-11-04T06:53:32.5193050Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5194118Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5194551Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5195001Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5195628Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "period": "2026-07-01",
+2026-11-04T06:53:32.5196671Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "period": "2026-07-01",
+2026-11-04T06:53:32.5197336Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "train_last_period": "2026-06-01",
+2026-11-04T06:53:32.5197988Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-06-01",
+2026-11-04T06:53:32.5198718Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "actual": 4073.0,
+2026-11-04T06:53:32.5199624Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "actual": 4073.0,
+2026-11-04T06:53:32.5200331Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "model": 4264.1447612046495,
+2026-11-04T06:53:32.5200828Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "model": 4264.1447612046495,
+2026-11-04T06:53:32.5201369Z [2026-11-04 06:53:32,519] {subprocess.py:106} INFO -       "naive": 4228.0,
+2026-11-04T06:53:32.5201887Z [2026-11-04T06:53:32.519+0000] {subprocess.py:106} INFO -       "naive": 4228.0,
+2026-11-04T06:53:32.5202409Z [2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "training_rows": 305
+2026-11-04T06:53:32.5203368Z [2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "training_rows": 305
+2026-11-04T06:53:32.5203844Z [2026-11-04 06:53:32,520] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5204366Z [2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5204772Z [2026-11-04 06:53:32,520] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5205630Z [2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5206076Z [2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "period": "2026-08-01",
+2026-11-04T06:53:32.5207104Z [2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "period": "2026-08-01",
+2026-11-04T06:53:32.5207669Z [2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "train_last_period": "2026-07-01",
+2026-11-04T06:53:32.5208468Z [2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-07-01",
+2026-11-04T06:53:32.5209158Z [2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "actual": 4411.0,
+2026-11-04T06:53:32.5209958Z [2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "actual": 4411.0,
+2026-11-04T06:53:32.5210972Z [2026-11-04 06:53:32,520] {subprocess.py:106} INFO -       "model": 4073.871673536891,
+2026-11-04T06:53:32.5211606Z [2026-11-04T06:53:32.520+0000] {subprocess.py:106} INFO -       "model": 4073.871673536891,
+2026-11-04T06:53:32.5212150Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "naive": 4073.0,
+2026-11-04T06:53:32.5212729Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "naive": 4073.0,
+2026-11-04T06:53:32.5213248Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "training_rows": 306
+2026-11-04T06:53:32.5214160Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "training_rows": 306
+2026-11-04T06:53:32.5214616Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5215085Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5215601Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5216426Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5216995Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "period": "2026-09-01",
+2026-11-04T06:53:32.5217956Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "period": "2026-09-01",
+2026-11-04T06:53:32.5218534Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "train_last_period": "2026-08-01",
+2026-11-04T06:53:32.5219412Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-08-01",
+2026-11-04T06:53:32.5219862Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "actual": 4319.0,
+2026-11-04T06:53:32.5220824Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "actual": 4319.0,
+2026-11-04T06:53:32.5221343Z [2026-11-04 06:53:32,521] {subprocess.py:106} INFO -       "model": 4469.426617933303,
+2026-11-04T06:53:32.5221914Z [2026-11-04T06:53:32.521+0000] {subprocess.py:106} INFO -       "model": 4469.426617933303,
+2026-11-04T06:53:32.5222661Z [2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "naive": 4411.0,
+2026-11-04T06:53:32.5223586Z [2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "naive": 4411.0,
+2026-11-04T06:53:32.5224069Z [2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "training_rows": 307
+2026-11-04T06:53:32.5225021Z [2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "training_rows": 307
+2026-11-04T06:53:32.5225483Z [2026-11-04 06:53:32,522] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5225988Z [2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -     },
+2026-11-04T06:53:32.5226403Z [2026-11-04 06:53:32,522] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5227195Z [2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -     {
+2026-11-04T06:53:32.5227656Z [2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "period": "2026-10-01",
+2026-11-04T06:53:32.5228466Z [2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "period": "2026-10-01",
+2026-11-04T06:53:32.5228967Z [2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "train_last_period": "2026-09-01",
+2026-11-04T06:53:32.5230151Z [2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "train_last_period": "2026-09-01",
+2026-11-04T06:53:32.5230666Z [2026-11-04 06:53:32,522] {subprocess.py:106} INFO -       "actual": 4105.0,
+2026-11-04T06:53:32.5231290Z [2026-11-04T06:53:32.522+0000] {subprocess.py:106} INFO -       "actual": 4105.0,
+2026-11-04T06:53:32.5231707Z [2026-11-04 06:53:32,523] {subprocess.py:106} INFO -       "model": 4292.6511801302995,
+2026-11-04T06:53:32.5232895Z [2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -       "model": 4292.6511801302995,
+2026-11-04T06:53:32.5233441Z [2026-11-04 06:53:32,523] {subprocess.py:106} INFO -       "naive": 4319.0,
+2026-11-04T06:53:32.5234370Z [2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -       "naive": 4319.0,
+2026-11-04T06:53:32.5234896Z [2026-11-04 06:53:32,523] {subprocess.py:106} INFO -       "training_rows": 308
+2026-11-04T06:53:32.5235442Z [2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -       "training_rows": 308
+2026-11-04T06:53:32.5236362Z [2026-11-04 06:53:32,523] {subprocess.py:106} INFO -     }
+2026-11-04T06:53:32.5236819Z [2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -     }
+2026-11-04T06:53:32.5237258Z [2026-11-04 06:53:32,523] {subprocess.py:106} INFO -   ],
+2026-11-04T06:53:32.5237696Z [2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -   ],
+2026-11-04T06:53:32.5238668Z [2026-11-04 06:53:32,523] {subprocess.py:106} INFO -   "forecast": null
+2026-11-04T06:53:32.5239768Z [2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO -   "forecast": null
+2026-11-04T06:53:32.5240234Z [2026-11-04 06:53:32,523] {subprocess.py:106} INFO - }
+2026-11-04T06:53:32.5241363Z [2026-11-04T06:53:32.523+0000] {subprocess.py:106} INFO - }
+2026-11-04T06:53:32.6072537Z [2026-11-04 06:53:32,606] {subprocess.py:110} INFO - Command exited with return code 0
+2026-11-04T06:53:32.6073442Z [2026-11-04T06:53:32.606+0000] {subprocess.py:110} INFO - Command exited with return code 0
+2026-11-04T06:53:32.6175509Z [2026-11-04T06:53:32.617+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+2026-11-04T06:53:32.6178113Z [2026-11-04T06:53:32.617+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=gold_analytics_pipeline, task_id=evaluate_if_sufficient_history, run_id=manual__2026-11-04T00:00:00+00:00, execution_date=20261104T000000, start_date=, end_date=20261104T065332
+2026-11-04T06:53:32.6239199Z [2026-11-04T06:53:32.623+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=evaluate_if_sufficient_history map_index=-1
+2026-11-04T06:53:32.6304439Z [2026-11-04T06:53:32.630+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=export_snapshot map_index=-1
+2026-11-04T06:53:32.6305997Z [2026-11-04T06:53:32.630+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: gold_analytics_pipeline.export_snapshot manual__2026-11-04T00:00:00+00:00 [scheduled]>
+2026-11-04T06:53:32.6410481Z [2026-11-04 06:53:32,640] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='export_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+2026-11-04T06:53:32.6412250Z [2026-11-04T06:53:32.640+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='gold_analytics_pipeline' AIRFLOW_CTX_TASK_ID='export_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-11-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-04T00:00:00+00:00'
+2026-11-04T06:53:32.6413439Z [2026-11-04T06:53:32.641+0000] {taskinstance.py:732} INFO - ::endgroup::
+2026-11-04T06:53:32.6415837Z [2026-11-04 06:53:32,641] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+2026-11-04T06:53:32.6417184Z [2026-11-04T06:53:32.641+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+2026-11-04T06:53:32.6419598Z [2026-11-04 06:53:32,641] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading export']
+2026-11-04T06:53:32.6420951Z [2026-11-04T06:53:32.641+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd "$GOLD_PROJECT_DIR" && "$GOLD_PIPELINE_PYTHON" -m goldtrading export']
+2026-11-04T06:53:32.6524946Z [2026-11-04 06:53:32,652] {subprocess.py:99} INFO - Output:
+2026-11-04T06:53:32.6528068Z [2026-11-04T06:53:32.652+0000] {subprocess.py:99} INFO - Output:
+2026-11-04T06:53:33.0402061Z [2026-11-04 06:53:33,038] {subprocess.py:106} INFO - {
+2026-11-04T06:53:33.0402499Z [2026-11-04T06:53:33.038+0000] {subprocess.py:106} INFO - {
+2026-11-04T06:53:33.0402849Z [2026-11-04 06:53:33,038] {subprocess.py:106} INFO -   "quality": {
+2026-11-04T06:53:33.0403335Z [2026-11-04T06:53:33.038+0000] {subprocess.py:106} INFO -   "quality": {
+2026-11-04T06:53:33.0403593Z [2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "duplicate_keys": 0,
+2026-11-04T06:53:33.0403867Z [2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "duplicate_keys": 0,
+2026-11-04T06:53:33.0404143Z [2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "invalid_prices": 0,
+2026-11-04T06:53:33.0404410Z [2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "invalid_prices": 0,
+2026-11-04T06:53:33.0404691Z [2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "rows": 2414,
+2026-11-04T06:53:33.0404939Z [2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "rows": 2414,
+2026-11-04T06:53:33.0405236Z [2026-11-04 06:53:33,039] {subprocess.py:106} INFO -     "monthly_average_and_spot_are_separate": true
+2026-11-04T06:53:33.0405586Z [2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -     "monthly_average_and_spot_are_separate": true
+2026-11-04T06:53:33.0405873Z [2026-11-04 06:53:33,039] {subprocess.py:106} INFO -   }
+2026-11-04T06:53:33.0406081Z [2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO -   }
+2026-11-04T06:53:33.0406288Z [2026-11-04 06:53:33,039] {subprocess.py:106} INFO - }
+2026-11-04T06:53:33.0406489Z [2026-11-04T06:53:33.039+0000] {subprocess.py:106} INFO - }
+2026-11-04T06:53:33.0919433Z [2026-11-04 06:53:33,091] {subprocess.py:110} INFO - Command exited with return code 0
+2026-11-04T06:53:33.0920471Z [2026-11-04T06:53:33.091+0000] {subprocess.py:110} INFO - Command exited with return code 0
+2026-11-04T06:53:33.1001032Z [2026-11-04T06:53:33.099+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+2026-11-04T06:53:33.1003607Z [2026-11-04T06:53:33.100+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=gold_analytics_pipeline, task_id=export_snapshot, run_id=manual__2026-11-04T00:00:00+00:00, execution_date=20261104T000000, start_date=, end_date=20261104T065333
+2026-11-04T06:53:33.1068685Z [2026-11-04T06:53:33.106+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=export_snapshot map_index=-1
+2026-11-04T06:53:33.1096168Z [2026-11-04T06:53:33.108+0000] {dagrun.py:854} INFO - Marking run <DagRun gold_analytics_pipeline @ 2026-11-04 00:00:00+00:00: manual__2026-11-04T00:00:00+00:00, state:running, queued_at: None. externally triggered: False> successful
+2026-11-04T06:53:33.1099587Z [2026-11-04T06:53:33.109+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=gold_analytics_pipeline, execution_date=2026-11-04 00:00:00+00:00, run_id=manual__2026-11-04T00:00:00+00:00, run_start_date=2026-11-04 00:00:00+00:00, run_end_date=2026-11-04 06:53:33.109412+00:00, run_duration=24813.109412, state=success, external_trigger=False, run_type=manual, data_interval_start=2026-11-04 00:00:00+00:00, data_interval_end=2026-11-04 00:00:00+00:00, dag_hash=None
+2026-11-04T06:53:34.3573374Z ##[group]Run docker compose logs dashboard > evidence/runtime/dashboard-container.txt
+2026-11-04T06:53:34.3573771Z [36;1mdocker compose logs dashboard > evidence/runtime/dashboard-container.txt[0m
+2026-11-04T06:53:34.3574064Z [36;1mdocker compose ps -a > evidence/runtime/container-state.txt[0m
+2026-11-04T06:53:34.3618185Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T06:53:34.3618384Z env:
+2026-11-04T06:53:34.3618527Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:53:34.3618697Z ##[endgroup]
+2026-11-04T06:53:34.5403828Z ##[group]Run python - <<'PY'
+2026-11-04T06:53:34.5404040Z [36;1mpython - <<'PY'[0m
+2026-11-04T06:53:34.5404183Z [36;1mfrom pathlib import Path[0m
+2026-11-04T06:53:34.5404331Z [36;1mimport json[0m
+2026-11-04T06:53:34.5404506Z [36;1mt=Path('evidence/runtime/airflow-dag.txt').read_text()[0m
+2026-11-04T06:53:34.5404806Z [36;1mfor task in ['extract_validate_load','evaluate_if_sufficient_history','export_snapshot']:[0m
+2026-11-04T06:53:34.5405064Z [36;1m    assert task in t, task[0m
+2026-11-04T06:53:34.5405301Z [36;1massert 'Marking run' in t and 'successful' in t.lower(), 'DAG success not observed'[0m
+2026-11-04T06:53:34.5405759Z [36;1md=json.loads(Path('evidence/runtime/api-snapshot.json').read_text())[0m
+2026-11-04T06:53:34.5405988Z [36;1massert d['quality']['rows']>=2406[0m
+2026-11-04T06:53:34.5406186Z [36;1massert d['pipeline']['status'] in ['success','partial'][0m
+2026-11-04T06:53:34.5406486Z [36;1mprint('Docker / PostgreSQL / API / Airflow DAG integration assertions passed')[0m
+2026-11-04T06:53:34.5406715Z [36;1mPY[0m
+2026-11-04T06:53:34.5450079Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T06:53:34.5450277Z env:
+2026-11-04T06:53:34.5450415Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:53:34.5450589Z ##[endgroup]
+2026-11-04T06:53:34.5715518Z Docker / PostgreSQL / API / Airflow DAG integration assertions passed
+2026-11-04T06:53:34.5823742Z ##[group]Run actions/upload-artifact@v4
+2026-11-04T06:53:34.5823907Z with:
+2026-11-04T06:53:34.5824030Z   name: actual-runtime-evidence
+2026-11-04T06:53:34.5824176Z   path: evidence/runtime/
+2026-11-04T06:53:34.5824324Z   if-no-files-found: warn
+2026-11-04T06:53:34.5824453Z   compression-level: 6
+2026-11-04T06:53:34.5824581Z   overwrite: false
+2026-11-04T06:53:34.5824705Z   include-hidden-files: false
+2026-11-04T06:53:34.5824838Z env:
+2026-11-04T06:53:34.5824970Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:53:34.5825134Z ##[endgroup]
+2026-11-04T06:53:34.6966562Z (node:4465) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T06:53:34.6967098Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T06:53:34.7030360Z With the provided path, there will be 8 files uploaded
+2026-11-04T06:53:34.7030836Z Artifact name is valid!
+2026-11-04T06:53:34.7031170Z Root directory input is valid!
+2026-11-04T06:53:34.9859559Z Beginning upload of artifact content to blob storage
+2026-11-04T06:53:35.0124362Z (node:4465) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-04T06:53:35.2158902Z Uploaded bytes 26574
+2026-11-04T06:53:35.2614404Z Finished uploading artifact content to blob storage!
+2026-11-04T06:53:35.2615614Z SHA256 digest of uploaded artifact zip is 1c5dbaaefc57e4b03a8a7752ae4426d831b5d755ba345d6644d59fa6af160da8
+2026-11-04T06:53:35.2616105Z Finalizing artifact upload
+2026-11-04T06:53:35.6785881Z Artifact actual-runtime-evidence.zip successfully finalized. Artifact ID 13301644425
+2026-11-04T06:53:35.6786445Z Artifact actual-runtime-evidence has been successfully uploaded! Final size is 26574 bytes. Artifact ID is 13301644425
+2026-11-04T06:53:35.6792147Z Artifact download URL: https://github.com/intasan/gold-trading/actions/runs/41788294519/artifacts/13301644425
+2026-11-04T06:53:35.6932766Z ##[group]Run docker compose -f docker-compose.yml -f docker-compose.integration.yml down -v
+2026-11-04T06:53:35.6933152Z [36;1mdocker compose -f docker-compose.yml -f docker-compose.integration.yml down -v[0m
+2026-11-04T06:53:35.6974769Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T06:53:35.6974962Z env:
+2026-11-04T06:53:35.6975097Z   POSTGRES_PASSWORD: integration_ephemeral_gold
+2026-11-04T06:53:35.6975266Z ##[endgroup]
+2026-11-04T06:53:35.7529096Z  Container gold-trading-dashboard-1 Stopping 
+2026-11-04T06:53:45.8595547Z  Container gold-trading-dashboard-1 Stopped 
+2026-11-04T06:53:45.8595962Z  Container gold-trading-dashboard-1 Removing 
+2026-11-04T06:53:45.8673830Z  Container gold-trading-dashboard-1 Removed 
+2026-11-04T06:53:45.8674218Z  Container gold-trading-postgres-1 Stopping 
+2026-11-04T06:53:45.9522357Z  Container gold-trading-postgres-1 Stopped 
+2026-11-04T06:53:45.9522977Z  Container gold-trading-postgres-1 Removing 
+2026-11-04T06:53:45.9598382Z  Container gold-trading-postgres-1 Removed 
+2026-11-04T06:53:45.9603593Z  Network gold-trading_default Removing 
+2026-11-04T06:53:45.9605651Z  Volume gold-trading_pgdata Removing 
+2026-11-04T06:53:45.9605945Z  Volume gold-trading_pipeline-data Removing 
+2026-11-04T06:53:46.0070792Z  Network gold-trading_default Removed 
+2026-11-04T06:53:46.1131957Z  Volume gold-trading_pgdata Removed 
+2026-11-04T06:53:46.1166464Z  Volume gold-trading_pipeline-data Removed 
+2026-11-04T06:53:46.1276079Z Post job cleanup.
+2026-11-04T06:53:46.1858644Z [command]/usr/bin/git version
+2026-11-04T06:53:46.1894641Z git version 2.56.0
+2026-11-04T06:53:46.1920419Z Temporarily overriding HOME='/home/runner/work/_temp/2f3a48c3-791e-4f43-86ef-dfbfb24f23bb' before making global git config changes
+2026-11-04T06:53:46.1921161Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T06:53:46.1923875Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gold-trading/gold-trading
+2026-11-04T06:53:46.1959181Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T06:53:46.1995292Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T06:53:46.2268943Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T06:53:46.2307666Z http.https://github.com/.extraheader
+2026-11-04T06:53:46.2316720Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-04T06:53:46.2351064Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T06:53:46.2613691Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T06:53:46.2646102Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T06:53:46.3021288Z Cleaning up orphan processes
+2026-11-04T06:53:46.3320640Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

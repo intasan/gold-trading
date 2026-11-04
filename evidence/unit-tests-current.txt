@@ -1,0 +1,17 @@
+test_features_never_use_same_period_target (test_pipeline.ModelTests.test_features_never_use_same_period_target) ... ok
+test_gaps_disable_evaluation (test_pipeline.ModelTests.test_gaps_disable_evaluation) ... ok
+test_insufficient_data_does_not_train (test_pipeline.ModelTests.test_insufficient_data_does_not_train) ... ok
+test_walk_forward_alignment_and_metrics_on_real_history (test_pipeline.ModelTests.test_walk_forward_alignment_and_metrics_on_real_history) ... ok
+test_all_sources_fail_is_visible (test_pipeline.PipelineTests.test_all_sources_fail_is_visible) ... ok
+test_duplicate_batch_rejected (test_pipeline.PipelineTests.test_duplicate_batch_rejected) ... ok
+test_export_matches_sql_rows_and_series_boundaries (test_pipeline.PipelineTests.test_export_matches_sql_rows_and_series_boundaries) ... ok
+test_idempotence_and_persistence (test_pipeline.PipelineTests.test_idempotence_and_persistence) ... ok
+test_invalid_batch_is_atomic (test_pipeline.PipelineTests.test_invalid_batch_is_atomic) ... ok
+test_real_snapshot_rows_validate (test_pipeline.PipelineTests.test_real_snapshot_rows_validate) ... ok
+test_source_outage_preserves_prior_records (test_pipeline.PipelineTests.test_source_outage_preserves_prior_records) ... ok
+test_units_and_future_dates_rejected (test_pipeline.PipelineTests.test_units_and_future_dates_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 3.781s
+
+OK
