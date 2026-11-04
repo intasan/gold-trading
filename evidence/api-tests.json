@@ -1,0 +1,46 @@
+{
+  "scope": "Actual Python HTTP server with real recorded observations replayed in a temporary SQLite DB; no provider network call in this test",
+  "rows": 2406,
+  "checks": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/api/snapshot",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/.env",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/data/gold.db",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/sql/schema.sql",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/api/unknown",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/web/../data/gold.db",
+      "status": 400,
+      "expected": 400
+    }
+  ]
+}

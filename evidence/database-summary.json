@@ -1,0 +1,66 @@
+{
+  "coverage": [
+    {
+      "source": "frankfurter",
+      "series": "USDTHB",
+      "frequency": "daily",
+      "unit": "THB per USD (reference rate)",
+      "rows": 1,
+      "first": "2026-11-03",
+      "last": "2026-11-03"
+    },
+    {
+      "source": "gold_api",
+      "series": "XAG",
+      "frequency": "quote",
+      "unit": "USD/troy oz (spot quote)",
+      "rows": 1,
+      "first": "2026-11-03T17:10:26Z",
+      "last": "2026-11-03T17:10:26Z"
+    },
+    {
+      "source": "gold_api",
+      "series": "XAU",
+      "frequency": "quote",
+      "unit": "USD/troy oz (spot quote)",
+      "rows": 1,
+      "first": "2026-11-03T17:10:27Z",
+      "last": "2026-11-03T17:10:27Z"
+    },
+    {
+      "source": "worldbank",
+      "series": "GOLD",
+      "frequency": "monthly",
+      "unit": "USD/troy oz (monthly average)",
+      "rows": 801,
+      "first": "1960-01-01",
+      "last": "2026-09-01"
+    },
+    {
+      "source": "worldbank",
+      "series": "PLATINUM",
+      "frequency": "monthly",
+      "unit": "USD/troy oz (monthly average)",
+      "rows": 801,
+      "first": "1960-01-01",
+      "last": "2026-09-01"
+    },
+    {
+      "source": "worldbank",
+      "series": "SILVER",
+      "frequency": "monthly",
+      "unit": "USD/troy oz (monthly average)",
+      "rows": 801,
+      "first": "1960-01-01",
+      "last": "2026-09-01"
+    }
+  ],
+  "runs": [
+    {
+      "id": "9553d1df-1218-4377-a2a3-0c15589f9727",
+      "status": "success",
+      "started_at": "2026-11-03T17:10:24Z",
+      "finished_at": "2026-11-03T17:10:30Z"
+    }
+  ]
+}

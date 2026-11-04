@@ -1,0 +1,82 @@
+{
+  "validation": "actual collected/exported rows only; replay in isolated temporary SQLite database",
+  "quality": {
+    "duplicate_keys": 0,
+    "invalid_prices": 0,
+    "rows": 2406,
+    "monthly_average_and_spot_are_separate": true
+  },
+  "csv_rows_equal_database": true,
+  "first_load_inserted": 2406,
+  "second_load_inserted": 0,
+  "second_load_existing": 2406,
+  "persistence_after_reopen": true,
+  "coverage": [
+    {
+      "source": "frankfurter",
+      "series": "USDTHB",
+      "frequency": "daily",
+      "unit": "THB per USD (reference rate)",
+      "rows": 1,
+      "first_period": "2026-11-03",
+      "last_period": "2026-11-03"
+    },
+    {
+      "source": "gold_api",
+      "series": "XAG",
+      "frequency": "quote",
+      "unit": "USD/troy oz (spot quote)",
+      "rows": 1,
+      "first_period": "2026-11-03T17:10:26Z",
+      "last_period": "2026-11-03T17:10:26Z"
+    },
+    {
+      "source": "gold_api",
+      "series": "XAU",
+      "frequency": "quote",
+      "unit": "USD/troy oz (spot quote)",
+      "rows": 1,
+      "first_period": "2026-11-03T17:10:27Z",
+      "last_period": "2026-11-03T17:10:27Z"
+    },
+    {
+      "source": "worldbank",
+      "series": "GOLD",
+      "frequency": "monthly",
+      "unit": "USD/troy oz (monthly average)",
+      "rows": 801,
+      "first_period": "1960-01-01",
+      "last_period": "2026-09-01"
+    },
+    {
+      "source": "worldbank",
+      "series": "PLATINUM",
+      "frequency": "monthly",
+      "unit": "USD/troy oz (monthly average)",
+      "rows": 801,
+      "first_period": "1960-01-01",
+      "last_period": "2026-09-01"
+    },
+    {
+      "source": "worldbank",
+      "series": "SILVER",
+      "frequency": "monthly",
+      "unit": "USD/troy oz (monthly average)",
+      "rows": 801,
+      "first_period": "1960-01-01",
+      "last_period": "2026-09-01"
+    }
+  ],
+  "model_status": "evaluated",
+  "model_beats_naive_mae": false,
+  "model_metrics": {
+    "mae": 133.60021959939908,
+    "rmse": 180.93078538391265,
+    "mape_percent": 3.729441098288356
+  },
+  "naive_metrics": {
+    "mae": 129.52777777777777,
+    "rmse": 175.08418609977952,
+    "mape_percent": 3.6574220646761613
+  }
+}

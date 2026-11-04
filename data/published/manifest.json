@@ -1,0 +1,27 @@
+{
+  "exported_at": "2026-11-03T17:14:09Z",
+  "row_count": 2406,
+  "csv_sha256": "2740246935e1e4b5db09a9c2951a351aa4fd664d8f11b819bd4a92f5e9d86069",
+  "snapshot_sha256": "8135491108c6ebdce1ffe1d13f5aca15fcc4d9500ec33fa67c8531c8e6f5f310",
+  "source_urls": {
+    "worldbank": {
+      "name": "World Bank · Pink Sheet",
+      "url": "https://www.worldbank.org/en/research/commodity-markets",
+      "license": "CC BY 4.0 (World Bank dataset catalogue)",
+      "scope": "Monthly nominal USD averages; not daily or spot quotes"
+    },
+    "gold_api": {
+      "name": "Gold API",
+      "url": "https://gold-api.com/docs",
+      "license": "Provider terms apply",
+      "scope": "Timestamped spot quotes in USD per troy ounce"
+    },
+    "frankfurter": {
+      "name": "Frankfurter",
+      "url": "https://frankfurter.dev/",
+      "license": "Provider terms apply",
+      "scope": "Daily USD/THB reference rate; not a dealer quote"
+    }
+  },
+  "provenance_note": "Real normalized observations. raw_sha256 identifies the original provider response. Raw response cache is local and ignored by Git."
+}

@@ -1,0 +1,345 @@
+{
+  "status": "evaluated",
+  "evaluated_at": "2026-11-03T17:14:07Z",
+  "frequency": "monthly",
+  "target": "Next observed monthly average gold price, USD/troy oz",
+  "series_start": "2000-01-01",
+  "feature_columns": [
+    "return_1",
+    "return_3",
+    "return_6",
+    "return_12",
+    "mean_ratio_3",
+    "mean_ratio_12",
+    "volatility_6",
+    "silver_return_1",
+    "platinum_return_1"
+  ],
+  "min_training_rows": 180,
+  "holdout_rows": 36,
+  "eligible_rows": 308,
+  "input_sha256": "51119174a00f1c63d68c26fb1ad2e80028ac0381dd717481c8f0526aacc8f200",
+  "method": "Expanding-window, one-observation-ahead; fixed hyperparameters; no random split",
+  "limitations": [
+    "Current-vintage World Bank data; historical revisions/publication lags are not backtested point-in-time.",
+    "Monthly-average research is separate from the spot quotes and FX reference rates.",
+    "No fees, positions, profit/backtest returns or investment recommendation are modeled."
+  ],
+  "promotion_status": "not_promoted",
+  "reason": null,
+  "model_name": "HistGradientBoostingRegressor on log returns",
+  "sklearn_version": "1.8.0",
+  "parameters": {
+    "max_iter": 80,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10.0,
+    "random_state": 42,
+    "early_stopping": false
+  },
+  "training_rows_before_holdout": 272,
+  "test_start": "2023-10-01",
+  "test_end": "2026-09-01",
+  "model_metrics": {
+    "mae": 133.60021959939908,
+    "rmse": 180.93078538391265,
+    "mape_percent": 3.729441098288356
+  },
+  "naive_metrics": {
+    "mae": 129.52777777777777,
+    "rmse": 175.08418609977952,
+    "mape_percent": 3.6574220646761613
+  },
+  "beats_naive_mae": false,
+  "predictions": [
+    {
+      "period": "2023-10-01",
+      "train_last_period": "2023-09-01",
+      "actual": 1916.0,
+      "model": 1940.076473090425,
+      "naive": 1916.0,
+      "training_rows": 272
+    },
+    {
+      "period": "2023-11-01",
+      "train_last_period": "2023-10-01",
+      "actual": 1984.0,
+      "model": 1931.562252087298,
+      "naive": 1916.0,
+      "training_rows": 273
+    },
+    {
+      "period": "2023-12-01",
+      "train_last_period": "2023-11-01",
+      "actual": 2026.0,
+      "model": 2023.3155938332018,
+      "naive": 1984.0,
+      "training_rows": 274
+    },
+    {
+      "period": "2024-01-01",
+      "train_last_period": "2023-12-01",
+      "actual": 2034.0,
+      "model": 2075.353734838028,
+      "naive": 2026.0,
+      "training_rows": 275
+    },
+    {
+      "period": "2024-02-01",
+      "train_last_period": "2024-01-01",
+      "actual": 2023.0,
+      "model": 2085.664955495155,
+      "naive": 2034.0,
+      "training_rows": 276
+    },
+    {
+      "period": "2024-03-01",
+      "train_last_period": "2024-02-01",
+      "actual": 2158.0,
+      "model": 2011.4964430860143,
+      "naive": 2023.0,
+      "training_rows": 277
+    },
+    {
+      "period": "2024-04-01",
+      "train_last_period": "2024-03-01",
+      "actual": 2331.0,
+      "model": 2207.231761802689,
+      "naive": 2158.0,
+      "training_rows": 278
+    },
+    {
+      "period": "2024-05-01",
+      "train_last_period": "2024-04-01",
+      "actual": 2351.0,
+      "model": 2385.30899998429,
+      "naive": 2331.0,
+      "training_rows": 279
+    },
+    {
+      "period": "2024-06-01",
+      "train_last_period": "2024-05-01",
+      "actual": 2326.0,
+      "model": 2290.854477217121,
+      "naive": 2351.0,
+      "training_rows": 280
+    },
+    {
+      "period": "2024-07-01",
+      "train_last_period": "2024-06-01",
+      "actual": 2398.0,
+      "model": 2335.348265060732,
+      "naive": 2326.0,
+      "training_rows": 281
+    },
+    {
+      "period": "2024-08-01",
+      "train_last_period": "2024-07-01",
+      "actual": 2470.0,
+      "model": 2424.3620116014513,
+      "naive": 2398.0,
+      "training_rows": 282
+    },
+    {
+      "period": "2024-09-01",
+      "train_last_period": "2024-08-01",
+      "actual": 2571.0,
+      "model": 2495.035037217354,
+      "naive": 2470.0,
+      "training_rows": 283
+    },
+    {
+      "period": "2024-10-01",
+      "train_last_period": "2024-09-01",
+      "actual": 2690.0,
+      "model": 2625.6068713288564,
+      "naive": 2571.0,
+      "training_rows": 284
+    },
+    {
+      "period": "2024-11-01",
+      "train_last_period": "2024-10-01",
+      "actual": 2651.0,
+      "model": 2765.482957359632,
+      "naive": 2690.0,
+      "training_rows": 285
+    },
+    {
+      "period": "2024-12-01",
+      "train_last_period": "2024-11-01",
+      "actual": 2648.0,
+      "model": 2636.326668380734,
+      "naive": 2651.0,
+      "training_rows": 286
+    },
+    {
+      "period": "2025-01-01",
+      "train_last_period": "2024-12-01",
+      "actual": 2710.0,
+      "model": 2679.3601003252356,
+      "naive": 2648.0,
+      "training_rows": 287
+    },
+    {
+      "period": "2025-02-01",
+      "train_last_period": "2025-01-01",
+      "actual": 2895.0,
+      "model": 2731.2076207074574,
+      "naive": 2710.0,
+      "training_rows": 288
+    },
+    {
+      "period": "2025-03-01",
+      "train_last_period": "2025-02-01",
+      "actual": 2983.0,
+      "model": 3022.0227743009605,
+      "naive": 2895.0,
+      "training_rows": 289
+    },
+    {
+      "period": "2025-04-01",
+      "train_last_period": "2025-03-01",
+      "actual": 3218.0,
+      "model": 3000.9002522375963,
+      "naive": 2983.0,
+      "training_rows": 290
+    },
+    {
+      "period": "2025-05-01",
+      "train_last_period": "2025-04-01",
+      "actual": 3309.0,
+      "model": 3201.876235213168,
+      "naive": 3218.0,
+      "training_rows": 291
+    },
+    {
+      "period": "2025-06-01",
+      "train_last_period": "2025-05-01",
+      "actual": 3353.0,
+      "model": 3327.0345947419137,
+      "naive": 3309.0,
+      "training_rows": 292
+    },
+    {
+      "period": "2025-07-01",
+      "train_last_period": "2025-06-01",
+      "actual": 3340.0,
+      "model": 3436.586072262412,
+      "naive": 3353.0,
+      "training_rows": 293
+    },
+    {
+      "period": "2025-08-01",
+      "train_last_period": "2025-07-01",
+      "actual": 3368.0,
+      "model": 3396.96752460998,
+      "naive": 3340.0,
+      "training_rows": 294
+    },
+    {
+      "period": "2025-09-01",
+      "train_last_period": "2025-08-01",
+      "actual": 3668.0,
+      "model": 3476.676773980643,
+      "naive": 3368.0,
+      "training_rows": 295
+    },
+    {
+      "period": "2025-10-01",
+      "train_last_period": "2025-09-01",
+      "actual": 4058.0,
+      "model": 3815.472489357493,
+      "naive": 3668.0,
+      "training_rows": 296
+    },
+    {
+      "period": "2025-11-01",
+      "train_last_period": "2025-10-01",
+      "actual": 4087.0,
+      "model": 3980.8294984164304,
+      "naive": 4058.0,
+      "training_rows": 297
+    },
+    {
+      "period": "2025-12-01",
+      "train_last_period": "2025-11-01",
+      "actual": 4309.0,
+      "model": 4006.8567991578234,
+      "naive": 4087.0,
+      "training_rows": 298
+    },
+    {
+      "period": "2026-01-01",
+      "train_last_period": "2025-12-01",
+      "actual": 4753.0,
+      "model": 4207.433507005148,
+      "naive": 4309.0,
+      "training_rows": 299
+    },
+    {
+      "period": "2026-02-01",
+      "train_last_period": "2026-01-01",
+      "actual": 5020.0,
+      "model": 4743.121963580297,
+      "naive": 4753.0,
+      "training_rows": 300
+    },
+    {
+      "period": "2026-03-01",
+      "train_last_period": "2026-02-01",
+      "actual": 4856.0,
+      "model": 5026.651477905706,
+      "naive": 5020.0,
+      "training_rows": 301
+    },
+    {
+      "period": "2026-04-01",
+      "train_last_period": "2026-03-01",
+      "actual": 4721.0,
+      "model": 4889.045763161067,
+      "naive": 4856.0,
+      "training_rows": 302
+    },
+    {
+      "period": "2026-05-01",
+      "train_last_period": "2026-04-01",
+      "actual": 4587.0,
+      "model": 4667.877911945785,
+      "naive": 4721.0,
+      "training_rows": 303
+    },
+    {
+      "period": "2026-06-01",
+      "train_last_period": "2026-05-01",
+      "actual": 4228.0,
+      "model": 4667.778771362524,
+      "naive": 4587.0,
+      "training_rows": 304
+    },
+    {
+      "period": "2026-07-01",
+      "train_last_period": "2026-06-01",
+      "actual": 4073.0,
+      "model": 4264.1447612046495,
+      "naive": 4228.0,
+      "training_rows": 305
+    },
+    {
+      "period": "2026-08-01",
+      "train_last_period": "2026-07-01",
+      "actual": 4411.0,
+      "model": 4073.871673536891,
+      "naive": 4073.0,
+      "training_rows": 306
+    },
+    {
+      "period": "2026-09-01",
+      "train_last_period": "2026-08-01",
+      "actual": 4319.0,
+      "model": 4469.426617933303,
+      "naive": 4411.0,
+      "training_rows": 307
+    }
+  ],
+  "forecast": null
+}

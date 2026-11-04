@@ -1,0 +1,89 @@
+{
+  "id": "9553d1df-1218-4377-a2a3-0c15589f9727",
+  "started_at": "2026-11-03T17:10:24Z",
+  "finished_at": "2026-11-03T17:10:30Z",
+  "status": "success",
+  "sources": {
+    "gold_api_xag": {
+      "status": "success",
+      "extracted_rows": 1,
+      "inserted_rows": 1,
+      "existing_rows": 0,
+      "error": null,
+      "provenance": {
+        "url": "https://api.gold-api.com/price/XAG",
+        "final_url": "https://api.gold-api.com/price/XAG",
+        "http_status": 200,
+        "retrieved_at": "2026-11-03T17:10:27Z",
+        "sha256": "8475118f8ee62c6b0523e6f53cfed8c5b943ffc2888c0d959c9dcf8d99b38023",
+        "cached": false,
+        "file": "gold_api_xag-8475118f8ee62c6b0523e6f53cfed8c5b943ffc2888c0d959c9dcf8d99b38023.json"
+      }
+    },
+    "gold_api_xau": {
+      "status": "success",
+      "extracted_rows": 1,
+      "inserted_rows": 1,
+      "existing_rows": 0,
+      "error": null,
+      "provenance": {
+        "url": "https://api.gold-api.com/price/XAU",
+        "final_url": "https://api.gold-api.com/price/XAU",
+        "http_status": 200,
+        "retrieved_at": "2026-11-03T17:10:27Z",
+        "sha256": "6a03f5066e2fcdc74d756b39c97585be2b8501f9f335e8f060da187d1bc5ce86",
+        "cached": false,
+        "file": "gold_api_xau-6a03f5066e2fcdc74d756b39c97585be2b8501f9f335e8f060da187d1bc5ce86.json"
+      }
+    },
+    "worldbank": {
+      "status": "success",
+      "extracted_rows": 2403,
+      "inserted_rows": 2403,
+      "existing_rows": 0,
+      "error": null,
+      "provenance": {
+        "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+        "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+        "http_status": 200,
+        "retrieved_at": "2026-11-03T17:10:29Z",
+        "sha256": "ea1c350827878ea3bbe30e3cda16a13fd3bd5b409b8458940dc94a36b5a33154",
+        "cached": false,
+        "file": "worldbank-ea1c350827878ea3bbe30e3cda16a13fd3bd5b409b8458940dc94a36b5a33154.xlsx",
+        "release_label": "Updated on October 02, 2026"
+      }
+    },
+    "frankfurter": {
+      "status": "success",
+      "extracted_rows": 1,
+      "inserted_rows": 1,
+      "existing_rows": 0,
+      "error": null,
+      "provenance": {
+        "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+        "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
+        "http_status": 200,
+        "retrieved_at": "2026-11-03T17:10:30Z",
+        "sha256": "acab2127dbc68367b000781cdff3fbc082430653be6fbe85dcb2e242e78fbbda",
+        "cached": false,
+        "file": "frankfurter-acab2127dbc68367b000781cdff3fbc082430653be6fbe85dcb2e242e78fbbda.json"
+      }
+    }
+  }
+}
+{
+  "database_rows": 2406,
+  "model_status": "evaluated",
+  "reason": null,
+  "model_metrics": {
+    "mae": 133.60021959939908,
+    "rmse": 180.93078538391265,
+    "mape_percent": 3.729441098288356
+  },
+  "naive_metrics": {
+    "mae": 129.52777777777777,
+    "rmse": 175.08418609977952,
+    "mape_percent": 3.6574220646761613
+  },
+  "beats_naive_mae": false
+}

@@ -1,0 +1,39 @@
+name: Refresh real market data
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: refresh-market-data
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Collect, validate, evaluate and export
+        id: pipeline
+        run: |
+          python -m goldtrading replay
+          python -m goldtrading refresh > refresh-log.txt 2>&1
+      - name: Preserve run logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-evidence
+          path: |
+            refresh-log.txt
+            data/published/
+      - name: Commit the recorded export
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/published
+          git diff --cached --quiet || git commit -m 'Refresh real-source market export'
+          git push
