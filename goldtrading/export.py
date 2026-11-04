@@ -23,7 +23,7 @@ def snapshot(store):
  return {'schema_version':1,'exported_at':utcnow(),'delivery':'Recorded pipeline export; browser does not query data providers','sources':SOURCE_DOCS,'coverage':coverage,'quotes':quotes,'history':history,'quality':quality,'pipeline':pipeline,'model':model},obs
 def export(store,directory=Path('data/published')):
  directory=Path(directory);directory.mkdir(parents=True,exist_ok=True);data,obs=snapshot(store);path=directory/'observations.csv';tmp=directory/'observations.csv.tmp'
- with tmp.open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=FIELDS);w.writeheader();w.writerows(obs)
+ with tmp.open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=FIELDS,lineterminator="\n");w.writeheader();w.writerows(obs)
  os.replace(tmp,path);atomic_json(directory/'snapshot.json',data)
  atomic_json(directory/'manifest.json',{'exported_at':data['exported_at'],'row_count':len(obs),'csv_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'snapshot_sha256':hashlib.sha256((directory/'snapshot.json').read_bytes()).hexdigest(),'source_urls':SOURCE_DOCS,'provenance_note':'Real normalized observations. raw_sha256 identifies the original provider response. Raw response cache is local and ignored by Git.'})
  return data
