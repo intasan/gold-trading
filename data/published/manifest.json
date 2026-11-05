@@ -1,11 +1,11 @@
 {
-  "exported_at": "2026-11-04T06:56:26.299389Z",
-  "row_count": 2412,
-  "csv_sha256": "91ae5c73dc441036fee0978a46a34f0979f394a37ce60a3b61508c13f594e8db",
-  "snapshot_sha256": "f65fc0f6ad842e2257e6d7ad8fa5c0cdeed4ac52235fb7c7108d3e6a3ed76cc7",
+  "exported_at": "2026-11-05T14:37:59.081721Z",
+  "row_count": 2415,
+  "csv_sha256": "39c35ce04c560e2457326ecad04b6f7f64e822d671265c911402b1a8fcb8901b",
+  "snapshot_sha256": "45ee2f3749b01404e5821485efc78961d73b74980522b07efe300294a251c8b7",
   "source_urls": {
     "worldbank": {
-      "name": "World Bank \u00b7 Pink Sheet",
+      "name": "World Bank · Pink Sheet",
       "url": "https://www.worldbank.org/en/research/commodity-markets",
       "license": "CC BY 4.0 (World Bank dataset catalogue)",
       "scope": "Monthly nominal USD averages; not daily or spot quotes"
