@@ -1,7 +1,7 @@
 {
-  "workflow_run_id": "42484419268",
-  "exported_at": "2026-11-08T13:21:47.899280Z",
-  "rows": 2418,
+  "workflow_run_id": "42838144381",
+  "exported_at": "2026-11-10T14:52:31.497583Z",
+  "rows": 2421,
   "source_status": {
     "gold_api_xag": "success",
     "gold_api_xau": "success",

@@ -1,8 +1,8 @@
 {
-  "exported_at": "2026-11-08T13:21:47.899280Z",
-  "row_count": 2418,
-  "csv_sha256": "e75a1b6b373075e4f19378b1ef814351dfc293558a55ab1cb4bcafdff7eca113",
-  "snapshot_sha256": "9252765a5ef4b014530674a7b8ac2a749236a65700c71c28f1ff534fa331cf30",
+  "exported_at": "2026-11-10T14:52:31.497583Z",
+  "row_count": 2421,
+  "csv_sha256": "3f0c4eaab455f94608b93bfe702537b678b70ed6de8d6ea5d5a3aed7587d4cb2",
+  "snapshot_sha256": "1135c3b59655843bd989d01b7ed2c734e52c20bb0b1ba717c83d3b8e9f77da7f",
   "source_urls": {
     "worldbank": {
       "name": "World Bank · Pink Sheet",
