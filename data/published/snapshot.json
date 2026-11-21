@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "exported_at": "2026-11-20T15:26:02.453468Z",
+  "exported_at": "2026-11-21T14:38:43.501759Z",
   "delivery": "Recorded pipeline export; browser does not query data providers",
   "sources": {
     "worldbank": {
@@ -28,27 +28,27 @@
       "series": "USDTHB",
       "frequency": "daily",
       "unit": "THB per USD (reference rate)",
-      "rows": 15,
+      "rows": 16,
       "first_period": "2026-11-03",
-      "last_period": "2026-11-20"
+      "last_period": "2026-11-21"
     },
     {
       "source": "gold_api",
       "series": "XAG",
       "frequency": "quote",
       "unit": "USD/troy oz (spot quote)",
-      "rows": 15,
+      "rows": 16,
       "first_period": "2026-11-03T17:10:26Z",
-      "last_period": "2026-11-20T15:25:35Z"
+      "last_period": "2026-11-21T14:38:37Z"
     },
     {
       "source": "gold_api",
       "series": "XAU",
       "frequency": "quote",
       "unit": "USD/troy oz (spot quote)",
-      "rows": 15,
+      "rows": 16,
       "first_period": "2026-11-03T17:10:27Z",
-      "last_period": "2026-11-20T15:25:36Z"
+      "last_period": "2026-11-21T14:38:38Z"
     },
     {
       "source": "worldbank",
@@ -83,31 +83,31 @@
       "source": "frankfurter",
       "series": "USDTHB",
       "frequency": "daily",
-      "observed_at": "2026-11-20",
-      "value": 33.924,
+      "observed_at": "2026-11-21",
+      "value": 33.927,
       "unit": "THB per USD (reference rate)",
-      "retrieved_at": "2026-11-20T15:25:56.941419Z",
-      "raw_sha256": "30111ca71ee3bf0dfd995ebe7add42837b57202ffd08212798396e4b1feb5b90"
+      "retrieved_at": "2026-11-21T14:38:40.363744Z",
+      "raw_sha256": "5b871a304f6a8edc5f048bef7730b3ca70274b203c99665e2975fc124214486b"
     },
     {
       "source": "gold_api",
       "series": "XAG",
       "frequency": "quote",
-      "observed_at": "2026-11-20T15:25:35Z",
-      "value": 41.355,
+      "observed_at": "2026-11-21T14:38:37Z",
+      "value": 41.080002,
       "unit": "USD/troy oz (spot quote)",
-      "retrieved_at": "2026-11-20T15:25:57.221155Z",
-      "raw_sha256": "5a9a4f7181a8bfeeff17b0405fc3acad7e842765abc55f30d7ac009cd64cc083"
+      "retrieved_at": "2026-11-21T14:38:40.700265Z",
+      "raw_sha256": "86735df79fd00d97f45000903760f2cf13c69a0d24256cd1b5f65a076f59c699"
     },
     {
       "source": "gold_api",
       "series": "XAU",
       "frequency": "quote",
-      "observed_at": "2026-11-20T15:25:36Z",
-      "value": 3542.649902,
+      "observed_at": "2026-11-21T14:38:38Z",
+      "value": 3539.0,
       "unit": "USD/troy oz (spot quote)",
-      "retrieved_at": "2026-11-20T15:25:57.223997Z",
-      "raw_sha256": "7ad823e3739f5e65aefc9ba5294e20f7b8137f66286f2d7ab328da31323b09f2"
+      "retrieved_at": "2026-11-21T14:38:40.694909Z",
+      "raw_sha256": "0258ea24ba0c4cf127b50619939f1994981529ac220c3c434f5224cb7d95022b"
     }
   ],
   "history": {
@@ -9745,13 +9745,13 @@
   "quality": {
     "duplicate_keys": 0,
     "invalid_prices": 0,
-    "rows": 2451,
+    "rows": 2454,
     "monthly_average_and_spot_are_separate": true
   },
   "pipeline": {
-    "id": "87877e10-794d-44aa-88b7-c76cb3c83147",
-    "started_at": "2026-11-20T15:25:56.787360Z",
-    "finished_at": "2026-11-20T15:25:58.488621Z",
+    "id": "23fc01ad-52c1-4aa9-8b4a-9d205b85be17",
+    "started_at": "2026-11-21T14:38:40.253119Z",
+    "finished_at": "2026-11-21T14:38:41.114027Z",
     "status": "success",
     "sources": {
       "frankfurter": {
@@ -9764,26 +9764,10 @@
           "url": "https://api.frankfurter.dev/v2/rate/USD/THB",
           "final_url": "https://api.frankfurter.dev/v2/rate/USD/THB",
           "http_status": 200,
-          "retrieved_at": "2026-11-20T15:25:56.941419Z",
-          "sha256": "30111ca71ee3bf0dfd995ebe7add42837b57202ffd08212798396e4b1feb5b90",
+          "retrieved_at": "2026-11-21T14:38:40.363744Z",
+          "sha256": "5b871a304f6a8edc5f048bef7730b3ca70274b203c99665e2975fc124214486b",
           "cached": false,
-          "file": "frankfurter-30111ca71ee3bf0dfd995ebe7add42837b57202ffd08212798396e4b1feb5b90.json"
-        }
-      },
-      "gold_api_xag": {
-        "status": "success",
-        "extracted_rows": 1,
-        "inserted_rows": 1,
-        "existing_rows": 0,
-        "error": null,
-        "provenance": {
-          "url": "https://api.gold-api.com/price/XAG",
-          "final_url": "https://api.gold-api.com/price/XAG",
-          "http_status": 200,
-          "retrieved_at": "2026-11-20T15:25:57.221155Z",
-          "sha256": "5a9a4f7181a8bfeeff17b0405fc3acad7e842765abc55f30d7ac009cd64cc083",
-          "cached": false,
-          "file": "gold_api_xag-5a9a4f7181a8bfeeff17b0405fc3acad7e842765abc55f30d7ac009cd64cc083.json"
+          "file": "frankfurter-5b871a304f6a8edc5f048bef7730b3ca70274b203c99665e2975fc124214486b.json"
         }
       },
       "gold_api_xau": {
@@ -9796,10 +9780,10 @@
           "url": "https://api.gold-api.com/price/XAU",
           "final_url": "https://api.gold-api.com/price/XAU",
           "http_status": 200,
-          "retrieved_at": "2026-11-20T15:25:57.223997Z",
-          "sha256": "7ad823e3739f5e65aefc9ba5294e20f7b8137f66286f2d7ab328da31323b09f2",
+          "retrieved_at": "2026-11-21T14:38:40.694909Z",
+          "sha256": "0258ea24ba0c4cf127b50619939f1994981529ac220c3c434f5224cb7d95022b",
           "cached": false,
-          "file": "gold_api_xau-7ad823e3739f5e65aefc9ba5294e20f7b8137f66286f2d7ab328da31323b09f2.json"
+          "file": "gold_api_xau-0258ea24ba0c4cf127b50619939f1994981529ac220c3c434f5224cb7d95022b.json"
         }
       },
       "worldbank": {
@@ -9812,18 +9796,34 @@
           "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
           "final_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
           "http_status": 200,
-          "retrieved_at": "2026-11-20T15:25:56.953419Z",
+          "retrieved_at": "2026-11-21T14:38:40.411147Z",
           "sha256": "3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2",
           "cached": false,
           "file": "worldbank-3c8d9d8dbb48342fdbf24777c39a8ce8964cc2fd0958f72f6779e6e4ad99cde2.xlsx",
           "release_label": "Updated on November 03, 2026"
+        }
+      },
+      "gold_api_xag": {
+        "status": "success",
+        "extracted_rows": 1,
+        "inserted_rows": 1,
+        "existing_rows": 0,
+        "error": null,
+        "provenance": {
+          "url": "https://api.gold-api.com/price/XAG",
+          "final_url": "https://api.gold-api.com/price/XAG",
+          "http_status": 200,
+          "retrieved_at": "2026-11-21T14:38:40.700265Z",
+          "sha256": "86735df79fd00d97f45000903760f2cf13c69a0d24256cd1b5f65a076f59c699",
+          "cached": false,
+          "file": "gold_api_xag-86735df79fd00d97f45000903760f2cf13c69a0d24256cd1b5f65a076f59c699.json"
         }
       }
     }
   },
   "model": {
     "status": "evaluated",
-    "evaluated_at": "2026-11-20T15:26:00.265733Z",
+    "evaluated_at": "2026-11-21T14:38:42.279204Z",
     "frequency": "monthly",
     "target": "Next observed monthly average gold price, USD/troy oz",
     "series_start": "2000-01-01",
