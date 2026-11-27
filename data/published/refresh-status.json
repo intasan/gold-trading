@@ -1,12 +1,12 @@
 {
-  "workflow_run_id": "45862510257",
-  "exported_at": "2026-11-26T16:52:42.380521Z",
-  "rows": 2469,
+  "workflow_run_id": "46035010097",
+  "exported_at": "2026-11-27T16:38:17.870079Z",
+  "rows": 2472,
   "source_status": {
     "gold_api_xag": "success",
     "gold_api_xau": "success",
-    "worldbank": "success",
-    "frankfurter": "success"
+    "frankfurter": "success",
+    "worldbank": "success"
   },
   "model_status": "evaluated",
   "forecast_published": false,
